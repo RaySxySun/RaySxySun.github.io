@@ -1,5 +1,5 @@
-title:            CodeInventory
-description:      "Nerd's feeder!"
+title:            OhRayMaster
+description:      "Idea Booth"
 logo:             logo.png
 disqus_shortname: codeinventorycom
 share:            true
@@ -7,11 +7,11 @@ dropcap:	   true
 # Change url to your domain. Leave localhost server or blank when working locally.
 # or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same 
 # whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
-url:        	 http://www.codeinventory.com
+url:        	 http://raysxysun.github.io
 
 # Owner/author information
 owner:
-  name:           Amey Jadiye
+  name:           Ray Sun
   avatar:         ameyjadiye.jpg
   email:          ameyjadiye@gmail.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string

@@ -1,3 +1,9 @@
+/*custom*/
+table {
+  margin: auto !important;
+}
+
+
 /* tools */
 .cf:before,
 .cf:after {
