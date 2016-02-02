@@ -1,0 +1,270 @@
+<h1 id="logging-method">1. logging method</h1>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>logging()
+{
+    local FUN_NAME="${1}"
+    local LINE_NO="${2}"
+    local LEVEL="${3}"
+    local MSG="${4}"
+    echo "[$(date '+%F %T')] [$0:${FUN_NAME}:${LINE_NO}] [${LEVEL}] ${MSG}" &gt;&gt; "${log_file}"
+}
+
+logging "$FUNCNAME" "$LINENO" "INFO" "Run hook [after_run_install]"
+</code></pre>
+</div>
+
+<blockquote>
+  <p><strong>Build-in Keywords:</strong> $FUNCNAME &amp; $LINENO</p>
+</blockquote>
+
+<hr />
+
+<h1 id="print-string-with-diff-color">2. print string with diff color</h1>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>stars="********************"
+cus_echo()
+{
+    echo ""
+    printf "\n\e[35m%s [ %s ] %s\e[0m\n" "${stars}" "$1" "${stars}"
+}
+
+red_echo()
+{
+    printf "\n\e[31m%s\e[0m\n" "$@"
+}
+
+green_echo()
+{
+    printf "\n\e[32m%s\e[0m\n" "$@"
+}
+
+yellow_echo()
+{
+    printf "\n\e[33m%s\e[0m\n" "$@"
+}
+
+blue_echo()
+{
+    printf "\n\e[34m%s\e[0m\n" "$@"
+}
+
+light_magenta_echo()
+{
+    printf "\n\e[35m%s\e[0m\n" "$@"
+}
+
+cyan_echo()
+{
+    printf "\n\e[36m%s\e[0m\n" "$@"
+}
+</code></pre>
+</div>
+
+<blockquote>
+  <p><strong>Notice:</strong> the color code is filled between “\e[” and “m”</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>\e[30m -- \e[37m   foreground color
+</code></pre>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>echo -e “\e[30m”</td>
+      <td>grey</td>
+    </tr>
+    <tr>
+      <td>echo -e “\e[31m”</td>
+      <td>red</td>
+    </tr>
+    <tr>
+      <td>echo -e “\e[32m”</td>
+      <td>green</td>
+    </tr>
+    <tr>
+      <td>echo -e “\e[33m”</td>
+      <td>yellow</td>
+    </tr>
+    <tr>
+      <td>echo -e “\e[34m”</td>
+      <td>blue</td>
+    </tr>
+    <tr>
+      <td>echo -e “\e[35m”</td>
+      <td>purple</td>
+    </tr>
+    <tr>
+      <td>echo -e “\e[36m”</td>
+      <td>light blue</td>
+    </tr>
+    <tr>
+      <td>echo -e “\e[37m”</td>
+      <td>white</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>\e[40m -- \e[47m    background color 
+</code></pre>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>echo -e “\e[40m”</td>
+      <td>grey</td>
+    </tr>
+    <tr>
+      <td>echo -e “\e[41m”</td>
+      <td>red</td>
+    </tr>
+    <tr>
+      <td>echo -e “\e[42m”</td>
+      <td>green</td>
+    </tr>
+    <tr>
+      <td>echo -e “\e[43m”</td>
+      <td>yellow</td>
+    </tr>
+    <tr>
+      <td>echo -e “\e[44m”</td>
+      <td>blue</td>
+    </tr>
+    <tr>
+      <td>echo -e “\e[45m”</td>
+      <td>purple</td>
+    </tr>
+    <tr>
+      <td>echo -e “\e[46m”</td>
+      <td>light blue</td>
+    </tr>
+    <tr>
+      <td>echo -e “\e[47m”</td>
+      <td>white</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>function</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>\033[0m</td>
+      <td>close all attr</td>
+    </tr>
+    <tr>
+      <td>\033[1m</td>
+      <td>set brightness</td>
+    </tr>
+    <tr>
+      <td>\03[4m</td>
+      <td>underline</td>
+    </tr>
+    <tr>
+      <td>\033[5m</td>
+      <td>blink</td>
+    </tr>
+    <tr>
+      <td>\033[7m</td>
+      <td>reverse display</td>
+    </tr>
+    <tr>
+      <td>\033[8m</td>
+      <td>blanking</td>
+    </tr>
+    <tr>
+      <td>\033[30m</td>
+      <td>–   \033[37m   foreground color</td>
+    </tr>
+    <tr>
+      <td>\033[40m</td>
+      <td>–   \033[47m   background color</td>
+    </tr>
+    <tr>
+      <td>\033[nA</td>
+      <td>move up N lines</td>
+    </tr>
+    <tr>
+      <td>\03[nB</td>
+      <td>move down N lines</td>
+    </tr>
+    <tr>
+      <td>\033[nC</td>
+      <td>move right N lines</td>
+    </tr>
+    <tr>
+      <td>\033[nD</td>
+      <td>move left N lines</td>
+    </tr>
+    <tr>
+      <td>\033[y;xH</td>
+      <td>set cursor position</td>
+    </tr>
+    <tr>
+      <td>\033[2J</td>
+      <td>clear screen</td>
+    </tr>
+    <tr>
+      <td>\033[K</td>
+      <td>clear text from current position to the end</td>
+    </tr>
+    <tr>
+      <td>\033[s</td>
+      <td>save cursor position</td>
+    </tr>
+    <tr>
+      <td>\033[u</td>
+      <td>reset cursor position</td>
+    </tr>
+    <tr>
+      <td>\033[?25l</td>
+      <td>hide cursor</td>
+    </tr>
+    <tr>
+      <td>\33[?25h</td>
+      <td>show cursor</td>
+    </tr>
+  </tbody>
+</table>
+
+<p># 3.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>2&gt;&amp;1  
+local n_br_nm="${INSTALL_NAME}"_$(date "+%s")
+curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=bin
+
+ Problem 1
+- Installation request for onelogin/php-saml 2.5.0 -&gt; satisfiable by onelogin/php-saml[2.5.0].
+- onelogin/php-saml 2.5.0 requires ext-mcrypt * -&gt; the requested PHP extension mcrypt is missing from your system.
+
+for file in index.php install.php; do
+    sed -i "1a ini_set('log_errors_max_len', 1024);" "${WEB_PATH}/${INSTALL_NAME}/${file}"
+    sed -i "1a ini_set('display_errors', 0);" "${WEB_PATH}/${INSTALL_NAME}/${file}"
+    sed -i "1a ini_set('error_log', '${WEB_PATH}/${INSTALL_NAME}/php_error.txt');" "${WEB_PATH}/${INSTALL_NAME}/${file}"
+    sed -i "1a ini_set('log_errors', 1);" "${WEB_PATH}/${INSTALL_NAME}/${file}"
+    sed -i "1a error_reporting(E_ALL &amp; ~E_NOTICE &amp; ~E_STRICT &amp; ~E_DEPRECATED);" "${WEB_PATH}/${INSTALL_NAME}/${file}"
+done
+
+instance name number
+
+cron job  remove files  
+</code></pre>
+</div>

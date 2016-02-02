@@ -1,0 +1,267 @@
+<h2 id="python">Python</h2>
+
+<blockquote>
+  <p><a href="https://docs.python.org/3/">Python 3.5.1 document</a></p>
+</blockquote>
+
+<hr />
+
+<h3 id="import-most-used-module">1. import most used module</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import os
+import sys
+import getopt
+import datetime
+import platform
+import logging
+import urllib
+import urllib2
+import logging.handlers
+</code></pre>
+</div>
+
+<hr />
+<p>### 2. Method</p>
+
+<p>Define a method</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>def parse_command(self):
+</code></pre>
+</div>
+
+<p>Call a method</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>self.parse_parameters()
+</code></pre>
+</div>
+
+<h5 id="example-parse-command-line-options">example: Parse command line options</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> if sys.argv[1] == "install":
+     short_opt = "hp:i:"
+     long_opt = [
+            "help",
+            "install-dir=",
+            "git-pull-request-number="
+     ]
+     try:
+         params, args = getopt.getopt(sys.argv[2:], short_opt, long_opt)
+         for key, value in params:
+            if key in ("--install-dir"):
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="os">3. OS</h3>
+<p>1). os.path.exists</p>
+
+<p>2). os.makedirs</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> if not os.path.exists(tmp_path):
+    os.makedirs(tmp_path)
+ self.tmp_config["tmp_path"] = tmp_path
+</code></pre>
+</div>
+
+<p>3). os.environ.get(“FOO”)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if os.environ.get("ATOI_INSTALL_HOOK"):  4). os.execlp("sh", "sh", "-c", cmd)   
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="dictionary">4. Dictionary</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>install_config = {
+        "building_method": 0,
+        "name":           None,
+        "db_name":        None,
+        "update":         1, # update composer
+        "debugging":      0,
+    }
+</code></pre>
+</div>
+
+<p>get the value by key from dictionary</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>dict.get(key, default=None)        
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="format-string">5. Format string</h3>
+<blockquote>
+  <p><a href="https://docs.python.org/3/library/stdtypes.html?highlight=str%20format#str.format">string methods (including str.format)</a></p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>"%s, %s"%('hello', 'ray')
+"{0}, {1}, {0}".format('hello', 'ray')
+</code></pre>
+</div>
+
+<p>Similar to str.format(**mapping), except that mapping is used directly and not copied to a dict. This is useful if for example mapping is a dict subclass:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Default(dict):
+    def __missing__(self, key):
+        return key
+
+'{name} was born in {country}'.format_map(Default(name='Guido'))
+'Guido was born in country'
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="import-logging--logginghandlers">6. Import logging &amp; logging.handlers</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>def sc_get_logger(log_file):
+    handler = logging.handlers.RotatingFileHandler(log_file, maxBytes=1024 * 1024, backupCount=5)
+    fmt = "[%(asctime)s] [%(filename)s:%(lineno)s] [%(levelname)s]: %(message)s"
+
+    formatter = logging.Formatter(fmt)
+    handler.setFormatter(formatter)
+
+    logger = logging.getLogger('install_log')
+    logger.addHandler(handler)
+    logger.setLevel(logging.DEBUG)
+
+if not logger:
+    print "fail to create a Rotating logger"
+    exit(1)
+
+return logger
+</code></pre>
+</div>
+
+<blockquote>
+  <div class="highlighter-rouge"><pre class="highlight"><code>**NODE:** Rollover occurs whenever the current log file is nearly maxBytes in length. 
+If backupCount is &gt;= 1, the system will successively create new files with 
+the same pathname as the base file, but with extensions ".1", ".2" etc. 
+appended to it.
+</code></pre>
+  </div>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>CRITICAL : 'CRITICAL',
+ERROR : 'ERROR',
+WARNING : 'WARNING',
+INFO : 'INFO',
+DEBUG : 'DEBUG',
+NOTSET : 'NOTSET',
+
+NOTSET &lt; DEBUG &lt; INFO &lt; WARNING &lt; ERROR &lt; CRITICAL
+</code></pre>
+</div>
+
+<p><strong>LogRecord attributes</strong> <a href="https://docs.python.org/3/library/logging.html?highlight=asctime%20lineno#logrecord-attributes">wormhole</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute name</th>
+      <th>Format</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>asctime</td>
+      <td>%(asctime)s</td>
+      <td>Human-readable time when the LogRecord was created. By default this is of the form ‘2003-07-08 16:49:45,896’ (the numbers after the comma are millisecond portion of the time).</td>
+    </tr>
+    <tr>
+      <td>filename</td>
+      <td>%(filename)s</td>
+      <td>Filename portion of pathname.</td>
+    </tr>
+    <tr>
+      <td>lineno</td>
+      <td>%(lineno)d</td>
+      <td>Source line number where the logging call was issued (if available).</td>
+    </tr>
+    <tr>
+      <td>levelname</td>
+      <td>%(levelname)s</td>
+      <td>Text logging level for the message (‘DEBUG’, ‘INFO’, ‘WARNING’, ‘ERROR’, ‘CRITICAL’).</td>
+    </tr>
+    <tr>
+      <td>message</td>
+      <td>%(message)s</td>
+      <td>The logged message, computed as msg % args. This is set when Formatter.format() is invoked.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="https://docs.python.org/3/library/logging.handlers.html?highlight=rotatingfilehandler#rotatingfilehandler">16.8. logging.handlers — Logging handlers</a></p>
+
+<pre>
+16.8.1. StreamHandler
+16.8.2. FileHandler
+16.8.3. NullHandler
+16.8.4. WatchedFileHandler
+16.8.5. BaseRotatingHandler
+16.8.6. RotatingFileHandler
+16.8.7. TimedRotatingFileHandler
+16.8.8. SocketHandler
+16.8.9. DatagramHandler
+16.8.10. SysLogHandler
+16.8.11. NTEventLogHandler
+16.8.12. SMTPHandler
+16.8.13. MemoryHandler
+16.8.14. HTTPHandler
+16.8.15. QueueHandler
+16.8.16. QueueListener
+</pre>
+
+<h3 id="web">7. Web</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import urllib
+import urllib2
+   
+   
+def get_pull_info(self):
+    id = self.__config__["install_info"]["id"]
+    url = "https://api.github.com/repos/xxxxx/Mango/pulls/%s" % pull_number
+
+    commons.cus_normal_print("Getting pull request [{0:s}] info...".format(pull_number))
+    self.__logger__.info("Getting pull request{0:s} info from URL: {1:s}".format(pull_number, url))
+
+    token = "token {0:s}".format(self.__install_config__["token"])
+    request = urllib2.Request(url)
+    request.add_header('User-Agent', 'gbyukg')
+    request.add_header('Content-Type', 'application/json')
+    request.add_header('Authorization', token)
+
+    try:
+        response = urllib2.urlopen(request)
+    except urllib2.URLError, e:
+        err_info = "Get pull request [{0:s}] info wrong: HTTP request code [{1:s}] with message [{2:s}]".format(
+            str(pull_number),
+            str(e.code),
+            str(e.read()))
+
+        self.__logger__.error(err_info)
+        print err_info
+        exit(1)
+</code></pre>
+</div>
+
+<hr />
+<p># How to get oauth-token from github api
+1. Login github -&gt; setting -&gt; developer applications
+2. redirect by visiting</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>```
+https://github.com/login/oauth/authorize
+Example
+https://github.com/login/oauth/authorize?client_id=xxxxxxxx&amp;client_secret=xxxxxxx&amp;scope=repo    ```   &gt;About [scope](https://developer.github.com/v3/oauth/#scopes) 3. get the code from redirect url   
+</code></pre>
+</div>
+
+<ol>
+  <li>send POST request https://github.com/login/oauth/access_token</li>
+</ol>
+
