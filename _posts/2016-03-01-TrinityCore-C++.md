@@ -53,6 +53,8 @@ docker run -d  --dns 8.8.8.8 --dns 8.8.4.4 -v /home/ray:/home/ray --name=wow -h 
  
 	#Another Example Below:
 	cmake ../ -DCMAKE_INSTALL_PREFIX=/home/wow/server -DCONF_DIR=/home/wow/server/etc -DTOOLS=1 -DWITH_WARNINGS=1
+	#Debug
+	cmake ../ -DCMAKE_INSTALL_PREFIX=/home/wow/server -DCONF_DIR=/home/wow/server/etc -DTOOLS=1 -DWITH_WARNINGS=1 -DWITH_COREDEBUG=1 -DCMAKE_BUILD_TYPE=Debug
 
 	#BUILDING
 	make

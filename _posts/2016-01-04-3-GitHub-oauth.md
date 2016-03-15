@@ -13,13 +13,6 @@ description: To understand python class and metaclass
 1. Login github -> setting -> [developer applications](https://raw.githubusercontent.com/RaySxySun/raysxysun.github.io/master/img/20160112/160112aboutPython1.png)
 
 2. redirect by visiting 
-    
-    ```
-    https://github.com/login/oauth/authorize
-    Example
-    https://github.com/login/oauth/authorize?client_id=xxxxxxxx&client_secret=xxxxxxx&scope=repo
-   ```
-   
 
 Name | Type | Description
 ---|---|---
@@ -35,7 +28,6 @@ state|string|An unguessable random string. It is used to protect against cross-s
 
 4. send 
 
-    POST https://github.com/login/oauth/access_token
 
 **Parameters**
 
