@@ -2,6 +2,7 @@
 layout: post
 title: writing correction 1
 date: 2016-02-21
+weather: rainy
 categories: EN
 tags: [correction]
 description: 

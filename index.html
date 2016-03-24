@@ -8,7 +8,7 @@ tags: [Amey, Jadiye, CodeInvemtory]
 {% if site.paginate %}
 	{% for post in paginator.posts %}
     <article class="notepad-index-post post row">
-        <div class="small-12 medium-3 large-2 columns datetime">
+        <div class="small-12 medium-3 large-2 columns datetime weather-{{ post.weather }}-container grow">
             <span class="notepad-post-meta">
                 <time datetime="{{ post.date | date_to_xmlschema }}">
                     <span class="day pop">
@@ -18,6 +18,9 @@ tags: [Amey, Jadiye, CodeInvemtory]
                         {{ post.date | date: "%B %Y" }}
                     </span>
                 </time>
+            <div class="weather-{{ post.weather }}">
+               <div class="{{ post.weather }}"> </div>
+            </div>
             </span>
         </div>
         <div class="small-12 medium-9 large-10 columns">
@@ -62,7 +65,7 @@ tags: [Amey, Jadiye, CodeInvemtory]
 {% else %}
 	{% for post in site.posts %}
     <article class="notepad-index-post post row">
-        <div class="small-12 medium-3 large-2 columns datetime">
+        <div class="small-12 medium-3 large-2 columns datetime weather-{{ post.weather }}-container grow">
             <span class="notepad-post-meta">
                 <time datetime="{{ post.date | date_to_xmlschema }}">
                     <span class="day pop">
@@ -72,6 +75,9 @@ tags: [Amey, Jadiye, CodeInvemtory]
                         {{ post.date | date: "%B %Y" }}
                     </span>
                 </time>
+        <div class="weather-{{ post.weather }}">
+               <div class="{{ post.weather }}"> </div>
+            </div>
             </span>
         </div>
         <div class="small-12 medium-9 large-10 columns">

@@ -2,6 +2,7 @@
 layout: post
 title: Mybatis Getting Started
 date: 2016-03-24
+weather: stormy
 categories: Framework
 tags: [Persistence framework ,SQL mapper framework]
 description: 

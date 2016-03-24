@@ -2,6 +2,7 @@
 layout: post
 title: command collection
 date: 2016-02-24
+weather: snowy
 categories: linux
 tags: [shell, linux, automation, docker]
 description: 

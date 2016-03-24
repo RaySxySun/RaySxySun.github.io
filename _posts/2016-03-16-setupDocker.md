@@ -2,6 +2,7 @@
 layout: post
 title: setup docker
 date: 2016-03-16
+weather: starry
 categories: Docker
 tags: [CI, Docker]
 description: 

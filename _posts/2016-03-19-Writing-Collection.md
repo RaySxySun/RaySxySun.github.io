@@ -2,6 +2,7 @@
 layout: post
 title: Writing Collection
 date: 2016-03-19
+weather: sunny
 categories: EN
 tags: [EN,Writing]
 description: 

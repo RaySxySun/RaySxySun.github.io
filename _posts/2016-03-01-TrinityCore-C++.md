@@ -2,6 +2,7 @@
 layout: post
 title: TrinityCore
 date: 2016-03-01
+weather: rainbow
 categories: C++
 tags: [C++, Language C]
 description: 
