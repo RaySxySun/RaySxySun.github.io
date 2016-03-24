@@ -11,7 +11,7 @@ tags: [Amey, Jadiye, CodeInvemtory]
         <div class="small-12 medium-3 large-2 columns datetime">
             <span class="notepad-post-meta">
                 <time datetime="{{ post.date | date_to_xmlschema }}">
-                    <span class="day">
+                    <span class="day pop">
                         {{ post.date | date: "%d" }}
                     </span>
                     <span class="month-year">
@@ -22,7 +22,7 @@ tags: [Amey, Jadiye, CodeInvemtory]
         </div>
         <div class="small-12 medium-9 large-10 columns">
             <header class="notepad-post-header">
-                <h3 class="notepad-post-title">
+                <h3 class="notepad-post-title grow">
                     <a href="{{ site.url }}{{ post.url }}">
                         {{ post.title }}
                     </a>
@@ -32,7 +32,7 @@ tags: [Amey, Jadiye, CodeInvemtory]
                 <p>{{ post.content | strip_html | truncatewords:40 }}</p>
             </section>
             
-                <div class="notepad-index-post-tags">
+                <div class="notepad-index-post-tags wobble-horizontal">
                 {% for tag in post.categories %}<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" title="Other posts from the {{ tag | capitalize }} category">{{ tag | capitalize }}</a>{% unless forloop.last %}&nbsp;{% endunless %}{% endfor %}
                     
                 </div>
@@ -65,7 +65,7 @@ tags: [Amey, Jadiye, CodeInvemtory]
         <div class="small-12 medium-3 large-2 columns datetime">
             <span class="notepad-post-meta">
                 <time datetime="{{ post.date | date_to_xmlschema }}">
-                    <span class="day">
+                    <span class="day pop">
                         {{ post.date | date: "%d" }}
                     </span>
                     <span class="month-year">
@@ -76,7 +76,7 @@ tags: [Amey, Jadiye, CodeInvemtory]
         </div>
         <div class="small-12 medium-9 large-10 columns">
             <header class="notepad-post-header">
-                <h3 class="notepad-post-title">
+                <h3 class="notepad-post-title grow">
                     <a href="{{ site.url }}{{ post.url }}">
                         {{ post.title }}
                     </a>
@@ -86,7 +86,7 @@ tags: [Amey, Jadiye, CodeInvemtory]
                 <p>{{ post.content | strip_html | truncatewords:100 }}</p>
             </section>
             
-                <div class="notepad-index-post-tags">
+                <div class="notepad-index-post-tags wobble-horizontal">
                 {% for tag in post.categories %}<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" title="Other posts from the {{ tag | capitalize }} category">{{ tag | capitalize }}</a>{% unless forloop.last %}&nbsp;{% endunless %}{% endfor %}
                     
                 </div>
