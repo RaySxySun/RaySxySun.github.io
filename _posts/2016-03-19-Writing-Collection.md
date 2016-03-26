@@ -239,8 +239,18 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 
 Position/Attitude|Ideas
  ---|---
-TBD|TBD
-
+Main boday 1| Using computers tends to make us more stressful
+|1. The modern workplace has been largely computerized
+|2. People who use computers everyday have health problems.
+|A lot of stress is accumulated on a psychological level.
+Main Body 2| Cell phones reduce the quality of human relationship
+|1. The convenience of cell phone comes with a huge price.
+|2. THe intimacy of face-to-face conversation is lost.
+|3. Discussion of serious issues over cell phone is inefficient
+Main Body 3| Private cars have created many urban problems
+|1. Traffic jam is a modern plague in every major city.
+|2. Serious air pollution is a direct result of auto emissions.
+|3. Parking presents a greater challenge to car owners.
 
 ---
 
@@ -250,7 +260,7 @@ TBD|TBD
 
 - People have different views about how much choice students should have with regard to what they can study at university. While some argue that it would be better for students to be forced into certain key subject areas, I believe that everyone should be able to study the course of their choice.
 
-- There are various reasons why people believe that universities should only offer subjects that will be useful in the future. They may assert that university courses like medicine, engineering and information technology are more likely to be beneficial than certain art degrees. From a personal perspective, it can be argued that these courses provide more job opportunities, career progression, better salaries, and therefore an improved quality of life for students who take them. On the societal level, by forcing people to choose particular university subjects, governments can ensure that any knowledge and skill gaps in the economy are covered. Finally, a focus on technology in higher education could lead to new inventions, economic growth, and greater future prosperity.
+- There are various reasons why people believe that universities should only offer subjects that will be useful in the future. They may assert that university courses like medicine, engineering and information technology are more likely to be beneficial than certain art degrees. From a personal perspective, it can be argued that these courses provide more job opportunities, career progression, better salaries, and therefore an improved quality of life for students who take them. On the social level, by forcing people to choose particular university subjects, governments can ensure that any knowledge and skill gaps in the economy are covered. Finally, a focus on technology in higher education could lead to new inventions, economic growth, and greater future prosperity.
 
 - In spite of these arguments, I believe that university students should be free to choose their preferred areas of study. In my opinion, society will benefit more if our students are passionate about what they are learning. Besides, nobody can really predict which areas of knowledge will be most useful to society in the future, and it may be that employers begin to value creative thinking skills above practical or technical skills. If this were the case, perhaps we would need more students of art, history and philosophy than of science or technology.
 
@@ -260,9 +270,152 @@ TBD|TBD
 
 No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 ---|---|---|---|---
-TBD|TBD|TBD|TBD|TBD
+1|with regard to| about/related to||
+2|be forced into|it would be better for students to ~ certain key subject areas.||
+3|There are various reasons whay ..||TS|
+4|medicine, engineering and information technology|~ are more likely to be beneficial than certain art degrees.||
+5|job opportunities, career progression, better salaries|~, and therefore an improved quality of life for students||
+6|gaps are covered|any knowledge and skill gaps in the economy are covered.||
+7|a focus on xx|~ in higher education could lead to new inventions, economic growth, and greater future prosperity||
+8|inventions, economic growth, and greater future prosperity|||
+9|preferred|students should be free to choose their preferred areas of study.||
+10|benefit|xxx will benefit more if ...||
+11|be passionate about|||
+12|value xxx above|it may be that employers begin to value creative thinking skills above practical or technical skills.||
+13|If this were the case, |||
+14|perhaps|~ we would need ...||
+15|student of art|more students of art, history and philosophy than of science or technology.||
+16|sensible|it might seem sensible for uni(s) to focus only on ...||
 
 
 Position/Attitude|Ideas
  ---|---
-TBD|TBD
+Main Body 1|There are various reasons why people believe that uni(s) should only offer subjects ..
+|1. From a personal perspective, more job opportunities, career progression, better salaries, and therefore an improved quality of life
+|2. On the social level, by forcing pp to choose ..., gov can  ensure that any knowledge and skill gaps are covered
+|3. Finally, a focus on tech in higher edu could lead to new inventions, economic growth, and greater future prosperity.
+Main Body 2|In spite of these arguments, students should be free to choose their preferred areas of study.
+|1. Society will benefit more if our students are passionate about what they are learning.
+|2. Besides, nobody can really predict which areas of knowledge will be most usefull to society in the future.
+
+---
+
+# Game
+
+> Some people regard video games as harmless fun, or even as a useful educational tool. Others, however, believe that videos games are having an adverse effect on the people who play them. In your opinion, do the drawbacks of video games outweigh the benefits?
+
+- Many people, and children in particular, enjoy playing computer games. While I accept that these games can sometimes have a positive effect on the user, I believe that they are more likely to have a harmful impact.
+
+- On the one hand, video games can be both entertaining and educational. Users, or gamers, are transported into virtual worlds which are often more exciting and engaging than real-life pastimes. From an educational perspective, these games encourage imagination and creativity, as well as concentration, logical thinking and problem solving, all of which are useful skills outside the gaming context. Furthermore, it has been shown that computer simulation games can improve users’ motor skills and help to prepare them for real-world tasks, such as flying a plane.
+
+- However, I would argue that these benefits are outweighed by the drawbacks. Gaming can be highly addictive because users are constantly given scores, new targets and frequent rewards to keep them playing. Many children now spend hours each day trying to progress through the levels of a game or to get a higher score than their friends. This type of addiction can have effects ranging from lack of sleep to problems at school, when homework is sacrificed for a few more hours on the computer or console. The rise in obesity in recent years has also been linked in part to the sedentary lifestyle and lack of exercise that often accompany gaming addiction.
+
+- In conclusion, it seems to me that the potential dangers of video games are more significant than the possible benefits.
+
+(258 words, band 9)
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|---
+1|harmless fun|some pp regard video games as harmless fun||
+2|adverse effect on|xxx is/are having an adverse effect on||
+3|enjoy doing|Many pp, and children in particular, enjoy playing computer games.||
+4|entertaining and educational|xxx can be both entertaining and educational.||
+5|virtual worlds|sb are transported into virtual worlds||
+6|exciting and engaging|video games are often more exciting and engaging than real-life pastimes||
+7|useful skills outside the gaming context|imagination and creativity, as well as centration, logical thinking and problem solving||
+8|it has been shown that|||
+9|computer simulation games|~ can improve users' motor skills and help to prepare them for real-world tasks, such as flying a plane||
+10|are outweighed by|these benefits are outweighed by the drawbacks.|TS|
+11|highly addictive|Gaming can be highly addictive||
+12|scores, new targets and frequent rewards|users are constantly given ~ to keep them playing||
+13|progress through|Many children now spend hours each day trying to ~ the levels of a game or to get higher score than their friends||
+14|addiction|this type of ~ can have effects ||
+15|ranging from to|xxx can have effects ranging from lack of sleep to problems at school||
+16|be sacrificed|homework is sacrificed fro a few more hours on the computer or console||
+17|the rise in obesity|~ in recent years ||
+18|has been linked in part to|the rise in obesity in recent years ~ the sedentary lifestyle and lack of exercise||
+19|the sedentary lifestyle and lack of exercise|~ that often accompany gaming addiction||
+20|xxx often accompany gaming addiction|||
+21|the potential dangers of|~ video games are more significant than the possible benefits.||
+
+---
+
+# Support art
+
+> Do you agree or disagree with the following statement? The government should support artists rather than allow them to support themselves.
+
+- As the inseparable division of people's life, art has drawn more and more public attention. While some people maintain artists should live on their own, I believe without support from the government, many artists are unable to support themselves and give up their artistic careers, which will be a great tragedy for all of us.
+
+- First of all, many artists in modern society are struggling for survival. Obviously, most people have the basic knowledge in many aspects of their life, yet not many of them can really appreciate works of art. Thus, quite a few artists cannot be recognized, let alone having a regular income. Even some extraordinary artists are afflicted by poverty and cannot even feed on their own.
+
+- Moreover, if the government just leaves some artists alone without offering any support programs, the death of art may be just around the corner. It can be expained in two folds. On the one hand, many traditional arts and crafts are dying out because the attention to them is on the decrease. On the other hand, many young people are zealous in the pursuit of fame and money, showing less and less enthusiasm about pursuing artistic careers.
+
+- Last but not least, the thriving of art is of great benefit to the society. One reason to think so is that artists, especially those famous one are conducive to promoting the traditional culture and helping the public raise social responsibility. Besides, many forms of art are part of cultural heritage, if they are well inherited, our human world will be more civilized.
+
+- Taking into account their economic situation and essential roles in the society, the government must financially support artists rather than let them die.
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+1|as the inseparable division of|As the inseparable division of people's life,|BI|ART (100%)
+2|draw attention|art has drawn more and more public attention.||
+3|tragedy|xx will be a great tragedy for all of us||
+4|be struggling for|many artists in modern society are struggling for suvival||
+5|yet|, yet not many of them can really appreciate works of art||
+5|quite a few|[many] quite a few artists cannot be recognized||
+6|let alone|quite a few artists cannot be recognized, let alone having a regular income.||
+7|extraordinary|Even some extraordinary artists are afflicted by poverty||
+8|cannot ..., let alone doing xx. Even |||
+9|feed on their own|support oneself, raise family||
+10|leave sb alone without any support|||
+11|around the corner|||
+12|traditional arts and crafts|||
+13|the attention to xxx is on the decrease|||
+14|be zealous in the pursuit of xx|many young people are zealous in the pursuit of fame and money [zealous = enthusiasm]||
+15|,showing less enthusiasm about|many young people show|||
+17|the thriving of art|||
+16| is of great benefit(1,2) to sb|the thriving of art is of great benefit to the society||over time
+17|one reason to think so is that|||
+18|be conducive to doing|[be beneficial] artists are conducive to promoting the traditional culture and helping the public raise social responsibility.||
+19|cultural heritage|many forms of art are part of cultural heritage||
+
+> 1: countable 	2:uncountable
+
+---
+
+# Luck & Success
+
+> “When people succeed, it is because of hard work. Luck has nothing to do with success.” Do you agree or disagree with the quotation above? Use specific reasons and examples to explain your语义组 position.
+
+- Many people claim that success comes only as a result of hard work, while others believe that it is mostly the result of good fortune.  I believe that the former is true; success is only achieved by people who are diligent, hard-working and perseverant.  I feel this way for two reasons, which I will explore in the following essay.
+
+- To begin with, success is not the result of a single lucky strike, but is instead the cumulative result of a lot of hard work.  Success happens over time and only after a series of correct decisions and small victories.  A stroke of luck, in contrast, is generally perceived to be a one-time event.  The experience of my uncle, a successful entrepreneur, is a good example of what I mean.  He runs a very profitable technology firm which manufactures and sells a wide range of products.  His business started very small when he invested his savings to bring to market a single product and hired his first employee.  When his single product found a market, my uncle compounded his success with a series of profitable mergers that increased the size of his company.  His company later grew from a single employee to include a staff of dozens.  While my uncle might have been lucky at one stage of his company’s growth, the long-term success of his firm cannot simply be ascribed to good fortune.
+
+- Secondly, people today tend to misattribute the results of hard work and diligence to simple blind luck. Too many people ascribe to luck things which are actually the result of careful planning, research and “business smarts.”  For example, some people said that my uncle was lucky when his initial product offering was successful.  However, he was confident that his product would be a hit even before he started manufacturing it.  This is because he spent thousands of dollars on market research and focus groups.  It was this investment, not luck, which ensured the early success of his business.  Likewise, when his small firm completed its first merger just before the target company rose to prominence some called him lucky.  In this case, though, my uncle had spent weeks interviewing the research and development team at that company and predicted their success based on what they told him about their planning.  Had he not been confident of their success, he would not have completed the merger.   Again, this victory was the result of diligence rather than luck, despite what some observers say about it.
+
+-  In conclusion, I strongly believe that success comes as a result of hard work, rather than good fortune.  This is because success is a gradual and cumulative process, and because the public’s conception of luck is very superficial and hollow.
+blind luck
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+1|luck = good fortune|||
+2|diligent, hard-working and perseverant||semantic chunking|
+3|a single lucky strike|[= A stroke of luck]success is not the result of ~, but is instead the cumulative(<>) result of a lot of hard work||
+4|a series of correct decisions and small victories|Success happens over time and only after ~.|TS|
+5|A stroke of luck| = a single lucky strike||
+6|is perceived to |A stroke of luck is generally perceived to be a one-time event.||
+7|profitable|profitable technology firm||
+8|manufactures and sells||sc|
+9|bring to market|is there a service or product you would like to bring to market?||
+10|compounded with|he compounded his success with a series of ...||
+11|profitable mergers|merger: the act of joining two or more organizations or businesses into one||
+12|s staff of dozens|the company later grew from a single employee to include a staff of dozens.||
+13|be ascribed to|be attributed to||
+14|blind luck|pp often tend to misattribute the results of hard work and diligence to simple blind luck.||
+15|planning, research and "business smarts"|the result of ~||
+16|a hit|he was confident that his product would be a hit even before he started manufacturing it||
+17|market research and focus groups|||
+18|rise to prominence|||
+19|gradual and cumulative|success is a gradual and cumulative proces.|sc|
+20|superficial and hollow|the public’s conception of luck is very superficial and hollow.|sc|
+
+
+
+

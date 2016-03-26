@@ -33,6 +33,8 @@ No.|problem|solution
 |CentOS|nameserver 8.8.8.8 & nameserver 8.8.4.4
 8|Docker: FATA[0000] | sudo service docker restart
 9|set up ~/bin|vim /etc/environment
+10|update core with cmd|sudo apt-get dist-upgrade 
+11|check system info|uname -a && cat /etc/lsb-release 
 
 > Problem 9: Docker: FATA[0000] Get http:///var/run/docker.sock/v1.18/version: dial unix /var/run/docker.sock: no such file or directory. Are you trying to connect to a TLS-enabled daemon without TLS?
 

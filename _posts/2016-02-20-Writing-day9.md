@@ -3,6 +3,7 @@ layout: post
 title: writing day 9
 date: 2016-02-20
 categories: EN
+weather: snowy
 tags: [EN,Writing]
 description: 
 ---

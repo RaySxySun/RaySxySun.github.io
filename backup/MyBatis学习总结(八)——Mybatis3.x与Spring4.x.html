@@ -1,0 +1,1241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>MyBatis学习总结(八)——Mybatis3.x与Spring4.x整合 - 孤傲苍狼 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=8F6jO9aWZhOryqKsIFGUkSbXpyPVKDwgWwvpie3eJis1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/SimpleClear/bundle-SimpleClear.css?v=EVOKy_9d-0OzsDt7Iaw0OHSiRqKJoQVRFQeK_xCGZ6c1"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/133816.css?v=ywxzTbV%2b2OE%2bOBzQ0AZQvXcKb58%3d"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/xdp-gacl/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/xdp-gacl/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/xdp-gacl/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'xdp-gacl', cb_enable_mathjax=false;</script>
+<script src="/bundles/blog-common.js?v=RfhNKlooq8UCPGza5SEnRApkENocpZBAyea43YNIjNw1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+<div id="page_begin_html"></div><script>load_page_begin_html();</script>
+
+<div id="main">
+<div id="header">
+<h1><a id="Header1_HeaderTitle" href="http://www.cnblogs.com/xdp-gacl/">孤傲苍狼</a></h1>
+<p id="tagline">只为成功找方法，不为失败找借口！</p></div>
+
+<div id="post_detail">
+<div class="post">
+    <h2 class="postTitle"><a id="cb_post_title_url" href="http://www.cnblogs.com/xdp-gacl/p/4271627.html">MyBatis学习总结(八)——Mybatis3.x与Spring4.x整合</a></h2>
+    <div class="postText"><div id="cnblogs_post_body"><h2>一、搭建开发环境</h2>
+<h3>1.1、使用Maven创建Web项目</h3>
+<p>　　执行如下命令：</p>
+<div class="cnblogs_code">
+<pre>mvn archetype:create -DgroupId=me.gacl -DartifactId=spring4-mybatis3 -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false</pre>
+</div>
+<p>　　如下图所示：<br />　　<img src="http://images.cnitblog.com/blog/289233/201502/061204098903280.png" alt="" /></p>
+<p>　　创建好的项目如下：</p>
+<p>　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061206074994011.png" alt="" /></p>
+<p>　　编辑pom.xml文件</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">project </span><span style="color: #ff0000;">xmlns</span><span style="color: #0000ff;">="http://maven.apache.org/POM/4.0.0"</span><span style="color: #ff0000;"> xmlns:xsi</span><span style="color: #0000ff;">="http://www.w3.org/2001/XMLSchema-instance"</span>
+<span style="color: #008080;"> 2</span> <span style="color: #ff0000;">  xsi:schemaLocation</span><span style="color: #0000ff;">="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 3</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">modelVersion</span><span style="color: #0000ff;">&gt;</span>4.0.0<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">modelVersion</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 4</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>me.gacl<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 5</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>spring4-mybatis3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 6</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">packaging</span><span style="color: #0000ff;">&gt;</span>war<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">packaging</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 7</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>1.0-SNAPSHOT<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 8</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">name</span><span style="color: #0000ff;">&gt;</span>spring4-mybatis3 Maven Webapp<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">name</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 9</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">url</span><span style="color: #0000ff;">&gt;</span>http://maven.apache.org<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">url</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">10</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependencies</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">11</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">12</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>junit<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">13</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>junit<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">14</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>3.8.1<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">15</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">scope</span><span style="color: #0000ff;">&gt;</span>test<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">scope</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">16</span>     <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">17</span>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependencies</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">18</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">build</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">19</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">finalName</span><span style="color: #0000ff;">&gt;</span>spring4-mybatis3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">finalName</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">20</span>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">build</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">21</span> <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">project</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>　　修改&nbsp;<span class="cnblogs_code"><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">name</span><span style="color: #0000ff;">&gt;</span>spring4-mybatis3 Maven Webapp<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">name</span><span style="color: #0000ff;">&gt;</span></span>&nbsp;部分，把"&nbsp;Maven Webapp"这部分包含空格的内容去掉，否则Maven在编译项目时会因为空格的原因导致一些莫名其妙的错误出现，修改成：&nbsp;<span class="cnblogs_code"><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">name</span><span style="color: #0000ff;">&gt;</span>spring4-mybatis3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">name</span><span style="color: #0000ff;">&gt;</span></span>&nbsp;。</p>
+<p>　　另外，把以下内容删掉：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;">1</span> <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">2</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>junit<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">3</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>junit<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">4</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>3.8.1<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">5</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">scope</span><span style="color: #0000ff;">&gt;</span>test<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">scope</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">6</span> <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>　　这部分是junit的jar包依赖信息，这个版本太低了，我们不使用这个Junit测试版本，修改过后的pom.xml内容如下：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">project </span><span style="color: #ff0000;">xmlns</span><span style="color: #0000ff;">="http://maven.apache.org/POM/4.0.0"</span><span style="color: #ff0000;"> xmlns:xsi</span><span style="color: #0000ff;">="http://www.w3.org/2001/XMLSchema-instance"</span>
+<span style="color: #008080;"> 2</span> <span style="color: #ff0000;">  xsi:schemaLocation</span><span style="color: #0000ff;">="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 3</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">modelVersion</span><span style="color: #0000ff;">&gt;</span>4.0.0<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">modelVersion</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 4</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>me.gacl<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 5</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>spring4-mybatis3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 6</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">packaging</span><span style="color: #0000ff;">&gt;</span>war<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">packaging</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 7</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>1.0-SNAPSHOT<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 8</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">name</span><span style="color: #0000ff;">&gt;</span>spring4-mybatis3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">name</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 9</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">url</span><span style="color: #0000ff;">&gt;</span>http://maven.apache.org<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">url</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">10</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependencies</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">11</span>     
+<span style="color: #008080;">12</span>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependencies</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">13</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">build</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">14</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">finalName</span><span style="color: #0000ff;">&gt;</span>spring4-mybatis3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">finalName</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">15</span>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">build</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">16</span> <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">project</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<h3>1.2、将创建好的项目导入MyEclipse中</h3>
+<p>　　具体操作步骤如下图所示：</p>
+<p>　　<img src="http://images.cnitblog.com/blog/289233/201502/061221145152942.png" alt="" /></p>
+<p>　　<img src="http://images.cnitblog.com/blog/289233/201502/061222321243786.png" alt="" /></p>
+<p>　　<img src="http://images.cnitblog.com/blog/289233/201502/061224323121503.png" alt="" /></p>
+<p>　　<img src="http://images.cnitblog.com/blog/289233/201502/061226060627144.png" alt="" /></p>
+<p>　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061227222819528.png" alt="" /></p>
+<p>　　手动创建【src/main/java】、【src/test/resources】、【src/test/java】这三个source folder，如下图所示：</p>
+<p>　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061320474999342.png" alt="" /></p>
+<p>　　到此，项目搭建的工作就算是全部完成了。</p>
+<h2>二、创建数据库和表(针对MySQL)</h2>
+<p>SQL脚本如下：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">Create</span> <span style="color: #0000ff;">DATABASE</span><span style="color: #000000;"> spring4_mybatis3;
+</span><span style="color: #0000ff;">USE</span><span style="color: #000000;"> spring4_mybatis3;
+
+</span><span style="color: #0000ff;">DROP</span> <span style="color: #0000ff;">TABLE</span> <span style="color: #0000ff;">IF</span> <span style="color: #808080;">EXISTS</span><span style="color: #000000;"> t_user;
+</span><span style="color: #0000ff;">CREATE</span> <span style="color: #0000ff;">TABLE</span><span style="color: #000000;"> t_user (
+  </span><span style="color: #ff00ff;">user_id</span> <span style="color: #0000ff;">char</span>(<span style="color: #800000; font-weight: bold;">32</span>) <span style="color: #808080;">NOT</span> <span style="color: #0000ff;">NULL</span><span style="color: #000000;">,
+  </span><span style="color: #ff00ff;">user_name</span> <span style="color: #0000ff;">varchar</span>(<span style="color: #800000; font-weight: bold;">30</span>) <span style="color: #0000ff;">DEFAULT</span> <span style="color: #0000ff;">NULL</span><span style="color: #000000;">,
+  user_birthday date </span><span style="color: #0000ff;">DEFAULT</span> <span style="color: #0000ff;">NULL</span><span style="color: #000000;">,
+  user_salary </span><span style="color: #0000ff;">double</span> <span style="color: #0000ff;">DEFAULT</span> <span style="color: #0000ff;">NULL</span><span style="color: #000000;">,
+  </span><span style="color: #0000ff;">PRIMARY</span> <span style="color: #0000ff;">KEY</span> (<span style="color: #ff00ff;">user_id</span><span style="color: #000000;">)
+) ENGINE</span><span style="color: #808080;">=</span>InnoDB <span style="color: #0000ff;">DEFAULT</span> CHARSET<span style="color: #808080;">=</span>utf8;</pre>
+</div>
+<p>　　创建好的数据库和表如下：</p>
+<p>　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061332247034876.png" alt="" /></p>
+<h2>三、使用generator工具生成代码</h2>
+<p>　　在网上找到了一个generator工具可以根据创建好的数据库表生成MyBatis的表对应的实体类，SQL映射文件和dao，找到generator工具根目录下的generator.xml文件，这个文件是用来配置代码生成规则的，如下图所示：</p>
+<p>　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061336050789568.png" alt="" /></p>
+<p>　　编辑generator.xml文件，内容如下：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">&lt;?</span><span style="color: #ff00ff;">xml version="1.0" encoding="UTF-8"</span><span style="color: #0000ff;">?&gt;</span>
+<span style="color: #008080;"> 2</span> <span style="color: #0000ff;">&lt;!</span><span style="color: #ff00ff;">DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 3</span> <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">generatorConfiguration</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 4</span>     <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 数据库驱动包位置 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 5</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">classPathEntry </span><span style="color: #ff0000;">location</span><span style="color: #0000ff;">="E:\repository\mysql\mysql-connector-java\5.1.34\mysql-connector-java-5.1.34.jar"</span> <span style="color: #0000ff;">/&gt;</span> 
+<span style="color: #008080;"> 6</span>     <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> &lt;classPathEntry location="C:\oracle\product\10.2.0\db_1\jdbc\lib\ojdbc14.jar" /&gt;</span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 7</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">context </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="DB2Tables"</span><span style="color: #ff0000;"> targetRuntime</span><span style="color: #0000ff;">="MyBatis3"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 8</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">commentGenerator</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 9</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="suppressAllComments"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="true"</span> <span style="color: #0000ff;">/&gt;</span>
+<span style="color: #008080;">10</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">commentGenerator</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">11</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 数据库链接URL、用户名、密码 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;">12</span>          <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">jdbcConnection </span><span style="color: #ff0000;">driverClass</span><span style="color: #0000ff;">="com.mysql.jdbc.Driver"</span><span style="color: #ff0000;"> connectionURL</span><span style="color: #0000ff;">="jdbc:mysql://localhost:3306/spring4_mybatis3"</span><span style="color: #ff0000;"> userId</span><span style="color: #0000ff;">="root"</span><span style="color: #ff0000;"> password</span><span style="color: #0000ff;">="XDP"</span><span style="color: #0000ff;">&gt;</span> 
+<span style="color: #008080;">13</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;">&lt;jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@localhost:1521:orcl" userId="msa" password="msa"&gt;</span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;">14</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">jdbcConnection</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">15</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">javaTypeResolver</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">16</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="forceBigDecimals"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="false"</span> <span style="color: #0000ff;">/&gt;</span>
+<span style="color: #008080;">17</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">javaTypeResolver</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">18</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 生成实体类的包名和位置，这里配置将生成的实体类放在me.gacl.domain这个包下 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;">19</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">javaModelGenerator </span><span style="color: #ff0000;">targetPackage</span><span style="color: #0000ff;">="me.gacl.domain"</span><span style="color: #ff0000;"> targetProject</span><span style="color: #0000ff;">="C:\Users\gacl\spring4-mybatis3\src\main\java"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">20</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="enableSubPackages"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="true"</span> <span style="color: #0000ff;">/&gt;</span>
+<span style="color: #008080;">21</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="trimStrings"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="true"</span> <span style="color: #0000ff;">/&gt;</span>
+<span style="color: #008080;">22</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">javaModelGenerator</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">23</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 生成的SQL映射文件包名和位置，这里配置将生成的SQL映射文件放在me.gacl.mapping这个包下 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;">24</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">sqlMapGenerator </span><span style="color: #ff0000;">targetPackage</span><span style="color: #0000ff;">="me.gacl.mapping"</span><span style="color: #ff0000;"> targetProject</span><span style="color: #0000ff;">="C:\Users\gacl\spring4-mybatis3\src\main\java"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">25</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="enableSubPackages"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="true"</span> <span style="color: #0000ff;">/&gt;</span>
+<span style="color: #008080;">26</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">sqlMapGenerator</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">27</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 生成DAO的包名和位置，这里配置将生成的dao类放在me.gacl.dao这个包下 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;">28</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">javaClientGenerator </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="XMLMAPPER"</span><span style="color: #ff0000;"> targetPackage</span><span style="color: #0000ff;">="me.gacl.dao"</span><span style="color: #ff0000;"> targetProject</span><span style="color: #0000ff;">="C:\Users\gacl\spring4-mybatis3\src\main\java"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">29</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="enableSubPackages"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="true"</span> <span style="color: #0000ff;">/&gt;</span>
+<span style="color: #008080;">30</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">javaClientGenerator</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">31</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 要生成那些表(更改tableName和domainObjectName就可以) </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;">32</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">table </span><span style="color: #ff0000;">tableName</span><span style="color: #0000ff;">="t_user"</span><span style="color: #ff0000;"> domainObjectName</span><span style="color: #0000ff;">="User"</span><span style="color: #ff0000;"> enableCountByExample</span><span style="color: #0000ff;">="false"</span><span style="color: #ff0000;"> enableUpdateByExample</span><span style="color: #0000ff;">="false"</span><span style="color: #ff0000;"> enableDeleteByExample</span><span style="color: #0000ff;">="false"</span><span style="color: #ff0000;"> enableSelectByExample</span><span style="color: #0000ff;">="false"</span><span style="color: #ff0000;"> selectByExampleQueryId</span><span style="color: #0000ff;">="false"</span> <span style="color: #0000ff;">/&gt;</span>
+<span style="color: #008080;">33</span>     <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">context</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">34</span> <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">generatorConfiguration</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>　　打开命令行窗口，切换到生成工具的根目录下，执行如下命令：</p>
+<div class="cnblogs_code">
+<pre>java -jar mybatis-generator-core-1.3.2.jar -configfile generator.xml -overwrite</pre>
+</div>
+<p>　　如下图所示：<br />　　<img src="http://images.cnitblog.com/blog/289233/201502/061351006245763.png" alt="" /></p>
+<p>　　刚才我们在generator.xml文件中配置将生成的代码和SQL映射文件放到"C:\Users\gacl\spring4-mybatis3\src\main\java"这个目录下，这个目录就是我们的spring4-mybatis3项目所在目录，我们刷新一下src/main/java目录，就可以看到生成的代码和映射文件了，如下图所示：</p>
+<p>　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061358016245247.png" alt="" /></p>
+<p>　　生成的代码和映射文件一行都不用改，可以直接应用到项目当中。下面我们看一眼由generator工具生成的代码和映射文件：</p>
+<p>　　1、生成的dao类</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">package</span><span style="color: #000000;"> me.gacl.dao;
+</span><span style="color: #008080;"> 2</span> 
+<span style="color: #008080;"> 3</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.domain.User;
+</span><span style="color: #008080;"> 4</span> 
+<span style="color: #008080;"> 5</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">interface</span><span style="color: #000000;"> UserMapper {
+</span><span style="color: #008080;"> 6</span>     <span style="color: #0000ff;">int</span><span style="color: #000000;"> deleteByPrimaryKey(String userId);
+</span><span style="color: #008080;"> 7</span> 
+<span style="color: #008080;"> 8</span>     <span style="color: #0000ff;">int</span><span style="color: #000000;"> insert(User record);
+</span><span style="color: #008080;"> 9</span> 
+<span style="color: #008080;">10</span>     <span style="color: #0000ff;">int</span><span style="color: #000000;"> insertSelective(User record);
+</span><span style="color: #008080;">11</span> 
+<span style="color: #008080;">12</span> <span style="color: #000000;">    User selectByPrimaryKey(String userId);
+</span><span style="color: #008080;">13</span> 
+<span style="color: #008080;">14</span>     <span style="color: #0000ff;">int</span><span style="color: #000000;"> updateByPrimaryKeySelective(User record);
+</span><span style="color: #008080;">15</span> 
+<span style="color: #008080;">16</span>     <span style="color: #0000ff;">int</span><span style="color: #000000;"> updateByPrimaryKey(User record);
+</span><span style="color: #008080;">17</span> }</pre>
+</div>
+<p>　　生成的UserMapper是一个接口，里面定义了一些操作t_user表的增删改查方法。</p>
+<p>2、生成的实体类</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">package</span><span style="color: #000000;"> me.gacl.domain;
+</span><span style="color: #008080;"> 2</span> 
+<span style="color: #008080;"> 3</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.Date;
+</span><span style="color: #008080;"> 4</span> 
+<span style="color: #008080;"> 5</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> User {
+</span><span style="color: #008080;"> 6</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> String userId;
+</span><span style="color: #008080;"> 7</span> 
+<span style="color: #008080;"> 8</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> String userName;
+</span><span style="color: #008080;"> 9</span> 
+<span style="color: #008080;">10</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> Date userBirthday;
+</span><span style="color: #008080;">11</span> 
+<span style="color: #008080;">12</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> Double userSalary;
+</span><span style="color: #008080;">13</span> 
+<span style="color: #008080;">14</span>     <span style="color: #0000ff;">public</span><span style="color: #000000;"> String getUserId() {
+</span><span style="color: #008080;">15</span>         <span style="color: #0000ff;">return</span><span style="color: #000000;"> userId;
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">17</span> 
+<span style="color: #008080;">18</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> setUserId(String userId) {
+</span><span style="color: #008080;">19</span>         <span style="color: #0000ff;">this</span>.userId = userId == <span style="color: #0000ff;">null</span> ? <span style="color: #0000ff;">null</span><span style="color: #000000;"> : userId.trim();
+</span><span style="color: #008080;">20</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">21</span> 
+<span style="color: #008080;">22</span>     <span style="color: #0000ff;">public</span><span style="color: #000000;"> String getUserName() {
+</span><span style="color: #008080;">23</span>         <span style="color: #0000ff;">return</span><span style="color: #000000;"> userName;
+</span><span style="color: #008080;">24</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">25</span> 
+<span style="color: #008080;">26</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> setUserName(String userName) {
+</span><span style="color: #008080;">27</span>         <span style="color: #0000ff;">this</span>.userName = userName == <span style="color: #0000ff;">null</span> ? <span style="color: #0000ff;">null</span><span style="color: #000000;"> : userName.trim();
+</span><span style="color: #008080;">28</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">29</span> 
+<span style="color: #008080;">30</span>     <span style="color: #0000ff;">public</span><span style="color: #000000;"> Date getUserBirthday() {
+</span><span style="color: #008080;">31</span>         <span style="color: #0000ff;">return</span><span style="color: #000000;"> userBirthday;
+</span><span style="color: #008080;">32</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">33</span> 
+<span style="color: #008080;">34</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> setUserBirthday(Date userBirthday) {
+</span><span style="color: #008080;">35</span>         <span style="color: #0000ff;">this</span>.userBirthday =<span style="color: #000000;"> userBirthday;
+</span><span style="color: #008080;">36</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">37</span> 
+<span style="color: #008080;">38</span>     <span style="color: #0000ff;">public</span><span style="color: #000000;"> Double getUserSalary() {
+</span><span style="color: #008080;">39</span>         <span style="color: #0000ff;">return</span><span style="color: #000000;"> userSalary;
+</span><span style="color: #008080;">40</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">41</span> 
+<span style="color: #008080;">42</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> setUserSalary(Double userSalary) {
+</span><span style="color: #008080;">43</span>         <span style="color: #0000ff;">this</span>.userSalary =<span style="color: #000000;"> userSalary;
+</span><span style="color: #008080;">44</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">45</span> }</pre>
+</div>
+<p>　　User类是t_user表的对应的实体类，User类中定义的属性和t_user表中的字段一一对应。</p>
+<p>　　3、生成的SQL映射文件</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">&lt;?</span><span style="color: #ff00ff;">xml version="1.0" encoding="UTF-8" </span><span style="color: #0000ff;">?&gt;</span>
+<span style="color: #008080;"> 2</span> <span style="color: #0000ff;">&lt;!</span><span style="color: #ff00ff;">DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" </span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 3</span> <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">mapper </span><span style="color: #ff0000;">namespace</span><span style="color: #0000ff;">="me.gacl.dao.UserMapper"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 4</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">resultMap </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="BaseResultMap"</span><span style="color: #ff0000;"> type</span><span style="color: #0000ff;">="me.gacl.domain.User"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 5</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">id </span><span style="color: #ff0000;">column</span><span style="color: #0000ff;">="user_id"</span><span style="color: #ff0000;"> property</span><span style="color: #0000ff;">="userId"</span><span style="color: #ff0000;"> jdbcType</span><span style="color: #0000ff;">="CHAR"</span> <span style="color: #0000ff;">/&gt;</span>
+<span style="color: #008080;"> 6</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">result </span><span style="color: #ff0000;">column</span><span style="color: #0000ff;">="user_name"</span><span style="color: #ff0000;"> property</span><span style="color: #0000ff;">="userName"</span><span style="color: #ff0000;"> jdbcType</span><span style="color: #0000ff;">="VARCHAR"</span> <span style="color: #0000ff;">/&gt;</span>
+<span style="color: #008080;"> 7</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">result </span><span style="color: #ff0000;">column</span><span style="color: #0000ff;">="user_birthday"</span><span style="color: #ff0000;"> property</span><span style="color: #0000ff;">="userBirthday"</span><span style="color: #ff0000;"> jdbcType</span><span style="color: #0000ff;">="DATE"</span> <span style="color: #0000ff;">/&gt;</span>
+<span style="color: #008080;"> 8</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">result </span><span style="color: #ff0000;">column</span><span style="color: #0000ff;">="user_salary"</span><span style="color: #ff0000;"> property</span><span style="color: #0000ff;">="userSalary"</span><span style="color: #ff0000;"> jdbcType</span><span style="color: #0000ff;">="DOUBLE"</span> <span style="color: #0000ff;">/&gt;</span>
+<span style="color: #008080;"> 9</span>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">resultMap</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">10</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">sql </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="Base_Column_List"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">11</span> <span style="color: #000000;">    user_id, user_name, user_birthday, user_salary
+</span><span style="color: #008080;">12</span>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">sql</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">13</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">select </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="selectByPrimaryKey"</span><span style="color: #ff0000;"> resultMap</span><span style="color: #0000ff;">="BaseResultMap"</span><span style="color: #ff0000;"> parameterType</span><span style="color: #0000ff;">="java.lang.String"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">14</span> <span style="color: #000000;">    select 
+</span><span style="color: #008080;">15</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">include </span><span style="color: #ff0000;">refid</span><span style="color: #0000ff;">="Base_Column_List"</span> <span style="color: #0000ff;">/&gt;</span>
+<span style="color: #008080;">16</span> <span style="color: #000000;">    from t_user
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">    where user_id = #{userId,jdbcType=CHAR}
+</span><span style="color: #008080;">18</span>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">select</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">19</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">delete </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="deleteByPrimaryKey"</span><span style="color: #ff0000;"> parameterType</span><span style="color: #0000ff;">="java.lang.String"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">20</span> <span style="color: #000000;">    delete from t_user
+</span><span style="color: #008080;">21</span> <span style="color: #000000;">    where user_id = #{userId,jdbcType=CHAR}
+</span><span style="color: #008080;">22</span>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">delete</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">23</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">insert </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="insert"</span><span style="color: #ff0000;"> parameterType</span><span style="color: #0000ff;">="me.gacl.domain.User"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">24</span> <span style="color: #000000;">    insert into t_user (user_id, user_name, user_birthday, 
+</span><span style="color: #008080;">25</span> <span style="color: #000000;">      user_salary)
+</span><span style="color: #008080;">26</span> <span style="color: #000000;">    values (#{userId,jdbcType=CHAR}, #{userName,jdbcType=VARCHAR}, #{userBirthday,jdbcType=DATE}, 
+</span><span style="color: #008080;">27</span> <span style="color: #000000;">      #{userSalary,jdbcType=DOUBLE})
+</span><span style="color: #008080;">28</span>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">insert</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">29</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">insert </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="insertSelective"</span><span style="color: #ff0000;"> parameterType</span><span style="color: #0000ff;">="me.gacl.domain.User"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">30</span> <span style="color: #000000;">    insert into t_user
+</span><span style="color: #008080;">31</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">trim </span><span style="color: #ff0000;">prefix</span><span style="color: #0000ff;">="("</span><span style="color: #ff0000;"> suffix</span><span style="color: #0000ff;">=")"</span><span style="color: #ff0000;"> suffixOverrides</span><span style="color: #0000ff;">=","</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">32</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userId != null"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">33</span> <span style="color: #000000;">        user_id,
+</span><span style="color: #008080;">34</span>       <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">35</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userName != null"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">36</span> <span style="color: #000000;">        user_name,
+</span><span style="color: #008080;">37</span>       <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">38</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userBirthday != null"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">39</span> <span style="color: #000000;">        user_birthday,
+</span><span style="color: #008080;">40</span>       <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">41</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userSalary != null"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">42</span> <span style="color: #000000;">        user_salary,
+</span><span style="color: #008080;">43</span>       <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">44</span>     <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">trim</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">45</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">trim </span><span style="color: #ff0000;">prefix</span><span style="color: #0000ff;">="values ("</span><span style="color: #ff0000;"> suffix</span><span style="color: #0000ff;">=")"</span><span style="color: #ff0000;"> suffixOverrides</span><span style="color: #0000ff;">=","</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">46</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userId != null"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">47</span> <span style="color: #000000;">        #{userId,jdbcType=CHAR},
+</span><span style="color: #008080;">48</span>       <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">49</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userName != null"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">50</span> <span style="color: #000000;">        #{userName,jdbcType=VARCHAR},
+</span><span style="color: #008080;">51</span>       <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">52</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userBirthday != null"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">53</span> <span style="color: #000000;">        #{userBirthday,jdbcType=DATE},
+</span><span style="color: #008080;">54</span>       <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">55</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userSalary != null"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">56</span> <span style="color: #000000;">        #{userSalary,jdbcType=DOUBLE},
+</span><span style="color: #008080;">57</span>       <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">58</span>     <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">trim</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">59</span>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">insert</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">60</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">update </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="updateByPrimaryKeySelective"</span><span style="color: #ff0000;"> parameterType</span><span style="color: #0000ff;">="me.gacl.domain.User"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">61</span> <span style="color: #000000;">    update t_user
+</span><span style="color: #008080;">62</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">set </span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">63</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userName != null"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">64</span> <span style="color: #000000;">        user_name = #{userName,jdbcType=VARCHAR},
+</span><span style="color: #008080;">65</span>       <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">66</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userBirthday != null"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">67</span> <span style="color: #000000;">        user_birthday = #{userBirthday,jdbcType=DATE},
+</span><span style="color: #008080;">68</span>       <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">69</span>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userSalary != null"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">70</span> <span style="color: #000000;">        user_salary = #{userSalary,jdbcType=DOUBLE},
+</span><span style="color: #008080;">71</span>       <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">72</span>     <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">set</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">73</span> <span style="color: #000000;">    where user_id = #{userId,jdbcType=CHAR}
+</span><span style="color: #008080;">74</span>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">update</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">75</span>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">update </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="updateByPrimaryKey"</span><span style="color: #ff0000;"> parameterType</span><span style="color: #0000ff;">="me.gacl.domain.User"</span> <span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">76</span> <span style="color: #000000;">    update t_user
+</span><span style="color: #008080;">77</span> <span style="color: #000000;">    set user_name = #{userName,jdbcType=VARCHAR},
+</span><span style="color: #008080;">78</span> <span style="color: #000000;">      user_birthday = #{userBirthday,jdbcType=DATE},
+</span><span style="color: #008080;">79</span> <span style="color: #000000;">      user_salary = #{userSalary,jdbcType=DOUBLE}
+</span><span style="color: #008080;">80</span> <span style="color: #000000;">    where user_id = #{userId,jdbcType=CHAR}
+</span><span style="color: #008080;">81</span>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">update</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">82</span> <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">mapper</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>　　UserMapper.xml这个文件的内容是编写操作t_user表的SQL语句，重点说一下UserMapper.xml配置中需要注意的几个小细节问题：</p>
+<p>　　1、UserMapper.xml的&lt;mapper&gt;标签的namespace必须是UserMapper接口的全类名，既<span style="color: #ff0000;"><strong>&lt;mapper namespace="me.gacl.dao.UserMapper" &gt;</strong></span></p>
+<p><span style="color: #000000;">　　2、UserMapper.xml的定义操作数据库的&lt;select&gt;&lt;delete&gt;&lt;update&gt;&lt;insert&gt;这些标签的id属性的值必须和UserMapper接口定义的方法名一致，如下图所示：</span></p>
+<p><span style="color: #000000;">　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061421563283757.png" alt="" width="950" /></span></p>
+<p>　　之所以有上述说的这两点要求，就是为了能够让MyBatis能够根据UserMapper接口和UserMapper.xml文件去自动实现UserMapper接口中定义的相关方法，这样我们就不再需要针对UserMapper接口去编写具体的实现代码了。</p>
+<h2>四、Spring与MyBatis整合</h2>
+<p>　　首先我们要在项目中加入我们需要的相关jar包，我们可以到Maven的中央仓库：http://search.maven.org/&nbsp;找到我们要的相关jar包，如下图所示：</p>
+<p>　　<img src="http://images.cnitblog.com/blog/289233/201502/061433485319171.png" alt="" /></p>
+<p>　　我们只需要在搜索框中输入要找的jar包的名称，点击【SEARCH】按钮，就可以找到我们要的jar包了。</p>
+<h3>4.1、添加Spring与Mybatis的相关jar包</h3>
+<p>　　1、添加spring-core，输入spring-core关键字进行查找，如下图所示：</p>
+<p>　　<img src="http://images.cnitblog.com/blog/289233/201502/061439588127661.png" alt="" /></p>
+<p>　　找到关于spring-core的依赖描述信息，如下图所示：</p>
+<p>　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061443456093216.png" alt="" /></p>
+<p>　　将</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>org.springframework<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>spring-core<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>4.1.4.RELEASE<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>　　复制到项目的pom.xml文件中，如下所示：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">project </span><span style="color: #ff0000;">xmlns</span><span style="color: #0000ff;">="http://maven.apache.org/POM/4.0.0"</span><span style="color: #ff0000;"> xmlns:xsi</span><span style="color: #0000ff;">="http://www.w3.org/2001/XMLSchema-instance"</span><span style="color: #ff0000;">
+    xsi:schemaLocation</span><span style="color: #0000ff;">="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">modelVersion</span><span style="color: #0000ff;">&gt;</span>4.0.0<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">modelVersion</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>me.gacl<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>spring4-mybatis3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">packaging</span><span style="color: #0000ff;">&gt;</span>war<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">packaging</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>1.0-SNAPSHOT<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">name</span><span style="color: #0000ff;">&gt;</span>spring4-mybatis3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">name</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">url</span><span style="color: #0000ff;">&gt;</span>http://maven.apache.org<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">url</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependencies</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 添加Spring4.1.4的核心包 </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>org.springframework<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>spring-core<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>4.1.4.RELEASE<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependencies</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">build</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">finalName</span><span style="color: #0000ff;">&gt;</span>spring4-mybatis3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">finalName</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">build</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">project</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>　　这样Maven就会自动帮我们从Maven的中央仓库中下载spring-core这个jar包到我们的本地仓库，然后将spring-core这个jar包以及它的相关依赖包加入到我们的项目当中，如下所示：</p>
+<p>　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061452135153651.png" alt="" /></p>
+<p>　　spring4.x与mybatis3.x所需要的相关jar包都可以采用上述所说的方式进行查找，然后添加到项目当中，添加完spring4.x与mybatis3.x相关jar包后，pom.xml文件内容最终如下：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;">  1</span> <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">project </span><span style="color: #ff0000;">xmlns</span><span style="color: #0000ff;">="http://maven.apache.org/POM/4.0.0"</span><span style="color: #ff0000;"> xmlns:xsi</span><span style="color: #0000ff;">="http://www.w3.org/2001/XMLSchema-instance"</span>
+<span style="color: #008080;">  2</span> <span style="color: #ff0000;">    xsi:schemaLocation</span><span style="color: #0000ff;">="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">  3</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">modelVersion</span><span style="color: #0000ff;">&gt;</span>4.0.0<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">modelVersion</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">  4</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>me.gacl<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">  5</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>spring4-mybatis3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">  6</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">packaging</span><span style="color: #0000ff;">&gt;</span>war<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">packaging</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">  7</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>1.0-SNAPSHOT<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">  8</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">name</span><span style="color: #0000ff;">&gt;</span>spring4-mybatis3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">name</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">  9</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">url</span><span style="color: #0000ff;">&gt;</span>http://maven.apache.org<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">url</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 10</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependencies</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 11</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 添加Spring-core包 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 12</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 13</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>org.springframework<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 14</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>spring-core<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 15</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>4.1.4.RELEASE<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 16</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 17</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 添加spring-context包 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 18</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 19</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>org.springframework<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 20</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>spring-context<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 21</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>4.1.4.RELEASE<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 22</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 23</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 添加spring-tx包 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 24</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 25</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>org.springframework<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 26</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>spring-tx<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 27</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>4.1.4.RELEASE<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 28</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 29</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 添加spring-jdbc包 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 30</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 31</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>org.springframework<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 32</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>spring-jdbc<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 33</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>4.1.4.RELEASE<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 34</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 35</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 为了方便进行单元测试，添加spring-test包 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 36</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 37</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>org.springframework<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 38</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>spring-test<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 39</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>4.1.4.RELEASE<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 40</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 41</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;">添加spring-web包 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 42</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 43</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>org.springframework<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 44</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>spring-web<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 45</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>4.1.4.RELEASE<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 46</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 47</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;">添加aspectjweaver包 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 48</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 49</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>org.aspectj<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 50</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>aspectjweaver<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 51</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>1.8.5<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 52</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 53</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 添加mybatis的核心包 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 54</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 55</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>org.mybatis<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 56</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>mybatis<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 57</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>3.2.8<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 58</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 59</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 添加mybatis与Spring整合的核心包 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 60</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 61</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>org.mybatis<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 62</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>mybatis-spring<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 63</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>1.2.2<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 64</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 65</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 添加servlet3.0核心包 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 66</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 67</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>javax.servlet<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 68</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>javax.servlet-api<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 69</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>3.0.1<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 70</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 71</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 72</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>javax.servlet.jsp<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 73</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>javax.servlet.jsp-api<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 74</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>2.3.2-b01<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 75</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 76</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> jstl </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 77</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 78</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>javax.servlet<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 79</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>jstl<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 80</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>1.2<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 81</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 82</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 添加mysql驱动包 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 83</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 84</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>mysql<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 85</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>mysql-connector-java<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 86</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>5.1.34<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 87</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 88</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 添加druid连接池包 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 89</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 90</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>com.alibaba<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 91</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>druid<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 92</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>1.0.12<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 93</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 94</span>         <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 添加junit单元测试包 </span><span style="color: #008000;">--&gt;</span>
+<span style="color: #008080;"> 95</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 96</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>junit<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 97</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>junit<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 98</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>4.12<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;"> 99</span>             <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">scope</span><span style="color: #0000ff;">&gt;</span>test<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">scope</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">100</span>         <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">101</span>     <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependencies</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">102</span>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">build</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">103</span>         <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">finalName</span><span style="color: #0000ff;">&gt;</span>spring4-mybatis3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">finalName</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">104</span>     <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">build</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #008080;">105</span> <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">project</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061502333435112.png" alt="" /></p>
+<h3>4.2、编写相关配置文件</h3>
+<p>　　1、<span style="color: #ff0000;"><strong>dbconfig.properties</strong></span></p>
+<p>　　在src/main/resources目录下创建一个dbconfig.properties文件，用于编写连接MySQL数据库的相关信息，dbconfig.properties的内容如下：</p>
+<div class="cnblogs_code">
+<pre>driverClassName=com.mysql.jdbc.Driver
+validationQuery=SELECT 1
+jdbc_url=jdbc:mysql://localhost:3306/spring4_mybatis3?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull
+jdbc_username=root
+jdbc_password=XDP</pre>
+</div>
+<p>　　2、<span style="color: #ff0000;"><strong>spring.xml(spring框架的配置文件)</strong></span></p>
+<p>　　在src/main/resources目录下创建一个spring.xml文件，spring.xml文件就是针对Spring框架编写的核心配置文件，spring.xml的内容如下：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">&lt;?</span><span style="color: #ff00ff;">xml version="1.0" encoding="UTF-8"</span><span style="color: #0000ff;">?&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">beans </span><span style="color: #ff0000;">xmlns</span><span style="color: #0000ff;">="http://www.springframework.org/schema/beans"</span><span style="color: #ff0000;">
+    xmlns:xsi</span><span style="color: #0000ff;">="http://www.w3.org/2001/XMLSchema-instance"</span><span style="color: #ff0000;"> xmlns:context</span><span style="color: #0000ff;">="http://www.springframework.org/schema/context"</span><span style="color: #ff0000;">
+    xsi:schemaLocation</span><span style="color: #0000ff;">="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd"</span><span style="color: #0000ff;">&gt;</span>
+
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 引入dbconfig.properties属性文件 </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">context:property-placeholder </span><span style="color: #ff0000;">location</span><span style="color: #0000ff;">="classpath:dbconfig.properties"</span> <span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 自动扫描(自动注入)，扫描me.gacl.service这个包以及它的子包的所有使用@Service注解标注的类 </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">context:component-scan </span><span style="color: #ff0000;">base-package</span><span style="color: #0000ff;">="me.gacl.service"</span> <span style="color: #0000ff;">/&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">beans</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>　　我们的spring.xml文件的配置非常简单，就两个配置。<br />　　3、<span style="color: #ff0000;"><strong>spring-mybatis.xml(spring与mybatis整合的配置文件)</strong></span></p>
+<p>　　在src/main/resources目录下创建一个spring-mybatis.xml文件，spring-mybatis.xml文件就是针对Spring框架与Mybatis框架整合编写的配置文件，spring-mybatis.xml的内容如下：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">&lt;?</span><span style="color: #ff00ff;">xml version="1.0" encoding="UTF-8"</span><span style="color: #0000ff;">?&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">beans </span><span style="color: #ff0000;">xmlns</span><span style="color: #0000ff;">="http://www.springframework.org/schema/beans"</span><span style="color: #ff0000;"> xmlns:xsi</span><span style="color: #0000ff;">="http://www.w3.org/2001/XMLSchema-instance"</span><span style="color: #ff0000;"> xmlns:tx</span><span style="color: #0000ff;">="http://www.springframework.org/schema/tx"</span><span style="color: #ff0000;"> xmlns:aop</span><span style="color: #0000ff;">="http://www.springframework.org/schema/aop"</span><span style="color: #ff0000;"> xsi:schemaLocation</span><span style="color: #0000ff;">="
+http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+http://www.springframework.org/schema/tx 
+http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+"</span><span style="color: #0000ff;">&gt;</span>
+
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> JNDI方式配置数据源 </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> &lt;bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"&gt; &lt;property name="jndiName" value="${jndiName}"&gt;&lt;/property&gt; &lt;/bean&gt; </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> ========================================配置数据源========================================= </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 配置数据源，使用的是alibaba的Druid(德鲁伊)数据源 </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="dataSource"</span><span style="color: #ff0000;"> class</span><span style="color: #0000ff;">="com.alibaba.druid.pool.DruidDataSource"</span><span style="color: #ff0000;"> init-method</span><span style="color: #0000ff;">="init"</span><span style="color: #ff0000;"> destroy-method</span><span style="color: #0000ff;">="close"</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="url"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="${jdbc_url}"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="username"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="${jdbc_username}"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="password"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="${jdbc_password}"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 初始化连接大小 </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="initialSize"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="0"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 连接池最大使用连接数量 </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="maxActive"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="20"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 连接池最大空闲 </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="maxIdle"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="20"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 连接池最小空闲 </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="minIdle"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="0"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 获取连接最大等待时间 </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="maxWait"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="60000"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 
+        &lt;property name="poolPreparedStatements" value="true" /&gt; 
+        &lt;property name="maxPoolPreparedStatementPerConnectionSize" value="33" /&gt; 
+        </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="validationQuery"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="${validationQuery}"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="testOnBorrow"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="false"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="testOnReturn"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="false"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="testWhileIdle"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="true"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="timeBetweenEvictionRunsMillis"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="60000"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 配置一个连接在池中最小生存的时间，单位是毫秒 </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="minEvictableIdleTimeMillis"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="25200000"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 打开removeAbandoned功能 </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="removeAbandoned"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="true"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 1800秒，也就是30分钟 </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="removeAbandonedTimeout"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="1800"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 关闭abanded连接时输出错误日志 </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="logAbandoned"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="true"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 监控数据库 </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> &lt;property name="filters" value="stat" /&gt; </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="filters"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="mergeStat"</span> <span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span>
+    
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> ========================================分隔线========================================= </span><span style="color: #008000;">--&gt;</span>
+    
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> ========================================针对myBatis的配置项============================== </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 配置sqlSessionFactory </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="sqlSessionFactory"</span><span style="color: #ff0000;"> class</span><span style="color: #0000ff;">="org.mybatis.spring.SqlSessionFactoryBean"</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 实例化sqlSessionFactory时需要使用上述配置好的数据源以及SQL映射文件 </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="dataSource"</span><span style="color: #ff0000;"> ref</span><span style="color: #0000ff;">="dataSource"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 自动扫描me/gacl/mapping/目录下的所有SQL映射的xml文件, 省掉Configuration.xml里的手工配置
+        value="classpath:me/gacl/mapping/*.xml"指的是classpath(类路径)下me.gacl.mapping包中的所有xml文件
+        UserMapper.xml位于me.gacl.mapping包下，这样UserMapper.xml就可以被自动扫描
+         </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="mapperLocations"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="classpath:me/gacl/mapping/*.xml"</span> <span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 配置扫描器 </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="org.mybatis.spring.mapper.MapperScannerConfigurer"</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 扫描me.gacl.dao这个包以及它的子包下的所有映射接口类 </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="basePackage"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="me.gacl.dao"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="sqlSessionFactoryBeanName"</span><span style="color: #ff0000;"> value</span><span style="color: #0000ff;">="sqlSessionFactory"</span> <span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span>
+    
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> ========================================分隔线========================================= </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 配置Spring的事务管理器 </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="transactionManager"</span><span style="color: #ff0000;"> class</span><span style="color: #0000ff;">="org.springframework.jdbc.datasource.DataSourceTransactionManager"</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="dataSource"</span><span style="color: #ff0000;"> ref</span><span style="color: #0000ff;">="dataSource"</span> <span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span>
+
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 注解方式配置事物 </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> &lt;tx:annotation-driven transaction-manager="transactionManager" /&gt; </span><span style="color: #008000;">--&gt;</span>
+
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 拦截器方式配置事物 </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:advice </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="transactionAdvice"</span><span style="color: #ff0000;"> transaction-manager</span><span style="color: #0000ff;">="transactionManager"</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:attributes</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="add*"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="REQUIRED"</span> <span style="color: #0000ff;">/&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="append*"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="REQUIRED"</span> <span style="color: #0000ff;">/&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="insert*"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="REQUIRED"</span> <span style="color: #0000ff;">/&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="save*"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="REQUIRED"</span> <span style="color: #0000ff;">/&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="update*"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="REQUIRED"</span> <span style="color: #0000ff;">/&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="modify*"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="REQUIRED"</span> <span style="color: #0000ff;">/&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="edit*"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="REQUIRED"</span> <span style="color: #0000ff;">/&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="delete*"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="REQUIRED"</span> <span style="color: #0000ff;">/&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="remove*"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="REQUIRED"</span> <span style="color: #0000ff;">/&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="repair"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="REQUIRED"</span> <span style="color: #0000ff;">/&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="delAndRepair"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="REQUIRED"</span> <span style="color: #0000ff;">/&gt;</span>
+
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="get*"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="SUPPORTS"</span> <span style="color: #0000ff;">/&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="find*"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="SUPPORTS"</span> <span style="color: #0000ff;">/&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="load*"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="SUPPORTS"</span> <span style="color: #0000ff;">/&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="search*"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="SUPPORTS"</span> <span style="color: #0000ff;">/&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="datagrid*"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="SUPPORTS"</span> <span style="color: #0000ff;">/&gt;</span>
+
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tx:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="*"</span><span style="color: #ff0000;"> propagation</span><span style="color: #0000ff;">="SUPPORTS"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">tx:attributes</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">tx:advice</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">aop:config</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">aop:pointcut </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="transactionPointcut"</span><span style="color: #ff0000;"> expression</span><span style="color: #0000ff;">="execution(* me.gacl.service..*Impl.*(..))"</span> <span style="color: #0000ff;">/&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">aop:advisor </span><span style="color: #ff0000;">pointcut-ref</span><span style="color: #0000ff;">="transactionPointcut"</span><span style="color: #ff0000;"> advice-ref</span><span style="color: #0000ff;">="transactionAdvice"</span> <span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">aop:config</span><span style="color: #0000ff;">&gt;</span>
+
+
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 配置druid监控spring jdbc </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="druid-stat-interceptor"</span><span style="color: #ff0000;"> class</span><span style="color: #0000ff;">="com.alibaba.druid.support.spring.stat.DruidStatInterceptor"</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="druid-stat-pointcut"</span><span style="color: #ff0000;"> class</span><span style="color: #0000ff;">="org.springframework.aop.support.JdkRegexpMethodPointcut"</span><span style="color: #ff0000;"> scope</span><span style="color: #0000ff;">="prototype"</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="patterns"</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">list</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>me.gacl.service.*<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">list</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">aop:config</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">aop:advisor </span><span style="color: #ff0000;">advice-ref</span><span style="color: #0000ff;">="druid-stat-interceptor"</span><span style="color: #ff0000;"> pointcut-ref</span><span style="color: #0000ff;">="druid-stat-pointcut"</span> <span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">aop:config</span><span style="color: #0000ff;">&gt;</span>
+
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">beans</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>　　</p>
+<p>　　到此，相关的配置文件算是编写完成了，如下图所示：</p>
+<p>　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061541369068382.png" alt="" /></p>
+<h3>4.3、进行单元测试</h3>
+<p>　　经过以上两个步骤，spring4与mybatis3的整合算是全部完成了。接下来我们要做的工作就算进行单元测试，测试一下spring4与mybatis3的整合是否成功。</p>
+<p>　　1、在src/main/java目录下创建一个me.gacl.service包，然后在me.gacl.service包创建一个UserServiceI接口，如下所示：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">package</span><span style="color: #000000;"> me.gacl.service;
+</span><span style="color: #008080;"> 2</span> 
+<span style="color: #008080;"> 3</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.domain.User;
+</span><span style="color: #008080;"> 4</span> 
+<span style="color: #008080;"> 5</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">interface</span><span style="color: #000000;"> UserServiceI {
+</span><span style="color: #008080;"> 6</span> 
+<span style="color: #008080;"> 7</span>     <span style="color: #008000;">/**</span>
+<span style="color: #008080;"> 8</span> <span style="color: #008000;">     * 添加用户
+</span><span style="color: #008080;"> 9</span> <span style="color: #008000;">     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> user
+</span><span style="color: #008080;">10</span>      <span style="color: #008000;">*/</span>
+<span style="color: #008080;">11</span>     <span style="color: #0000ff;">void</span><span style="color: #000000;"> addUser(User user);
+</span><span style="color: #008080;">12</span>     
+<span style="color: #008080;">13</span>     <span style="color: #008000;">/**</span>
+<span style="color: #008080;">14</span> <span style="color: #008000;">     * 根据用户id获取用户
+</span><span style="color: #008080;">15</span> <span style="color: #008000;">     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> userId
+</span><span style="color: #008080;">16</span> <span style="color: #008000;">     * </span><span style="color: #808080;">@return</span>
+<span style="color: #008080;">17</span>      <span style="color: #008000;">*/</span>
+<span style="color: #008080;">18</span> <span style="color: #000000;">    User getUserById(String userId);
+</span><span style="color: #008080;">19</span> }</pre>
+</div>
+<p>　　2、在src/main/java目录下创建一个me.gacl.service.impl包，然后在me.gacl.service.impl包创建一个针对UserServiceI接口的实现类：UserServiceImpl，如下所示：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">package</span><span style="color: #000000;"> me.gacl.service.impl;
+</span><span style="color: #008080;"> 2</span> 
+<span style="color: #008080;"> 3</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.beans.factory.annotation.Autowired;
+</span><span style="color: #008080;"> 4</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.stereotype.Service;
+</span><span style="color: #008080;"> 5</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.dao.UserMapper;
+</span><span style="color: #008080;"> 6</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.domain.User;
+</span><span style="color: #008080;"> 7</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.service.UserServiceI;
+</span><span style="color: #008080;"> 8</span> 
+<span style="color: #008080;"> 9</span> <span style="color: #008000;">/**</span>
+<span style="color: #008080;">10</span> <span style="color: #008000;"> * </span><span style="color: #808080;">@author</span><span style="color: #008000;"> gacl
+</span><span style="color: #008080;">11</span> <span style="color: #008000;"> * 使用@Service注解将UserServiceImpl类标注为一个service
+</span><span style="color: #008080;">12</span> <span style="color: #008000;"> * service的id是userService
+</span><span style="color: #008080;">13</span>  <span style="color: #008000;">*/</span>
+<span style="color: #008080;">14</span> @Service("userService"<span style="color: #000000;">)
+</span><span style="color: #008080;">15</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> UserServiceImpl <span style="color: #0000ff;">implements</span><span style="color: #000000;"> UserServiceI {
+</span><span style="color: #008080;">16</span> 
+<span style="color: #008080;">17</span>     <span style="color: #008000;">/**</span>
+<span style="color: #008080;">18</span> <span style="color: #008000;">     * 使用@Autowired注解标注userMapper变量，
+</span><span style="color: #008080;">19</span> <span style="color: #008000;">     * 当需要使用UserMapper时，Spring就会自动注入UserMapper
+</span><span style="color: #008080;">20</span>      <span style="color: #008000;">*/</span>
+<span style="color: #008080;">21</span> <span style="color: #000000;">    @Autowired
+</span><span style="color: #008080;">22</span>     <span style="color: #0000ff;">private</span> UserMapper userMapper;<span style="color: #008000;">//</span><span style="color: #008000;">注入dao</span>
+<span style="color: #008080;">23</span> 
+<span style="color: #008080;">24</span> <span style="color: #000000;">    @Override
+</span><span style="color: #008080;">25</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> addUser(User user) {
+</span><span style="color: #008080;">26</span> <span style="color: #000000;">        userMapper.insert(user);
+</span><span style="color: #008080;">27</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">28</span> 
+<span style="color: #008080;">29</span> <span style="color: #000000;">    @Override
+</span><span style="color: #008080;">30</span>     <span style="color: #0000ff;">public</span><span style="color: #000000;"> User getUserById(String userId) {
+</span><span style="color: #008080;">31</span>         <span style="color: #0000ff;">return</span><span style="color: #000000;"> userMapper.selectByPrimaryKey(userId);
+</span><span style="color: #008080;">32</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">33</span> }</pre>
+</div>
+<p>　　</p>
+<p>　　创建好的两个类如下所示：</p>
+<p>　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061555345465321.png" alt="" /></p>
+<p>　　3、在src/test/java目录下编写单元测试类，新建一个me.gacl.test包，然后在这个包下创建一个MyBatisTest类，代码如下：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">package</span><span style="color: #000000;"> me.gacl.test;
+</span><span style="color: #008080;"> 2</span> 
+<span style="color: #008080;"> 3</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.Date;
+</span><span style="color: #008080;"> 4</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.UUID;
+</span><span style="color: #008080;"> 5</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.domain.User;
+</span><span style="color: #008080;"> 6</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.service.UserServiceI;
+</span><span style="color: #008080;"> 7</span> <span style="color: #008000;">//</span><span style="color: #008000;">import me.gacl.service.UserServiceI;</span>
+<span style="color: #008080;"> 8</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.junit.Before;
+</span><span style="color: #008080;"> 9</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.junit.Test;
+</span><span style="color: #008080;">10</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.context.ApplicationContext;
+</span><span style="color: #008080;">11</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.context.support.ClassPathXmlApplicationContext;
+</span><span style="color: #008080;">12</span> 
+<span style="color: #008080;">13</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> MyBatisTest {
+</span><span style="color: #008080;">14</span> 
+<span style="color: #008080;">15</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> UserServiceI userService;
+</span><span style="color: #008080;">16</span>     
+<span style="color: #008080;">17</span>     <span style="color: #008000;">/**</span>
+<span style="color: #008080;">18</span> <span style="color: #008000;">     * 这个before方法在所有的测试方法之前执行，并且只执行一次
+</span><span style="color: #008080;">19</span> <span style="color: #008000;">     * 所有做Junit单元测试时一些初始化工作可以在这个方法里面进行
+</span><span style="color: #008080;">20</span> <span style="color: #008000;">     * 比如在before方法里面初始化ApplicationContext和userService
+</span><span style="color: #008080;">21</span>      <span style="color: #008000;">*/</span>
+<span style="color: #008080;">22</span> <span style="color: #000000;">    @Before
+</span><span style="color: #008080;">23</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> before(){
+</span><span style="color: #008080;">24</span>         <span style="color: #008000;">//</span><span style="color: #008000;">使用"spring.xml"和"spring-mybatis.xml"这两个配置文件创建Spring上下文</span>
+<span style="color: #008080;">25</span>         ApplicationContext ac = <span style="color: #0000ff;">new</span> ClassPathXmlApplicationContext(<span style="color: #0000ff;">new</span> String[]{"spring.xml","spring-mybatis.xml"<span style="color: #000000;">});
+</span><span style="color: #008080;">26</span>         <span style="color: #008000;">//</span><span style="color: #008000;">从Spring容器中根据bean的id取出我们要使用的userService对象</span>
+<span style="color: #008080;">27</span>         userService = (UserServiceI) ac.getBean("userService"<span style="color: #000000;">);
+</span><span style="color: #008080;">28</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">29</span>     
+<span style="color: #008080;">30</span> <span style="color: #000000;">    @Test
+</span><span style="color: #008080;">31</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> testAddUser(){
+</span><span style="color: #008080;">32</span>         <span style="color: #008000;">//</span><span style="color: #008000;">ApplicationContext ac = new ClassPathXmlApplicationContext(new String[]{"spring.xml","spring-mybatis.xml"});
+</span><span style="color: #008080;">33</span>         <span style="color: #008000;">//</span><span style="color: #008000;">UserServiceI userService = (UserServiceI) ac.getBean("userService");</span>
+<span style="color: #008080;">34</span>         User user = <span style="color: #0000ff;">new</span><span style="color: #000000;"> User();
+</span><span style="color: #008080;">35</span>         user.setUserId(UUID.randomUUID().toString().replaceAll("-", ""<span style="color: #000000;">));
+</span><span style="color: #008080;">36</span>         user.setUserName("白虎神皇xdp"<span style="color: #000000;">);
+</span><span style="color: #008080;">37</span>         user.setUserBirthday(<span style="color: #0000ff;">new</span><span style="color: #000000;"> Date());
+</span><span style="color: #008080;">38</span> <span style="color: #000000;">        user.setUserSalary(10000D);
+</span><span style="color: #008080;">39</span> <span style="color: #000000;">        userService.addUser(user);
+</span><span style="color: #008080;">40</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">41</span>     
+<span style="color: #008080;">42</span> }</pre>
+</div>
+<p>　　执行单元测试代码，这时候会报如下错误：</p>
+<p>&nbsp;　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061606486099149.png" alt="" /></p>
+<p>　　错误提示是说没有找到"me.gacl.test.MyBatisTest"这个类，这是因为我们没有使用maven编译项目中的类的缘故。</p>
+<p>　　下面我们使用Maven编译项目，选中项目的pom.xml文件&rarr;【Debug As】&rarr;【maven install】，如下所示：</p>
+<p>　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061612041405714.png" alt="" /></p>
+<p>编译结果如下：</p>
+<p>　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061659076715085.png" alt="" /></p>
+<p>　　在这里说一下我执行Maven install之后遇到的问题，第一次执行Maven install命令时，就出现了如下一堆乱七八糟的错误：</p>
+<p>　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061704489991597.png" alt="" width="950" /></p>
+<p>　　后来我把项目删掉，再重新导入项目，然后再执行Clean项目操作之后，如下图所示：</p>
+<p>　　<img src="http://images.cnitblog.com/blog/289233/201502/061706482655399.png" alt="" /></p>
+<p>　　再执行Maven install操作又可以正常编译通过了，这让我郁闷了好久，这应该不是我项目配置的原因，而是Maven的原因，具体也不知道为啥会这样。反正这算是一种解决办法吧，<span style="color: #ff0000;"><strong>如果遇到执行Maven install操作不能正常编译通过的情况：可以尝试采用：Maven clean&rarr;Clean项目&rarr;Maven install这三个步骤去解决问题</strong></span>。</p>
+<p>　　除了可以用常规的Junit进行单元测试之外，我们还可以使用Spring提供的Junit测试框架进行单元测试，在me.gacl.test下新建一个MyBatisTestBySpringTestFramework类，代码如下：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">package</span><span style="color: #000000;"> me.gacl.test;
+</span><span style="color: #008080;"> 2</span> 
+<span style="color: #008080;"> 3</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.Date;
+</span><span style="color: #008080;"> 4</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.UUID;
+</span><span style="color: #008080;"> 5</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.domain.User;
+</span><span style="color: #008080;"> 6</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.service.UserServiceI;
+</span><span style="color: #008080;"> 7</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.junit.Test;
+</span><span style="color: #008080;"> 8</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.junit.runner.RunWith;
+</span><span style="color: #008080;"> 9</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.beans.factory.annotation.Autowired;
+</span><span style="color: #008080;">10</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.test.context.ContextConfiguration;
+</span><span style="color: #008080;">11</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+</span><span style="color: #008080;">12</span> 
+<span style="color: #008080;">13</span> @RunWith(SpringJUnit4ClassRunner.<span style="color: #0000ff;">class</span><span style="color: #000000;">)
+</span><span style="color: #008080;">14</span> <span style="color: #008000;">//</span><span style="color: #008000;">配置了@ContextConfiguration注解并使用该注解的locations属性指明spring和配置文件之后，</span>
+<span style="color: #008080;">15</span> @ContextConfiguration(locations = {"classpath:spring.xml", "classpath:spring-mybatis.xml"<span style="color: #000000;"> })
+</span><span style="color: #008080;">16</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> MyBatisTestBySpringTestFramework {
+</span><span style="color: #008080;">17</span> 
+<span style="color: #008080;">18</span>     <span style="color: #008000;">//</span><span style="color: #008000;">注入userService</span>
+<span style="color: #008080;">19</span> <span style="color: #000000;">    @Autowired
+</span><span style="color: #008080;">20</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> UserServiceI userService;
+</span><span style="color: #008080;">21</span>     
+<span style="color: #008080;">22</span> <span style="color: #000000;">    @Test
+</span><span style="color: #008080;">23</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> testAddUser(){
+</span><span style="color: #008080;">24</span>         User user = <span style="color: #0000ff;">new</span><span style="color: #000000;"> User();
+</span><span style="color: #008080;">25</span>         user.setUserId(UUID.randomUUID().toString().replaceAll("-", ""<span style="color: #000000;">));
+</span><span style="color: #008080;">26</span>         user.setUserName("xdp_gacl_白虎神皇"<span style="color: #000000;">);
+</span><span style="color: #008080;">27</span>         user.setUserBirthday(<span style="color: #0000ff;">new</span><span style="color: #000000;"> Date());
+</span><span style="color: #008080;">28</span> <span style="color: #000000;">        user.setUserSalary(10000D);
+</span><span style="color: #008080;">29</span> <span style="color: #000000;">        userService.addUser(user);
+</span><span style="color: #008080;">30</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">31</span>     
+<span style="color: #008080;">32</span> <span style="color: #000000;">    @Test
+</span><span style="color: #008080;">33</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> testGetUserById(){
+</span><span style="color: #008080;">34</span>         String userId = "fb1c5941094e400b975f10d9a9d602a3"<span style="color: #000000;">;
+</span><span style="color: #008080;">35</span>         User user =<span style="color: #000000;"> userService.getUserById(userId);
+</span><span style="color: #008080;">36</span> <span style="color: #000000;">        System.out.println(user.getUserName());
+</span><span style="color: #008080;">37</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">38</span> }</pre>
+</div>
+<p>　　执行这两个测试方法，是可以正常测试通过的，如下所示：</p>
+<p>　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061724534997978.png" alt="" /><br />　　<img style="border: 1px solid black;" src="http://images.cnitblog.com/blog/289233/201502/061722552961133.png" alt="" /></p>
+<p>　　到此，我们框架的整合测试工作就算是全部通过了，整合成功。</p>
+<h3>4.4、在web服务器中进行测试</h3>
+<p>　　1、编辑web.xml文件，添加spring监听器配置项，内容如下：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">&lt;?</span><span style="color: #ff00ff;">xml version="1.0" encoding="UTF-8"</span><span style="color: #0000ff;">?&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">web-app </span><span style="color: #ff0000;">xmlns</span><span style="color: #0000ff;">="http://java.sun.com/xml/ns/javaee"</span><span style="color: #ff0000;"> xmlns:xsi</span><span style="color: #0000ff;">="http://www.w3.org/2001/XMLSchema-instance"</span><span style="color: #ff0000;">
+    xsi:schemaLocation</span><span style="color: #0000ff;">="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"</span><span style="color: #ff0000;">
+    version</span><span style="color: #0000ff;">="3.0"</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">welcome-file-list</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">welcome-file</span><span style="color: #0000ff;">&gt;</span>index.jsp<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">welcome-file</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">welcome-file-list</span><span style="color: #0000ff;">&gt;</span>
+
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">listener</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">description</span><span style="color: #0000ff;">&gt;</span>Spring监听器<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">description</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">listener-class</span><span style="color: #0000ff;">&gt;</span>org.springframework.web.context.ContextLoaderListener<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">listener-class</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">listener</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> ContextLoaderListener初始化Spring上下文时需要使用到的contextConfigLocation参数 </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">context-param</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">param-name</span><span style="color: #0000ff;">&gt;</span>contextConfigLocation<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">param-name</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 配置spring.xml和spring-mybatis.xml这两个配置文件的位置，固定写法 </span><span style="color: #008000;">--&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">param-value</span><span style="color: #0000ff;">&gt;</span>classpath:spring.xml,classpath:spring-mybatis.xml<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">param-value</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">context-param</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">web-app</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>　　2、在UserMapper接口中添加一个获取所有用户信息的getAllUser()方法，如下所示：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">package</span><span style="color: #000000;"> me.gacl.dao;
+</span><span style="color: #008080;"> 2</span> 
+<span style="color: #008080;"> 3</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.List;
+</span><span style="color: #008080;"> 4</span> 
+<span style="color: #008080;"> 5</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.domain.User;
+</span><span style="color: #008080;"> 6</span> 
+<span style="color: #008080;"> 7</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">interface</span><span style="color: #000000;"> UserMapper {
+</span><span style="color: #008080;"> 8</span>     <span style="color: #0000ff;">int</span><span style="color: #000000;"> deleteByPrimaryKey(String userId);
+</span><span style="color: #008080;"> 9</span> 
+<span style="color: #008080;">10</span>     <span style="color: #0000ff;">int</span><span style="color: #000000;"> insert(User record);
+</span><span style="color: #008080;">11</span> 
+<span style="color: #008080;">12</span>     <span style="color: #0000ff;">int</span><span style="color: #000000;"> insertSelective(User record);
+</span><span style="color: #008080;">13</span> 
+<span style="color: #008080;">14</span> <span style="color: #000000;">    User selectByPrimaryKey(String userId);
+</span><span style="color: #008080;">15</span> 
+<span style="color: #008080;">16</span>     <span style="color: #0000ff;">int</span><span style="color: #000000;"> updateByPrimaryKeySelective(User record);
+</span><span style="color: #008080;">17</span> 
+<span style="color: #008080;">18</span>     <span style="color: #0000ff;">int</span><span style="color: #000000;"> updateByPrimaryKey(User record);
+</span><span style="color: #008080;">19</span>     
+<span style="color: #008080;">20</span>     <span style="color: #008000;">/**</span><span style="color: #008000;">获取所有用户信息
+</span><span style="color: #008080;">21</span> <span style="color: #008000;">     * </span><span style="color: #808080;">@return</span><span style="color: #008000;"> List&lt;User&gt;
+</span><span style="color: #008080;">22</span>      <span style="color: #008000;">*/</span>
+<span style="color: #008080;">23</span>     List&lt;User&gt;<span style="color: #000000;"> getAllUser();
+</span><span style="color: #008080;">24</span> }</pre>
+</div>
+<p>　　3、在UserMapper.xml文件中编写getAllUser()方法要执行的SQL语句，如下所示：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">&lt;?</span><span style="color: #ff00ff;">xml version="1.0" encoding="UTF-8" </span><span style="color: #0000ff;">?&gt;</span>
+<span style="color: #0000ff;">&lt;!</span><span style="color: #ff00ff;">DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" </span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">mapper </span><span style="color: #ff0000;">namespace</span><span style="color: #0000ff;">="me.gacl.dao.UserMapper"</span> <span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">resultMap </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="BaseResultMap"</span><span style="color: #ff0000;"> type</span><span style="color: #0000ff;">="me.gacl.domain.User"</span> <span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">id </span><span style="color: #ff0000;">column</span><span style="color: #0000ff;">="user_id"</span><span style="color: #ff0000;"> property</span><span style="color: #0000ff;">="userId"</span><span style="color: #ff0000;"> jdbcType</span><span style="color: #0000ff;">="CHAR"</span> <span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">result </span><span style="color: #ff0000;">column</span><span style="color: #0000ff;">="user_name"</span><span style="color: #ff0000;"> property</span><span style="color: #0000ff;">="userName"</span><span style="color: #ff0000;"> jdbcType</span><span style="color: #0000ff;">="VARCHAR"</span> <span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">result </span><span style="color: #ff0000;">column</span><span style="color: #0000ff;">="user_birthday"</span><span style="color: #ff0000;"> property</span><span style="color: #0000ff;">="userBirthday"</span><span style="color: #ff0000;"> jdbcType</span><span style="color: #0000ff;">="DATE"</span> <span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">result </span><span style="color: #ff0000;">column</span><span style="color: #0000ff;">="user_salary"</span><span style="color: #ff0000;"> property</span><span style="color: #0000ff;">="userSalary"</span><span style="color: #ff0000;"> jdbcType</span><span style="color: #0000ff;">="DOUBLE"</span> <span style="color: #0000ff;">/&gt;</span>
+  <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">resultMap</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">sql </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="Base_Column_List"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+    user_id, user_name, user_birthday, user_salary
+  </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">sql</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">select </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="selectByPrimaryKey"</span><span style="color: #ff0000;"> resultMap</span><span style="color: #0000ff;">="BaseResultMap"</span><span style="color: #ff0000;"> parameterType</span><span style="color: #0000ff;">="java.lang.String"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+    select 
+    </span><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">include </span><span style="color: #ff0000;">refid</span><span style="color: #0000ff;">="Base_Column_List"</span> <span style="color: #0000ff;">/&gt;</span><span style="color: #000000;">
+    from t_user
+    where user_id = #{userId,jdbcType=CHAR}
+  </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">select</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">delete </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="deleteByPrimaryKey"</span><span style="color: #ff0000;"> parameterType</span><span style="color: #0000ff;">="java.lang.String"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+    delete from t_user
+    where user_id = #{userId,jdbcType=CHAR}
+  </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">delete</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">insert </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="insert"</span><span style="color: #ff0000;"> parameterType</span><span style="color: #0000ff;">="me.gacl.domain.User"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+    insert into t_user (user_id, user_name, user_birthday, 
+      user_salary)
+    values (#{userId,jdbcType=CHAR}, #{userName,jdbcType=VARCHAR}, #{userBirthday,jdbcType=DATE}, 
+      #{userSalary,jdbcType=DOUBLE})
+  </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">insert</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">insert </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="insertSelective"</span><span style="color: #ff0000;"> parameterType</span><span style="color: #0000ff;">="me.gacl.domain.User"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+    insert into t_user
+    </span><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">trim </span><span style="color: #ff0000;">prefix</span><span style="color: #0000ff;">="("</span><span style="color: #ff0000;"> suffix</span><span style="color: #0000ff;">=")"</span><span style="color: #ff0000;"> suffixOverrides</span><span style="color: #0000ff;">=","</span> <span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userId != null"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+        user_id,
+      </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userName != null"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+        user_name,
+      </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userBirthday != null"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+        user_birthday,
+      </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userSalary != null"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+        user_salary,
+      </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">trim</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">trim </span><span style="color: #ff0000;">prefix</span><span style="color: #0000ff;">="values ("</span><span style="color: #ff0000;"> suffix</span><span style="color: #0000ff;">=")"</span><span style="color: #ff0000;"> suffixOverrides</span><span style="color: #0000ff;">=","</span> <span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userId != null"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+        #{userId,jdbcType=CHAR},
+      </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userName != null"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+        #{userName,jdbcType=VARCHAR},
+      </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userBirthday != null"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+        #{userBirthday,jdbcType=DATE},
+      </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userSalary != null"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+        #{userSalary,jdbcType=DOUBLE},
+      </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">trim</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">insert</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">update </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="updateByPrimaryKeySelective"</span><span style="color: #ff0000;"> parameterType</span><span style="color: #0000ff;">="me.gacl.domain.User"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+    update t_user
+    </span><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">set </span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userName != null"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userBirthday != null"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+        user_birthday = #{userBirthday,jdbcType=DATE},
+      </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">if </span><span style="color: #ff0000;">test</span><span style="color: #0000ff;">="userSalary != null"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+        user_salary = #{userSalary,jdbcType=DOUBLE},
+      </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">if</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">set</span><span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+    where user_id = #{userId,jdbcType=CHAR}
+  </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">update</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">update </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="updateByPrimaryKey"</span><span style="color: #ff0000;"> parameterType</span><span style="color: #0000ff;">="me.gacl.domain.User"</span> <span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+    update t_user
+    set user_name = #{userName,jdbcType=VARCHAR},
+      user_birthday = #{userBirthday,jdbcType=DATE},
+      user_salary = #{userSalary,jdbcType=DOUBLE}
+    where user_id = #{userId,jdbcType=CHAR}
+  </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">update</span><span style="color: #0000ff;">&gt;</span>
+  
+  <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> ==============以下内容是根据自身业务扩展的内容======================= </span><span style="color: #008000;">--&gt;</span>
+      <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> select标签的id属性与UserMapper接口中定义的getAllUser方法要一模一样 </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">select </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="getAllUser"</span><span style="color: #ff0000;"> resultMap</span><span style="color: #0000ff;">="BaseResultMap"</span><span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+        select user_id, user_name, user_birthday, user_salary from t_user
+    </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">select</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">mapper</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>　　4、在UserServiceI接口中也添加一个getAllUser()方法，如下：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">package</span><span style="color: #000000;"> me.gacl.service;
+</span><span style="color: #008080;"> 2</span> 
+<span style="color: #008080;"> 3</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.List;
+</span><span style="color: #008080;"> 4</span> 
+<span style="color: #008080;"> 5</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.domain.User;
+</span><span style="color: #008080;"> 6</span> 
+<span style="color: #008080;"> 7</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">interface</span><span style="color: #000000;"> UserServiceI {
+</span><span style="color: #008080;"> 8</span> 
+<span style="color: #008080;"> 9</span>     <span style="color: #008000;">/**</span>
+<span style="color: #008080;">10</span> <span style="color: #008000;">     * 添加用户
+</span><span style="color: #008080;">11</span> <span style="color: #008000;">     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> user
+</span><span style="color: #008080;">12</span>      <span style="color: #008000;">*/</span>
+<span style="color: #008080;">13</span>     <span style="color: #0000ff;">void</span><span style="color: #000000;"> addUser(User user);
+</span><span style="color: #008080;">14</span>     
+<span style="color: #008080;">15</span>     <span style="color: #008000;">/**</span>
+<span style="color: #008080;">16</span> <span style="color: #008000;">     * 根据用户id获取用户
+</span><span style="color: #008080;">17</span> <span style="color: #008000;">     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> userId
+</span><span style="color: #008080;">18</span> <span style="color: #008000;">     * </span><span style="color: #808080;">@return</span>
+<span style="color: #008080;">19</span>      <span style="color: #008000;">*/</span>
+<span style="color: #008080;">20</span> <span style="color: #000000;">    User getUserById(String userId);
+</span><span style="color: #008080;">21</span>     
+<span style="color: #008080;">22</span>     <span style="color: #008000;">/**</span><span style="color: #008000;">获取所有用户信息
+</span><span style="color: #008080;">23</span> <span style="color: #008000;">     * </span><span style="color: #808080;">@return</span><span style="color: #008000;"> List&lt;User&gt;
+</span><span style="color: #008080;">24</span>      <span style="color: #008000;">*/</span>
+<span style="color: #008080;">25</span>     List&lt;User&gt;<span style="color: #000000;"> getAllUser();
+</span><span style="color: #008080;">26</span> }</pre>
+</div>
+<p>　　5、在UserServiceImpl类中实现getAllUser方法，如下：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">package</span><span style="color: #000000;"> me.gacl.service.impl;
+</span><span style="color: #008080;"> 2</span> 
+<span style="color: #008080;"> 3</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.List;
+</span><span style="color: #008080;"> 4</span> 
+<span style="color: #008080;"> 5</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.beans.factory.annotation.Autowired;
+</span><span style="color: #008080;"> 6</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.stereotype.Service;
+</span><span style="color: #008080;"> 7</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.dao.UserMapper;
+</span><span style="color: #008080;"> 8</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.domain.User;
+</span><span style="color: #008080;"> 9</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.service.UserServiceI;
+</span><span style="color: #008080;">10</span> 
+<span style="color: #008080;">11</span> <span style="color: #008000;">/**</span>
+<span style="color: #008080;">12</span> <span style="color: #008000;"> * </span><span style="color: #808080;">@author</span><span style="color: #008000;"> gacl
+</span><span style="color: #008080;">13</span> <span style="color: #008000;"> * 使用@Service注解将UserServiceImpl类标注为一个service
+</span><span style="color: #008080;">14</span> <span style="color: #008000;"> * service的id是userService
+</span><span style="color: #008080;">15</span>  <span style="color: #008000;">*/</span>
+<span style="color: #008080;">16</span> @Service("userService"<span style="color: #000000;">)
+</span><span style="color: #008080;">17</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> UserServiceImpl <span style="color: #0000ff;">implements</span><span style="color: #000000;"> UserServiceI {
+</span><span style="color: #008080;">18</span> 
+<span style="color: #008080;">19</span>     <span style="color: #008000;">/**</span>
+<span style="color: #008080;">20</span> <span style="color: #008000;">     * 使用@Autowired注解标注userMapper变量，
+</span><span style="color: #008080;">21</span> <span style="color: #008000;">     * 当需要使用UserMapper时，Spring就会自动注入UserMapper
+</span><span style="color: #008080;">22</span>      <span style="color: #008000;">*/</span>
+<span style="color: #008080;">23</span> <span style="color: #000000;">    @Autowired
+</span><span style="color: #008080;">24</span>     <span style="color: #0000ff;">private</span> UserMapper userMapper;<span style="color: #008000;">//</span><span style="color: #008000;">注入dao</span>
+<span style="color: #008080;">25</span> 
+<span style="color: #008080;">26</span> <span style="color: #000000;">    @Override
+</span><span style="color: #008080;">27</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> addUser(User user) {
+</span><span style="color: #008080;">28</span> <span style="color: #000000;">        userMapper.insert(user);
+</span><span style="color: #008080;">29</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">30</span> 
+<span style="color: #008080;">31</span> <span style="color: #000000;">    @Override
+</span><span style="color: #008080;">32</span>     <span style="color: #0000ff;">public</span><span style="color: #000000;"> User getUserById(String userId) {
+</span><span style="color: #008080;">33</span>         <span style="color: #0000ff;">return</span><span style="color: #000000;"> userMapper.selectByPrimaryKey(userId);
+</span><span style="color: #008080;">34</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">35</span> 
+<span style="color: #008080;">36</span> <span style="color: #000000;">    @Override
+</span><span style="color: #008080;">37</span>     <span style="color: #0000ff;">public</span> List&lt;User&gt;<span style="color: #000000;"> getAllUser() {
+</span><span style="color: #008080;">38</span>         <span style="color: #0000ff;">return</span><span style="color: #000000;"> userMapper.getAllUser();
+</span><span style="color: #008080;">39</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">40</span> }</pre>
+</div>
+<p>　　6、在src/main/java目录下创建一个me.gacl.web.controller包，然后在me.gacl.web.controller下创建一个UserServlet，如下：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">package</span><span style="color: #000000;"> me.gacl.web.controller;
+</span><span style="color: #008080;"> 2</span> 
+<span style="color: #008080;"> 3</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.io.IOException;
+</span><span style="color: #008080;"> 4</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.List;
+</span><span style="color: #008080;"> 5</span> 
+<span style="color: #008080;"> 6</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> javax.servlet.ServletException;
+</span><span style="color: #008080;"> 7</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> javax.servlet.annotation.WebServlet;
+</span><span style="color: #008080;"> 8</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> javax.servlet.http.HttpServlet;
+</span><span style="color: #008080;"> 9</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> javax.servlet.http.HttpServletRequest;
+</span><span style="color: #008080;">10</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> javax.servlet.http.HttpServletResponse;
+</span><span style="color: #008080;">11</span> 
+<span style="color: #008080;">12</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.context.ApplicationContext;
+</span><span style="color: #008080;">13</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.web.context.support.WebApplicationContextUtils;
+</span><span style="color: #008080;">14</span> 
+<span style="color: #008080;">15</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.domain.User;
+</span><span style="color: #008080;">16</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> me.gacl.service.UserServiceI;
+</span><span style="color: #008080;">17</span> 
+<span style="color: #008080;">18</span> <span style="color: #008000;">/**</span>
+<span style="color: #008080;">19</span> <span style="color: #008000;"> * </span><span style="color: #808080;">@author</span><span style="color: #008000;"> gacl
+</span><span style="color: #008080;">20</span> <span style="color: #008000;"> * @WebServlet是Servlet3.0提供的注解，目的是将一个继承了HttpServlet类的普通java类标注为一个Servlet
+</span><span style="color: #008080;">21</span> <span style="color: #008000;"> * UserServlet使用了@WebServlet标注之后，就不需要在web.xml中配置了
+</span><span style="color: #008080;">22</span>  <span style="color: #008000;">*/</span>
+<span style="color: #008080;">23</span> @WebServlet("/UserServlet"<span style="color: #000000;">)
+</span><span style="color: #008080;">24</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> UserServlet <span style="color: #0000ff;">extends</span><span style="color: #000000;"> HttpServlet {
+</span><span style="color: #008080;">25</span> 
+<span style="color: #008080;">26</span>     <span style="color: #008000;">//</span><span style="color: #008000;">处理业务逻辑的userService</span>
+<span style="color: #008080;">27</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> UserServiceI userService;
+</span><span style="color: #008080;">28</span>     
+<span style="color: #008080;">29</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> doGet(HttpServletRequest request, HttpServletResponse response)
+</span><span style="color: #008080;">30</span>             <span style="color: #0000ff;">throws</span><span style="color: #000000;"> ServletException, IOException {
+</span><span style="color: #008080;">31</span>         <span style="color: #008000;">//</span><span style="color: #008000;">获取所有的用户信息</span>
+<span style="color: #008080;">32</span>         List&lt;User&gt; lstUsers =<span style="color: #000000;"> userService.getAllUser();
+</span><span style="color: #008080;">33</span>         request.setAttribute("lstUsers"<span style="color: #000000;">, lstUsers);
+</span><span style="color: #008080;">34</span>         request.getRequestDispatcher("/index.jsp"<span style="color: #000000;">).forward(request, response);
+</span><span style="color: #008080;">35</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">36</span>     
+<span style="color: #008080;">37</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> doPost(HttpServletRequest request, HttpServletResponse response)
+</span><span style="color: #008080;">38</span>             <span style="color: #0000ff;">throws</span><span style="color: #000000;"> ServletException, IOException {
+</span><span style="color: #008080;">39</span>         <span style="color: #0000ff;">this</span><span style="color: #000000;">.doGet(request, response);
+</span><span style="color: #008080;">40</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">41</span> 
+<span style="color: #008080;">42</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> init() <span style="color: #0000ff;">throws</span><span style="color: #000000;"> ServletException {
+</span><span style="color: #008080;">43</span>         <span style="color: #008000;">//</span><span style="color: #008000;">在Servlet初始化时获取Spring上下文对象(ApplicationContext)</span>
+<span style="color: #008080;">44</span>         ApplicationContext ac = WebApplicationContextUtils.getWebApplicationContext(<span style="color: #0000ff;">this</span><span style="color: #000000;">.getServletContext());
+</span><span style="color: #008080;">45</span>         <span style="color: #008000;">//</span><span style="color: #008000;">从ApplicationContext中获取userService</span>
+<span style="color: #008080;">46</span>         userService = (UserServiceI) ac.getBean("userService"<span style="color: #000000;">);
+</span><span style="color: #008080;">47</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">48</span> }</pre>
+</div>
+<p>　　7、编辑index.jsp页面，用于展示查询到的用户信息，内容如下：</p>
+<div class="cnblogs_code">
+<pre><span style="background-color: #ffff00; color: #000000;">&lt;%</span><span style="background-color: #f5f5f5; color: #000000;">@ page language</span><span style="background-color: #f5f5f5; color: #000000;">=</span><span style="background-color: #f5f5f5; color: #800000;">"</span><span style="background-color: #f5f5f5; color: #800000;">java</span><span style="background-color: #f5f5f5; color: #800000;">"</span><span style="background-color: #f5f5f5; color: #000000;"> pageEncoding</span><span style="background-color: #f5f5f5; color: #000000;">=</span><span style="background-color: #f5f5f5; color: #800000;">"</span><span style="background-color: #f5f5f5; color: #800000;">UTF-8</span><span style="background-color: #f5f5f5; color: #800000;">"</span><span style="background-color: #ffff00; color: #000000;">%&gt;</span>
+<span style="background-color: #ffff00; color: #000000;">&lt;%</span><span style="background-color: #f5f5f5; color: #000000;">--</span><span style="background-color: #f5f5f5; color: #000000;">引入JSTL核心标签库 </span><span style="background-color: #f5f5f5; color: #000000;">--</span><span style="background-color: #ffff00; color: #000000;">%&gt;</span>
+<span style="background-color: #ffff00; color: #000000;">&lt;%</span><span style="background-color: #f5f5f5; color: #000000;">@ taglib prefix</span><span style="background-color: #f5f5f5; color: #000000;">=</span><span style="background-color: #f5f5f5; color: #800000;">"</span><span style="background-color: #f5f5f5; color: #800000;">c</span><span style="background-color: #f5f5f5; color: #800000;">"</span><span style="background-color: #f5f5f5; color: #000000;"> uri</span><span style="background-color: #f5f5f5; color: #000000;">=</span><span style="background-color: #f5f5f5; color: #800000;">"</span><span style="background-color: #f5f5f5; color: #800000;">http://java.sun.com/jsp/jstl/core</span><span style="background-color: #f5f5f5; color: #800000;">"</span><span style="background-color: #ffff00; color: #000000;">%&gt;</span>
+<span style="color: #0000ff;">&lt;!</span><span style="color: #ff00ff;">DOCTYPE html</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">html</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;</span>显示用户信息<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">style </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="text/css"</span><span style="color: #0000ff;">&gt;</span><span style="background-color: #f5f5f5; color: #800000;">
+            table,td</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">
+                border</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 1px solid</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">
+                border-collapse</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> collapse</span><span style="background-color: #f5f5f5; color: #000000;">;</span>
+            <span style="background-color: #f5f5f5; color: #000000;">}</span>
+        <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">style</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">table</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tr</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>用户ID<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>用户名<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>用户生日<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>工资<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">tr</span><span style="color: #0000ff;">&gt;</span>
+            <span style="background-color: #ffff00; color: #000000;">&lt;%</span><span style="background-color: #f5f5f5; color: #000000;">--</span><span style="background-color: #f5f5f5; color: #000000;">遍历lstUsers集合中的User对象 </span><span style="background-color: #f5f5f5; color: #000000;">--</span><span style="background-color: #ffff00; color: #000000;">%&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">c:forEach </span><span style="color: #ff0000;">var</span><span style="color: #0000ff;">="user"</span><span style="color: #ff0000;"> items</span><span style="color: #0000ff;">="${lstUsers}"</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">tr</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>${user.userId}<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>${user.userName}<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>${user.userBirthday}<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>
+                    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>${user.userSalary}<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">td</span><span style="color: #0000ff;">&gt;</span>
+                <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">tr</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">c:forEach</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">table</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">html</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>　　8、执行maven install命令编译项目，然后将项目部署到tomcat服务器中运行，注意，由于要使用Servlet3.0，所以必须将项目部署到tomcat7.x以上的服务器中去运行，如下所示：</p>
+<p>　　<img src="http://images.cnitblog.com/blog/289233/201502/062357104375911.png" alt="" /></p>
+<p>　　输入地址：http://localhost:8080/spring4-mybatis3/UserServlet&nbsp;访问UserServlet，访问结果如下：</p>
+<p>　　<img src="http://images.cnitblog.com/blog/289233/201502/062359499538845.png" alt="" /></p>
+<p>　　可以看到，t_user表中的用户信息全部查询出来显示到页面上了。这样在web服务器中的测试也正常通过了。</p>
+<p>　　以上就是Spring4.x与MyBatis3.x整合的全部内容了。编写这个整合例子花了不少时间，使用Maven编译时总是出现莫名其妙的问题，有时候成功，有时候失败，反正很莫名其妙。<span style="color: #ff0000;"><strong>如果遇到执行Maven install操作不能正常编译通过的情况：可以尝试采用：Maven clean&rarr;Clean项目&rarr;Maven install这三个步骤去解决问题</strong></span></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+    <p class="postfoot">posted on <span id="post-date">2015-02-07 00:09</span> <a href='http://www.cnblogs.com/xdp-gacl/'>孤傲苍狼</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="http://i.cnblogs.com/EditPosts.aspx?postid=4271627" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(4271627);return false;">收藏</a></p>
+</div>
+<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=133816,cb_entryId=4271627,cb_blogApp=currentBlogApp,cb_blogUserGuid='f1774468-815f-e011-a53f-842b2b196315',cb_entryCreatedDate='2015/2/7 0:09:00';loadViewCount(cb_entryId);</script>
+
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='ad_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<div id='ad_c2' class='c_ad_block'></div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+$(function () {
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);    
+});
+</script>
+</div>
+
+
+</div>
+<div id="rightmenu">
+	
+		
+<div id="my_links">
+<h3>导航</h3>
+<ul>
+<li><a id="MyLinks1_HomeLink" href="http://www.cnblogs.com/">博客园</a></li>
+<li><a id="MyLinks1_MyHomeLink" href="http://www.cnblogs.com/xdp-gacl/">首页</a></li>
+<!--<li><a id="MyLinks1_NewPostLink" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>-->
+<li><a id="MyLinks1_ContactLink" rel="nofollow" href="http://msg.cnblogs.com/send/%E5%AD%A4%E5%82%B2%E8%8B%8D%E7%8B%BC">联系</a></li>
+<li><a id="MyLinks1_Syndication" href="http://www.cnblogs.com/xdp-gacl/rss">订阅</a></li><!--<a id="MyLinks1_XMLLink" href="http://www.cnblogs.com/xdp-gacl/rss"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" /></a>-->
+<li><a id="MyLinks1_Admin" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+</div>
+		<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+		
+<h3>公告</h3>
+<div class="newsItem">
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>		
+		
+<div id="blog_stats">
+<h3>统计</h3>
+<ul>
+<li>随笔 - 269
+<li>文章 - 0
+<li>评论 - 1283
+<!--<li>引用 - 0-->
+</li>
+</ul>
+</div>
+		<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+        
+		
+<div id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="http://www.cnblogs.com/" style="font-family:Verdana;font-size:12px;">博客园</a>
+	<br />
+	Copyright &copy; 孤傲苍狼
+</div>
+	
+</div>			
+			
+	
+
+<!--PageEndHtml Block Begin-->
+<!--评论，生成气泡效果标签代码-->
+<script type="text/javascript" language="javascript"> 
+    $(document).ready(function() {
+        var commentTime = setInterval(function(){if($("#comments_pager_bottom").length>0){CommentBubble();clearTimeout(commentTime);}},50);
+    }); 
+    function CommentBubble()
+    {
+var w1 = '<div class="list">' +
+        '<table class="out" border="0" cellspacing="0" cellpadding="0"> ' +
+            '<tr>' +
+                '<td class="icontd" align="right" valign="bottom">' +
+                    '<img src="http://pic.cnitblog.com/face/289233/20131202131125.png" width="70px" height="57px"/>' +
+                '</td>' +
+                '<td align="left" valign="bottom" class="q">' +
+                    '<table border="0" cellpadding="0" cellspacing="0" style=""> ' +
+                        '<tr><td class="topleft"></td><td class="top"></td><td class="topright"></td></tr> ' +
+                        '<tr><td class="left"></td> <td align="left" class="conmts"><p>';
+ 
+ 
+        var w2 = '</p> </td> <td class="right"></td></tr> ' +
+                        '<tr><td class="bottomleft"></td><td class="bottom"></td><td class="bottomright"></td></tr> ' +
+                    '</table>' +
+                '</td> ' +
+            '</tr> ' +
+        '</table> ' +
+    '</div>';
+ 
+        $.each($(".blog_comment_body"), function(i, t) {
+            $(t).html(w1 + $(t).html() + w2);
+        });
+$(".louzhu").closest(".feedbackItem").find(".out").removeClass("out").addClass("inc");
+        /*.find(".q").attr("align","right");*/
+        }
+</script>
+<!--PageEndHtml Block End-->
+</body>
+</html>

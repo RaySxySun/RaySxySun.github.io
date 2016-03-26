@@ -42,3 +42,5 @@ Steps|Description|Commands
 ||5. pkill docker && iptables -t nat -F && ifconfig docker0 down && brctl delbr docker0 && docker -d
 ||6. 直接在docker内修改/etc/hosts
 14|Docker network|sudo vim /etc/resolvconf/resolv.conf.d/base (nameserver 8.8.8.8 nameserver 8.8.4.4)
+15|Docker Version|docker version
+16|Download & test latest centos server|sudo docker run -i -t centos /bin/bash
