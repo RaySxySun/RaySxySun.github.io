@@ -17,3 +17,7 @@ delta 增量变量
     Total 6 (delta 5), reused 0 (delta 0)
     To git@github.com:RaySxySun/xxxxxx
      + a695c74...cfb90cf HEAD -> master (forced update)
+
+pass something on (to somebody)
+	In C#, arguments can be passed to parameters either by value or by reference. 
+	Much of the discount is pocketed(私吞了) by retailers instead of being passed on to customers.
