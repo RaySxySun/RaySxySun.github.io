@@ -416,6 +416,164 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 19|gradual and cumulative|success is a gradual and cumulative proces.|sc|
 20|superficial and hollow|the public’s conception of luck is very superficial and hollow.|sc|
 
+---
+
+# Gov Help 
+
+>Do you agree or disagree with the following statement? People can solve important problems by themselves or with the help from their family members, so there is no need for the government to help them.
+
+- Solving problems is a necessary part of our daily life, and as we grow older we develop more problem-solving skills. In my opinion, while people can depend on their own or their family members to deal with daily problems, there do exist a few problems that can only be handled by the goverment.
+
+- To begin with, there are an increasing number of environmental problems that are gradually out of everyone's control. That is to say, most people can hardly do anything effective to solve them. However, the government is in a position to pool resources to reduce severe air pollution. And many governments in the world have successfully protected the environment through legislation.
+
+- In addition, public security calls for help from goverment. With growing rates of crime, citizens' sense of safety remains to be improved. Apparently, the government is more powerful to combat various crimes than the individuals. By using greater police force and creating more job opportunities, the government can effectively maintain public order and increase the overall social stability.
+
+- Finally, any problems with medical insurance should be addressed by the government. A sad fact in our modern society is that many people are facing high expenses in medical care. Through restructuring, the government can considerably reduce the cost of healthcare. In other words, it is not the individuals but the government who can fundamentally reform the medical system.
+
+- To conclude, as people and their family members have limited powers to change things, government involvement is an indispensable part in the solutions to many of our environmental, social and medical problems.
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+1|with the help from|pp can solve important problems with the help from their family member||
+2|a necessary part of|||
+3|develop skills|develop more problem-solving skills||
+4|there do exist|there is/are||
+5|out of everyone's control|many environmental problems are gradually ~|TS|
+6|hardly do anything effective to solve |That is to say, most pp ~ these problems|Explaination|
+7|in the position|Gov is ~ to pool resources to ↓ severe air pollution||
+8|protect the environment through legislation|many govs in the world have successfully ~||
+9|call for help|~ calls for help from||
+10|with growing rates of xxx| with growing rates of crime, ...||
+11|citizens' sense of safety|with growing rates of crime, ~ remains to be improved.||
+12|Apparently, |obviously||
+13|be more powerful to| gov ~ combat crimes than individuals||
+14|police force & job opps|By using greater police force and creating more job opps, ||
+15|public order & social stability|By using ..., the gov can effectively maintain public order and increase the overall socail stability||
+16|problems with medical insurance|any ~ should be addressed by the gov||
+17|a sad fact|~ in our modern society is that ...||
+18|high expenses in |pp are facing ~ medical care.||
+19|Through restructuring|~, the gov can considerably reduce the cost of healthcare||
+20|it is not sb but sb who|It is not the individuals but the government who can fundamentally reform the medical system||
+21|gov involvement|~ is an indispensable part in the solutions to many of our environmental, social and medical problems.||
+22|an indispensable part in|gov involvement ~ the solutions to many of our environmental, social and medical problems.||
+
+
+Position/Attitude|Ideas
+ ---|---
+Main Body 1|There are an increasing number of environmental problems.
+|1. pp can hardly do anything effective to solve them.
+|2. Gov can pool resources to reduce severe air polution
+|3. Only gov can protect the environment through legislation
+Main Body 2|Public security calls for help from gov
+|1. Citizens' sense of safety remains to be improved.
+|2. Gov is more powerful to combat various crimes
+|3. Gov can effectively maintain public order
+Main Body 3|Problems with medical insurance should be addressed by the government.
+|1. Many pp are facing high expenses in medical care.
+|2. Gov can reduce the cost of healthcare
+|3. They can fundamentally reform the medical system
+
+
+---
+
+# Road Safety
+
+> Some people think that strict punishments for driving offences are the key to reducing traffic accidents. Others, however, believe that other measures would be more effective in improving road safety. Discuss both these views and give your own opinion.
+
+- People have differing views with regard to the question of how to make our roads safer. In my view, both punishments and a range of other measures can be used together to promote better driving habits.
+
+- On the one hand, strict punishments can certainly help to encourage people to drive more safely. Penalties for dangerous drivers can act as a deterrent, meaning that people avoid repeating the same offence. There are various types of driving penalty, such as small fines, licence suspension, driver awareness courses, and even prison sentences. The aim of these punishments is to show dangerous drivers that their actions have negative consequences. As a result, we would hope that drivers become more disciplined and alert, and that they follow the rules more carefully.
+
+- On the other hand, I believe that safe driving can be promoted in several different ways that do not punish drivers. Firstly, it is vitally important to educate people properly before they start to drive, and this could be done in schools or even as part of an extended or more difficult driving test. Secondly, more attention could be paid to safe road design. For example, signs can be used to warn people, speed bumps and road bends can be added to calm traffic, and speed cameras can help to deter people from driving too quickly. Finally, governments or local councils could reduce road accidents by investing in better public transport, which would mean that fewer people would need to travel by car.
+
+- In conclusion, while punishments can help to prevent bad driving, I believe that other road safety measures should also be introduced.
+
+(269 words, band 9)
+
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|strict punishments for|[strict penalties for]~ driving offences ..||
+2|be the key to doing sth|strict punishments for driving offences are the key to reducing traffic accidents.||
+3|with regard to|about/on||
+4|the question of how to|||
+5|driving habits|both punishments and a range of other measures can be used together to promote better ~||
+6|certainly help to encourage|strict punishments can ~ pp to drive more safely.||
+7|dangerous drivers|Penalties for dangerous drivers can ...||
+8|act as a deterrent|Penalties for ... can ~||
+9|meaning that...|[in turn/thereby]Penalties ... as a deterrent, ~ pp avoid repeating the same offence||
+10|repeat the same offence|||
+11|driving punishments|[1]small fines [2]licence suspension [3]driver awareness courses [4] prison sentences||
+12|punishments is to show sb that|the aim of these ~ their actions have - consequences||
+13|disciplined and alert|we would hope that drivers become more ~||
+14|follow the rules|we also hope that drivers follow the rules more carefully||
+15|safe driving|~ can be promoted in several diff ways that do not punish drivers||
+16|start to do|edu pp properly before they start to drive||
+17|an extended driving test|this could be done in schools or even as part of an extended or more diffcult driving test||
+18|attention could be paid to sth|~ safe road design||
+19|safe road design|signs, speed bumps & road bends, speed cameras||
+20|warm pp, calm traffic, deter pp from|||
+21|signs|~ can be used to warn pp||
+22|speed bumps & road bends| ~ can be added to calm traffic||
+23|speed cameras|~ can help to deter pp from driving to quickly||
+24|invest in|gov & local councils could reduce road accidents by ~ing in better public transport||
+25|prevent bad driving,|||
+
+---
+
+# Stay Healthy
+
+> People do many different things to stay healthy. What do you do for good health? Use specific reasons and examples to support your answer.
+
+ - Maintaining our health is one of the most effective ways of ensuring that we live a long and happy life.  I do many things in order to stay fit, but the most important maintaining a healthy diet.  There are two reasons why I think this is critically important, which I will explore in the following essay.
+
+- To begin with, eating healthy food prevents obesity, which is the cause of many very serious illnesses.  Obesity is debilitating all by itself, but it also causes patients to suffer from a variety of other illnesses, including diabetes, arthritis and heart disease.  It is important to be aware of this connection when making decisions about the food which we eat.  My eldest cousin is a good example of this.  While my cousin maintained a healthy weight throughout high school and university (despite eating a lot of unhealthy snacks and junk food), when he entered adulthood his metabolism changed and he began to rapidly gain weight.  My cousin is not a particularly self-conscious individual and was never bothered by how his weight gain affected his appearance, so he continued to eat an unhealthy diet.  However, he was eventually diagnosed with adult-onset diabetes which has had a profound effect on his quality of life.  He now regrets not being a bit more careful about his consumption choices.
+
+- Secondly, eating healthy food gives me a lot of energy, which keeps me effective in my personal and professional pursuits.  It is no secret that people who are lacking in certain vitamins and nutrients lack the energy necessary to complete even simple tasks.  I recall how when I was a university student I often skipped meals because I was quite busy studying.  As a result of not eating proper meals, I started to suffer from fatigue and lethargy. My grades began to drop because when it came time to write my tests I could barely keep my eyes open long enough to answer the questions.  Not only that, but my submitted assignments were also quite poor as my fatigue made me unable to keep up with them.  The following year I was a bit more diligent about making healthy food choices and my grades quickly recovered.
+
+- In conclusion, the most important thing I do in order to stay healthy is maintain a nutritious diet.  This is because keeping a healthy diet prevents obesity and related diseases, and because it gives me the energy to keep up with my academic and professional obligations.
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|stay fit|I do many things in order to stay fit [= stay healthy]||
+2|prevent obesity|which is the cause of many very serious illnesses||
+3|debilitate|Obesity is debilitating all by itself||
+4|suffer from|it also causes patients to suffer from a variety of other illnesses||
+5|a variety of other illnesses|(adult-onset)diabetes, arthritis, heart disease|SC|Health, Food(100%)
+6|maintain a healthy weight|||
+7|metabolism|the chemical processes in living things that change food, etc. into energy and materials for growth||
+8|gain weight|he was bothered by how his weight gain affected his appearance||
+9|self-conscious individuals|||
+10|continue to do|he continued to eat an unhealthy diet.||
+11|be diagnosed with|he was eventually diagnosed with adult-onset diabetes||
+12|one's quality of life|||Health, Food(100%)
+13|regrets not doing|He now regrets not being a bit more careful about his consumption choices.||
+14|keep sb effective in personal & professional pursuits|eating healthy keeps me ~||
+15|It is no secret that|it is quite common that/it is not uncommon that||
+16|be lacking in|pp are lacking in certain vitamins and nutrients||
+17|vitamins & nutrients|||
+18|the energy necessary to|lack the energy necessary to complete even simple tasks||
+19|skip meal|I often ~ because I was quite busy studying||
+20|be busy doing|||
+21|as a result of not doing xxx|~ eating proper meals, I started to suffer from fatigue & lethargy||
+22|fatigue|a feeling of being extremely tired, usually because of hard work or exercise||
+23|lethargy|the state of not having any energy or enthusiasm for doing things||
+24|Not only that,|Apart from that,||
+25|keep up with|to learn about or be aware of the news, current events, etc.||
+26|the following year|the next year||
+27|become more diligent about doing|showing care and effort in your work or duties||
+28|a nutritious diet|<> an unhealthy diet||
+29|obligations|keep up with my academic and professional obligations.[= responsibility]||
+
+
+
+
+
+
+
+
+
+
+
 
 
 
