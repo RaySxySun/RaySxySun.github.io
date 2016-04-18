@@ -564,8 +564,19 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 28|a nutritious diet|<> an unhealthy diet||
 29|obligations|keep up with my academic and professional obligations.[= responsibility]||
 
+---
 
+#Celebrities
 
+> Nowadays celebrities are more famous for their glamour and wealth than for their achievements, and this sets a bad example to young people.To what extent do you agree or disagree with this statement?
+
+- It is true that some celebrities are known for their glamorous lifestyles rather than for the work they do. While I agree that these celebrities set a bad example for children, I believe that other famous people act as positive role models.
+
+- On the one hand, many people do achieve fame without really working for it. They may have inherited money from parents, married a famous or wealthy person, or they may have appeared in gossip magazines or on a reality TV programme. A good example would be Paris Hilton, who is rich and famous for the wrong reasons. She spends her time attending parties and nightclubs, and her behaviour promotes the idea that appearance, glamour and media profile are more important than hard work and good character. The message to young people is that success can be achieved easily, and that school work is not necessary.
+
+- On the other hand, there are at least as many celebrities whose accomplishments make them excellent role models for young people. Actors, musicians and sports stars become famous idols because they have worked hard and applied themselves to develop real skills and abilities. They demonstrate great effort, determination and ambition, which is required for someone who wants to be truly successful in their chosen field. An example is the actor and martial artist Jackie Chan, who has become world famous through years of practice and hard work. This kind of self-made celebrity can inspire children to develop their talents through application and perseverance.
+
+- In conclusion, it seems to me that the influence of celebrities on young people can be positive as well as negative.
 
 
 
