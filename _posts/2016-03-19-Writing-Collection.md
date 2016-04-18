@@ -127,7 +127,7 @@ Paragraph 3|(TS) the personal and economic arguments given above can be consider
 ---
 
 
-# Food Safety
+# 3 Food Safety
 
 > Do you agree or disagree with the following statement? The food we ate in the past was healthier than the food we eat today.
 
@@ -196,7 +196,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 
 ---
 
-# Tech make our life simply OR complicated
+# 4 Tech make our life simply OR complicated
 
 > Do you agree or disagree with the following statement? Technology designed to make our life simply actually makes our life more complicated.
 
@@ -254,7 +254,7 @@ Main Body 3| Private cars have created many urban problems
 
 ---
 
- #University Subjects
+ # 5 University Subjects
 
  > Some people think that all university students should study whatever they like. Others believe that they should only be allowed to study subjects that will be useful in the future, such as those related to science and technology. Discuss both these views and give your own opinion.
 
@@ -300,7 +300,7 @@ Main Body 2|In spite of these arguments, students should be free to choose their
 
 ---
 
-# Game
+# 6 Game
 
 > Some people regard video games as harmless fun, or even as a useful educational tool. Others, however, believe that videos games are having an adverse effect on the people who play them. In your opinion, do the drawbacks of video games outweigh the benefits?
 
@@ -340,7 +340,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 
 ---
 
-# Support art
+# 7 Support art
 
 > Do you agree or disagree with the following statement? The government should support artists rather than allow them to support themselves.
 
@@ -381,7 +381,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 
 ---
 
-# Luck & Success
+# 8 Luck & Success
 
 > “When people succeed, it is because of hard work. Luck has nothing to do with success.” Do you agree or disagree with the quotation above? Use specific reasons and examples to explain your语义组 position.
 
@@ -418,7 +418,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 
 ---
 
-# Gov Help 
+# 9 Gov Help 
 
 >Do you agree or disagree with the following statement? People can solve important problems by themselves or with the help from their family members, so there is no need for the government to help them.
 
@@ -475,7 +475,7 @@ Main Body 3|Problems with medical insurance should be addressed by the governmen
 
 ---
 
-# Road Safety
+# 10 Road Safety
 
 > Some people think that strict punishments for driving offences are the key to reducing traffic accidents. Others, however, believe that other measures would be more effective in improving road safety. Discuss both these views and give your own opinion.
 
@@ -520,7 +520,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 
 ---
 
-# Stay Healthy
+# 11 Stay Healthy
 
 > People do many different things to stay healthy. What do you do for good health? Use specific reasons and examples to support your answer.
 
@@ -566,7 +566,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 
 ---
 
-#Celebrities
+# 12 Celebrities
 
 > Nowadays celebrities are more famous for their glamour and wealth than for their achievements, and this sets a bad example to young people.To what extent do you agree or disagree with this statement?
 
@@ -578,13 +578,149 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 
 - In conclusion, it seems to me that the influence of celebrities on young people can be positive as well as negative.
 
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|glamour & wealth|many pp are more famous for their ~ than for achievements||
+2|be known for|some celebrities ~ for their glamorous lifestyles rather than the work they do||
+3|set good/bad example for sb|= act as positive/negative role models||
+4|fame|many pp do achieve fame without really working for it.||
+5|inherit|they may have inherited $ from parents.||
+6|fame <- inherit, marry & appear|they may have ~ed $ from parents, ~ed a famous or wealthy person, or they may have ~ed in ..||
+7|gossip magazines or a reality TV programme|they many have appeared in ~||
+8|for the wrong reasons|who is rich & famous ~||
+9|attending parties & nightclubs|||
+10|promote the idea|one's behaviour promotes the idea that ....||
+11|appearance, glamour and media profile|~ are more important than hard work and good character||
+12|hard work & good character|||
+13|The message to sb|~ young pp is that success can be achieved easily||
+14|as many|there are at least ~ celebrities .....||
+15|accomplishment|[= achievement] their ~ make them excellent role models for young pp.||
+16|Actors, musicians and sports stars|Famous pp||
+17|work hard & apply oneself to do ..|pp become idols because they have ~ed & ~ed develop their real skills and abilities.||
+18|effort, determination & ambitions|They demonstrate great ~, which is required for sb who wants to be successful||
+19|through years of practice and hard work|sb become world famous through ~||
+20|self-made celebrity|||
+21|inspire sb to develop one's talents|this kind of self-made celebrity can inspire children ~ through application and perseverance||
+22|application & perseverance|application(determination to work hard at something; great effort) perseverance (the quality of continuing to try to achieve a particular aim despite difficulties)||
 
+---
 
+# 13 Earth
 
+> Some people believe that the Earth is being harmed (damaged) by human activity. Others feel that human activity makes the Earth a better place to live. What is your opinion? Use specific reasons and examples to support your answer.
 
+- Human activity is causing the world to change at a rapid pace these days. I am of the opinion that humanity has had a mostly negative effect on the planet.  I feel this way for two reasons, which I will explore in the following essay.
 
+- To begin with, industrial development has caused major air pollution, which has a terrible effect on human health.  Every week I hear news reports about how horrible air quality is in major cities all over the world.  At the same time, we often hear that chronic lung diseases are on the rise and that there is connection between these two trends.  I am reminded of the years I spent living in Beijing, China.  After having spent most of my life living in a small town where the air is mostly clean, I immediately noticed the smog and pollution of the big city.  Within months I was suffering from a variety of respiratory illnesses and had difficulty breathing.  I spent quite a few afternoons at a local hospital being treated for various throat and lung infections.  A majority of the population of the Earth now resides in cities and all such people are suffering from the consequences of industrial development.
 
+- Secondly, human development has lead to a massive accumulation of trash, which spoils the natural beauty of this planet.  While in the past products were often made of biodegradable materials like paper and wood, today most manufactured goods are made of plastic, which never breaks down.  Such materials eventually find their way into permanent landfills, but just as often end up as litter.  When I traveled to the island in Hainan last summer I was struck by the beauty of the place, but I also noticed that the natural environment was marred by an accumulation of plastic bags and water bottles that were strewn everywhere, even in otherwise pristine forests and rivers.  Had I visited the island a century ago I would not have found it tainted in such a way.
 
+- In conclusion, I strongly believe that human activity has made the planet a less pleasant place to live.  This is because people are more likely to suffer from the effects of pollution than in the past, and because human waste has destroyed the natural beauty of our world.
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|change at a rapd pacew|||
+2|be of the opinion that|||
+3|industrial development|~ has caused major air pollution||
+4|a terrible effect|has a ~ on human health||
+5|horrible air quality|||
+6|chronic lung diseases|~ are on the rise||
+7|connection between|there is connection between horrible air quality and chronic lung diseases||
+8|be reminded of|I am reminded of the years I spent living in Beijing||
+9|immediately notice|I ~ed the smog and pollution of the big city||
+10|suffer from|within months I was suffering from a variety of respiratory illnesses and had difficulty breathing||
+11|a variety respiratory illnesses| -> had difficulty breathing||
+12|throat and lung infections|I spent quite a few afternoons at a local hospital being treated for various ~||
+13|reside in|A majority of the population of the Earth now resides in cities||
+14|a massive accumulation of trash|human development has lead to ~||
+15|spoils the natural beauty of|~ this planet||
+16|biodegradable materials|in the past products were often made of ~ like paper and wood||
+17|manufactured goods|today most ~ are made of plastic||
+18|break down|plastic never breaks down||
+19|permanent landfills|such materials eventually find their way into permanent landfills||
+20|end up|||
+21|be struck by|I was struck by the beauty of the place||
+22|be marred by|[mar = taint]I also noticed that the natural environment was marred by an accumulation of plastic bags and water bottles||
+23|an accumulation of|~ plastic bags and water bottles strewn everywhere||
+24|strew|v/adj if a place is strewn with things, they are lying scattered there||
+25|pristine['pristin] forests and rivers|||
+26|Had sb done ..., sb would (not) have done ...|Had I visited the island a century ago I would not have found it tainted in such a way||
+27|taint|mar||
+
+---
+
+# 14 Film
+
+>Many people prefer foreign films, while others are more like to watch locally produced films. Which would your prefer? Should governments give more financial support to local film industries?
+
+- It is true that foreign films are more popular in many countries than domestically produced films. There could be several reasons why this is the case, and I believe that governments should promote local film-making by subsidizing the industry.
+
+- There are various reasons why many people find foreign films more enjoyable than the films produced in their own countries. Firstly, the established film industries in certain countries have huge budgets for action, special effects and to shoot scenes in spectacular locations. Hollywood blockbusters like ‘Avatar’ or the James Bond films are examples of such productions, and their global appeal is undeniable. Another reason why these big-budget films are so successful is that they often star the most famous actors and actresses, and they are made by the most accomplished producers and directors. The poor quality, low-budget filmmaking in many countries suffers in comparison.
+
+- In my view, governments should support local film industries financially. In every country, there may be talented amateur film-makers who just need to be given the opportunity to prove themselves. To compete with big-budget productions from overseas, these people need money to pay for film crews, actors and a host of other costs related to producing high-quality films. If governments did help with these costs, they would see an increase in employment in the film industry, income from film sales, and perhaps even a rise in tourist numbers. New Zealand, for example, has seen an increase in tourism related to the 'Lord of the Rings' films, which were partly funded by government subsidies.
+
+- In conclusion, I believe that increased financial support could help to raise the quality of locally made films and allow them to compete with the foreign productions that currently dominate the market.
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|foreign films <> locally produced films|||
+2|locally = domestically|domestically produced films||
+3|film-making|gov should promote local film-making by subsidizing the industry||
+4|subsidy(n.) subsidize(vt.)|||
+5|more enjoyable|many pp find foreign films more enjoyable than the films produced in their own countries||
+6|the established film industries|~ in certain countries have huge budgets for action special effects and to shoot scenes in spectacular locations||
+7|huge budgets for|xxx have ~ action, special effects and to shoot scenes in spectacular locations||
+8|Hollywood blockbusters|'Avatar' or the Jams Bond films are examples of such productions||
+9|global appeal|their ~ is undeniable||
+10|undeniable|||
+11|big-budget films <> low-budget filmmaking|Another reason why these big-budget films are so successful is that||
+12|star|these successful films often star the most famous actors and actresses||
+13|accomplished producers and directors|these films are made by the most ~||
+14|suffer(vi.)|low-budget filmmaking in many countries suffers in comparison||
+15|support .. financially|gov should support local film industries financially||
+16|talented amateur film-makers|there may be talented amateur film-makers who just need to be given the opp to prove themselves||
+17|from overseas|To compare with big-budget productions from overseas, ...||
+18|a host of costs related to doing|they need $ to pay for film crews, actors and ~ producing high-quality films||
+19|help (sb) with sth|if gov **did** help with these costs||
+20|an increase in employment, income from sales, a rise in #|If governments did help with these costs, they would see an increase in employment in the film industry, income from film sales, and perhaps even a rise in tourist numbers.||
+21|be partly funed by|the 'Lord of the Rings' films is partly funded by New Zealand gov subdidies||
+22|help to raise the quality of|increased financial support could help to raise the quality of locally made films||
+23|compete with|increased financial support could allow them to compete with the foreign productions||
+24|dominate the market|||
+
+---
+
+# 15 Unpaid Work
+
+> Teenagers should be required to do unpaid work
+
+- Many young people work on a volunteer basis, and this can only be beneficial for both the individual and society as a whole. However, I do not agree that we should therefore force all teenagers to do unpaid work.
+
+- Most young people are already under enough pressure with their studies, without being given the added responsibility of working in their spare time. School is just as demanding as a full-time job, and teachers expect their students to do homework and exam revision on top of attending lessons every day. When young people do have some free time, we should encourage them to enjoy it with their friends or to spend it doing sports and other leisure activities. They have many years of work ahead of them when they finish their studies.
+
+- At the same time, I do not believe that society has anything to gain from obliging young people to do unpaid work. In fact, I would argue that it goes against the values of a free and fair society to force a group of people to do something against their will. Doing this can only lead to resentment amongst young people, who would feel that they were being used, and parents, who would not want to be told how to raise their children. Currently, nobody is forced to volunteer, and this is surely the best system.
+
+- In conclusion, teenagers may choose to work for free and help others, but in my opinion we should not make this compulsory.
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|on a volunteer basis|Many young pp work on a volunteer basis||
+2|force ab to do|force all teenagers to do unpaid work||
+3|be already under enough pressure|Most young pp ~ with their studies, without being given the added reponsibility of working in their spare time.||
+4|as demanding as a full-time job|School is just as demanding as a full-time job||
+5|expect students to do homework and revision|teachers ~ on top of attending lessons every day||
+6|on top of doing sth|||
+7|spare time = free time|||
+8|When sb has/have time, we should encourage them to enjoy & spend|||
+9|many years of work ahead of sb|They have many years of work ahead of them when they finish their studies.||
+10|has/have anything to gain from|I do not believe that society ~ obliging[= force] young pp to do unpaid work.||
+11|In fact|in reality||
+12|go against|it ~es the values of a free and fair society to force a group of pp to do sth against their will||
+13|resentment|Doing this can only lead to resentment amongst young pp and parents||
+14|be being used|young pp would feel that they **were** being used||
+15|raise children|parents would not want to be told how to ~||
+16|surely|this is ~ the best system.||
+17|make this compulsory|teenagers may choose to work for free and help others, but in my opinion we should not ~||
 
 
 

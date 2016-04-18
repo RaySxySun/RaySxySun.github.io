@@ -13,8 +13,8 @@ description:
 >The design patterns are descriptions of communicating objects and classes that are customized to solve a general design problem in a particular context. 
 
 - Creational Patterns (5 Types)
-	- Abstract Factory
-	- Builder
+	- [Abstract Factory](#Abstract_Factory)
+	- [Builder](#Builder)
 	- Factory Method 
 	- Prototype
 	- Singleton
@@ -47,10 +47,15 @@ description:
 
 ## Part I Creational Patterns
 
-# 1. Abstract Factory
+<a name="Abstract_Factory"></a>
+
+### 1. Abstract Factory
 
 - **Intent**: 
 	- Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+
+- **Also Known As**:
+	- InterViews uses the "Kit" suffix to denote AbstractFactory classes. It defines WidgetKit and DialogKit abstract factories for generating look-and-feel-specific user interface objects.
 
 - **Applicability**:
 	- a system should be independent of how its products are created, composed, and represented.
@@ -87,78 +92,78 @@ description:
 
 > We'll apply the Abstract Factory pattern to creating the mazes
 
-	//Class MazeFactory can create components of mazes. It builds rooms, walls, and
-doors between rooms.
+		//Class MazeFactory can create components of mazes. It builds rooms, walls, and
+	doors between rooms.
 
-	class MazeFactory {
-	public:
-		MazeFactory();
-
-		virtual Maze* MakeMaze() const
-		{ return new Maze; }
-		virtual Wall* MakeWall() const
-		{ return new Wall; }
-		virtual Room* MakeRoom(int n) const
-		{ return new Room(n); }
-		virtual Door* MakeDoor(Room* r1, Room* r2) const
-		{ return new Door(r1, r2); }
-	};
-
-	//CreateMaze hard-codes the class names, making it difficult to create mazes with different components.	
-	//Here's a version of CreateMaze that remedies that shortcoming by taking a MazeFactory as a parameter:
-
-	Maze* MazeGame::CreateMaze (MazeFactory& factory) {
-		Maze* aMaze = factory.MakeMaze();
-		Room* r1 = factory.MakeRoom(1);
-		Room* r2 = factory.MakeRoom(2);
-		Door* aDoor = factory.MakeDoor(r1, r2);
-		aMaze->AddRoom(r1);
-		aMaze->AddRoom(r2);
-		r1->SetSide(North, factory.MakeWall());
-		r1->SetSide(East, aDoor);
-		r1->SetSide(South, factory.MakeWall());
-		r1->SetSide(West, factory.MakeWall());
-		r2->SetSide(North, factory.MakeWall());
-		r2->SetSide(East, factory.MakeWall());
-		r2->SetSide(South, factory.MakeWall());
-		r2->SetSide(West, aDoor);
-		return aMaze;
-	}
-
-	//We can also create EnchantedMazeFactory, a factory for enchanted mazes, by subclassing MazeFactory.
-	class EnchantedMazeFactory : public MazeFactory {
+		class MazeFactory {
 		public:
-		EnchantedMazeFactory();
+			MazeFactory();
 
-		virtual Room* MakeRoom(int n) const
-		{ return new EnchantedRoom(n, CastSpell()); }
+			virtual Maze* MakeMaze() const
+			{ return new Maze; }
+			virtual Wall* MakeWall() const
+			{ return new Wall; }
+			virtual Room* MakeRoom(int n) const
+			{ return new Room(n); }
+			virtual Door* MakeDoor(Room* r1, Room* r2) const
+			{ return new Door(r1, r2); }
+		};
 
-		virtual Door* MakeDoor(Room* r1, Room* r2) const
-		{ return new DoorNeedingSpell(r1, r2); }
+		//CreateMaze hard-codes the class names, making it difficult to create mazes with different components.	
+		//Here's a version of CreateMaze that remedies that shortcoming by taking a MazeFactory as a parameter:
 
-		protected:
-		Spell* CastSpell() const;
-	};
+		Maze* MazeGame::CreateMaze (MazeFactory& factory) {
+			Maze* aMaze = factory.MakeMaze();
+			Room* r1 = factory.MakeRoom(1);
+			Room* r2 = factory.MakeRoom(2);
+			Door* aDoor = factory.MakeDoor(r1, r2);
+			aMaze->AddRoom(r1);
+			aMaze->AddRoom(r2);
+			r1->SetSide(North, factory.MakeWall());
+			r1->SetSide(East, aDoor);
+			r1->SetSide(South, factory.MakeWall());
+			r1->SetSide(West, factory.MakeWall());
+			r2->SetSide(North, factory.MakeWall());
+			r2->SetSide(East, factory.MakeWall());
+			r2->SetSide(South, factory.MakeWall());
+			r2->SetSide(West, aDoor);
+			return aMaze;
+		}
 
-	//suppose we want to make a maze game in which a room can have a bomb set in it.
-	class BombedMazeFactory : public MazeFactory {
-		public:
-		BombedMazeFactory();
+		//We can also create EnchantedMazeFactory, a factory for enchanted mazes, by subclassing MazeFactory.
+		class EnchantedMazeFactory : public MazeFactory {
+			public:
+			EnchantedMazeFactory();
 
-		Wall* BombedMazeFactory::MakeWall () const 
-		{ return new BombedWall;}
+			virtual Room* MakeRoom(int n) const
+			{ return new EnchantedRoom(n, CastSpell()); }
 
-		Room* BombedMazeFactory::MakeRoom(int n) const 
-		{return new RoomWithABomb(n);}
-		
-		protected:
-		Spell* CastSpell() const;
-	};
+			virtual Door* MakeDoor(Room* r1, Room* r2) const
+			{ return new DoorNeedingSpell(r1, r2); }
 
-	//To build a simple maze that can contain bombs
-	MazeGame game;
-	BombedMazeFactory factory;
-	game.CreateMaze(factory);
+			protected:
+			Spell* CastSpell() const;
+		};
+
+		//suppose we want to make a maze game in which a room can have a bomb set in it.
+		class BombedMazeFactory : public MazeFactory {
+			public:
+			BombedMazeFactory();
+
+			Wall* BombedMazeFactory::MakeWall () const 
+			{ return new BombedWall;}
+
+			Room* BombedMazeFactory::MakeRoom(int n) const 
+			{return new RoomWithABomb(n);}
+			
+			protected:
+			Spell* CastSpell() const;
+		};
+
+		//To build a simple maze that can contain bombs
+		MazeGame game;
+		BombedMazeFactory factory;
+		game.CreateMaze(factory);
 
 
 > Java Implementation:
@@ -217,3 +222,7 @@ doors between rooms.
 		public class ConcreateProductB2 implements ProductB {  
 			...
 		}  
+
+<a name="Builder"></a>
+
+### 1. Builder
