@@ -40,17 +40,21 @@ description:
 	- overrides the factory method to return an instance of a ConcreteProduct.
 
 - **Collaborations**
-	- ConcreteCreator to define the factory method(Creator declares) so that it returns an instance of the appropriate ConcreteProdu
-
-> Interaction diagram
-
-<img src="{{ site.url }}/assets/img/2016-04-18-DesignPatterns/FactoryMethod.jpg" alt="{{ page.title }} at {{ site.title }}">
-	
+	- ConcreteCreator to define the factory method(Creator declares) so that it returns an instance of the appropriate ConcreteProduct.
 
 - **Consequences**:
 	- 1. Provides hooks for subclasses.
 	- 2. Connects parallel class hierarchies.
 
+- **Related Patterns**:
+	- **Abstract Factory** is often implemented with factory methods.
+	- Factory methods are usually called **within Template Methods**.
+	- **Prototypes** don't require subclassing Creator.However, they often require an Initialize operation on the Product class. Creator uses Initialize to initializethe object. Factory Method doesn't require such an operation.
+
+> Interaction diagram
+
+<img src="{{ site.url }}/assets/img/2016-04-18-DesignPatterns/FactoryMethod.jpg" alt="{{ page.title }} at {{ site.title }}">
+	
 
 - Code Sample
 
@@ -105,3 +109,4 @@ description:
 	        sender.Send();  
 	    }  
 	}  
+

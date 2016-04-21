@@ -16,7 +16,7 @@ description:
 	- [Abstract Factory](http://raysxysun.github.io/design/2016/04/19/DesignPatterns-Abstract-Factory/)
 	- [Builder](http://raysxysun.github.io/design/2016/04/20/DesignPatterns-Builder/)
 	- [Factory Method](http://raysxysun.github.io/design/2016/04/20/DesignPatterns-Factory-Method/) 
-	- Prototype
+	- [Prototype](http://raysxysun.github.io/design/2016/04/21/DesignPatterns-Prototype/) 
 	- Singleton
 
 
