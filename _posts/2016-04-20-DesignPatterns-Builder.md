@@ -8,7 +8,7 @@ tags: [Design]
 description: 
 ---
 
-> [Design Patterns Index](http://raysxysun.github.io/design/2016/04/18/DesignPatterns/)
+> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
 
 # 2. Builder
 
@@ -189,3 +189,5 @@ description:
 		        System.out.println(c); 
 		    } 
 		} 
+
+> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)

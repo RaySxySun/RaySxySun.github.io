@@ -8,6 +8,8 @@ tags: [Design]
 description: 
 ---
 
+> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
+
 # Design Patterns
 
 >The design patterns are descriptions of communicating objects and classes that are customized to solve a general design problem in a particular context. 
@@ -17,7 +19,7 @@ description:
 	- [Builder](http://raysxysun.github.io/design/2016/04/20/DesignPatterns-Builder/)
 	- [Factory Method](http://raysxysun.github.io/design/2016/04/20/DesignPatterns-Factory-Method/) 
 	- [Prototype](http://raysxysun.github.io/design/2016/04/21/DesignPatterns-Prototype/) 
-	- Singleton
+	- [Singleton](http://raysxysun.github.io/design/2016/04/22/DesignPatterns-Singleton/)
 
 
 - Structural Patterns (7 Types)
@@ -44,3 +46,5 @@ description:
 	- Visitor 
 
 ---
+
+> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)

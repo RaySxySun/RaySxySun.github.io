@@ -8,10 +8,9 @@ tags: [Design]
 description: 
 ---
 
-# Abstract Factory
+> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
 
-> [Design Patterns Index](http://raysxysun.github.io/design/2016/04/18/DesignPatterns/)
-
+# 1 Abstract Factory
 
 <a name="Abstract_Factory"></a>
 
@@ -188,3 +187,5 @@ description:
 		public class ConcreateProductB2 implements ProductB {  
 			...
 		}  
+
+> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)

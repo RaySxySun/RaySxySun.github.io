@@ -8,6 +8,8 @@ tags: [Design]
 description: 
 ---
 
+> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
+
 # 4 Prototype
 
 - **Intent**: 
@@ -105,3 +107,5 @@ description:
 	class SerializableObject implements Serializable {  
 	    private static final long serialVersionUID = 1L;  
 	}  
+
+> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)

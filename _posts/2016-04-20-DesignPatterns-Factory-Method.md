@@ -8,7 +8,7 @@ tags: [Design]
 description: 
 ---
 
-> [Design Patterns Index](http://raysxysun.github.io/design/2016/04/18/DesignPatterns/)
+> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
 
 # 3. Factory Method
 
@@ -110,3 +110,4 @@ description:
 	    }  
 	}  
 
+> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
