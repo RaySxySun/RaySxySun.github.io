@@ -10,7 +10,7 @@ description:
 
 > [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
 
-# 4 Prototype
+# 4. Prototype
 
 - **Intent**: 
 	- Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.

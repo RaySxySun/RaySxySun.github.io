@@ -23,7 +23,7 @@ description:
 
 
 - Structural Patterns (7 Types)
-	- Adapter
+	- [Adapter](http://raysxysun.github.io/design/2016/04/23/DesignPatterns-Adapter/)
 	- Bridge 
 	- Composite 
 	- Decorator 

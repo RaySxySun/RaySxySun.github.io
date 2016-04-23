@@ -10,7 +10,7 @@ description:
 
 > [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
 
-# 1 Abstract Factory
+# 1. Abstract Factory
 
 <a name="Abstract_Factory"></a>
 
