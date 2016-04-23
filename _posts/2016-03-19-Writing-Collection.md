@@ -722,5 +722,229 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 16|surely|this is ~ the best system.||
 17|make this compulsory|teenagers may choose to work for free and help others, but in my opinion we should not ~||
 
+---
+
+#16 Animal experiments 
+
+> Nowadays animal experiments are widely used to develop new medicines and to test the safety of other products. Some people argue that these experiments should be banned because it is morally wrong to cause animals to suffer, while others are in favour of them because of their benefits to humanity. Discuss both views and give your own opinion.
+
+- It is true that medicines and other products are routinely tested on animals before they are cleared for human use. While I tend towards the viewpoint that animal testing is morally wrong, I would have to support a limited amount of animal experimentation for the development of medicines.
+
+- On the one hand, there are clear ethical arguments against animal experimentation. To use a common example of this practice, laboratory mice may be given an illness so that the effectiveness of a new drug can be measured. Opponents of such research argue that humans have no right to subject animals to this kind of trauma, and that the lives of all creatures should be respected. They believe that the benefits to humans do not justify the suffering caused, and that scientists should use alternative methods of research.
+
+- On the other hand, reliable alternatives to animal experimentation may not always be available. Supporters of the use of animals in medical research believe that a certain amount of suffering on the part of mice or rats can be justified if human lives are saved. They argue that opponents of such research might feel differently if a member of their own families needed a medical treatment that had been developed through the use of animal experimentation. Personally, I agree with the banning of animal testing for non-medical products, but I feel that it may be a necessary evil where new drugs and medical procedures are concerned.
+
+- In conclusion, it seems to me that it would be wrong to ban testing on animals for vital medical research until equally effective alternatives have been developed.
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|be widely used to|animal experiments ~ develop ... and to test ...||
+2|medicines|||
+3|animal experiments/experimentation (animal testing for)|these ~ should be banned because it is morally worng to cause animals to suffer||
+4|be in favour of|others are them||
+5|humanity|benefits(n.) to ~||
+6|be routinely tested on |it is true that medicines and other products ~ animals||
+7|be cleared for|before these medicines ~ human use||
+8|human use||||
+9|tend towards the viewpoint that|I ~ animal testing is morally wrong||
+10|a limited amount of animal experimentation|I support ~ for the development of medicines||
+11|clear ethical arguments|there are ~ animal experimentation.||
+12|To use a common example of this practice|||
+13|be measured|the effectiveness of a new drug can ~||
+14|subject sb to|pp have no right to subject animals to this kind of trauma||
+15|trauma|||
+16|lives| the lives of all creatures should be respected||
+17|justify|the benefits to humans do not justify the suffering(n) caused||
+18|alternative methods(reliable alternatives to)|||
+19|supporters & opponents|supporters of the use of animals in medical research believe that||
+20|a certain amount of |~ suffering on the part of mice or rats can be justifed if human lives are saved||
+21|feel differently|sb may ~ if a member of their own families needed a medical treatment ...||
+22|the banning of (smoking, non-medical products)| I agree ~ animal testing for non-medical products||
+23|a necessary evil where|I feel that it may be ~ where new drugs and medical procedures are concerned||
+24|until|it seems to me that it would be wrong to ban testing on animal for vital medical research until equally effective alternatives have been developed||
+
+---
+
+#17 Music
+
+> There are many different types of music in the world today. Why do we need music? Is the traditional music of a country more important than the international music that is heard everywhere nowadays?
+
+- It is true that a rich variety of musical styles can be found around the world. Music is a vital part of all human cultures for a range of reasons, and I would argue that traditional music is more important than modern, international music.
+
+- Music is something that accompanies all of us throughout our lives. As children, we are taught songs by our parents and teachers as a means of learning language, or simply as a form of enjoyment. Children delight in singing with others, and it would appear that the act of singing in a group creates a connection between participants, regardless of their age. Later in life, people’s musical preferences develop, and we come to see our favourite songs as part of our life stories. Music both expresses and arouses emotions in a way that words alone cannot. In short, it is difficult to imagine life without it.
+
+- In my opinion, traditional music should be valued over the international music that has become so popular. International pop music is often catchy and fun, but it is essentially a commercial product that is marketed and sold by business people. Traditional music, by contrast, expresses the culture, customs and history of a country. Traditional styles, such as ...(example)..., connect us to the past and form part of our cultural identity. It would be a real pity if pop music became so predominant that these national styles disappeared.
+
+- In conclusion, music is a necessary part of human existence, and I believe that traditional music should be given more importance than international music.
+
+(261 words, band 9)
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|tradictional music <> international music |international(modern) music is heard everywhere||
+2|a rich variety of|~ musical styles can be found around the world||
+3|for a range of reasons|||
+4|accompany ab|Music is something that ~ies all of us throughout our lives.||
+5|as a means of|we are taught songs as a means of learning language, or as a form of enjoyment.||
+6|delight in|Children ~ singing with others.||
+7|it would appear that|it seems to me that ...||
+8|create a connection between|the act of singing in a group ~s between participants, regardless of their age.||
+9|Later in life,|||
+10|preferences develop|Later in life, pp's musical preferences develop||
+11|come to see|we will see our favourite songs as part of our life stories.||
+12|express & arouse |Music both ~s emotions in a way that words alone cannot.||
+13|be valued over|Traditional music should ~ the international music||
+14|catchy & fun|International pop music is often ~||
+15|a commercial product|it is essentially a commercial product that is marketed and sold by business pp||
+16|the culture, customs and history|Traditional music, by constrast, expresses ~ of a country||
+17|connect sb to|Traditional styles connect us to the past and form part of our cultural identity||
+18|It would be a real pity|~ if pop music become so predominant that these national styles disappeared||
+19|predominant|||
+20|a necessary part of|music is ~ human existence||
+21|be given more importance than|||
+
+---
+
+#18 Tech
+
+> Nowadays the way many people interact with each other has changed because of technology. In what ways has technology affected the types of relationships that people make? Has this been a positive or negative development?
+
+- It is true that new technologies have had an influence on communication between people. Technology has affected relationships in various ways, and in my opinion there are both positive and negative effects.
+
+- Technology has had an impact on relationships in business, education and social life. Firstly, telephones and the Internet allow business people in different countries to interact without ever meeting each other. Secondly, services like Skype create new possibilities for relationships between students and teachers. For example, a student can now take video lessons with a teacher in a different city or country. Finally, many people use social networks, like Facebook, to make new friends and find people who share common interests, and they interact through their computers rather than face to face.
+
+- On the one hand, these developments can be extremely positive. Cooperation between people in different countries was much more difficult when communication was limited to written letters or telegrams. Nowadays, interactions by email, phone or video are almost as good as face-to-face meetings, and many of us benefit from these interactions, either in work or social contexts. On the other hand, the availability of new communication technologies can also have the result of isolating people and discouraging real interaction. For example, many young people choose to make friends online rather than mixing with their peers in the real world, and these ‘virtual’ relationships are a poor substitute for real friendships.
+
+- In conclusion, technology has certainly revolutionised communication between people, but not all of the outcomes of this revolution have been positive.
+
+(257 words, band 9)
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|ever|the Internet allow business pp in different countries to interact without ever meeting each other.||
+2|common interests|||
+3|be limited to|when communication was limited to written letters or telegrams, ...||
+4|as good as|interactions by email, phone or video are almost ~ face-to-face meetings||
+5|either .. or ..|many of us benefit from these interactions, either in work or social contexts||
+6|mix with peers|many young people choose to make friends online rather than mixing with their peers||
+7|substitute for(alternative to)|these 'virtual' relationships are a poor substitute for real friendships||
+8|revolutionise|tech has certainly ~ed communication between pp||
+9|the outcomes of the revolution|but not all of the outcomes of this revolution have been positive||
+10|medium|books are not the best medium for communicating news stories||
+
+
+	Advantages / disadvantages of books:
+
+	The main advantage of books is that they are usually considered to be reliable sources of information. People tend to refer to books when they want to research a subject in depth, and for this reason they continue to play an important role in education. On the other hand, books quickly go out of date, and therefore they are not the best medium for communicating news stories.
+
+	Advantages / disadvantages of radio:
+
+	Radio is a much more effective medium than books for the communication of up-to-date information. We can listen to news broadcasts about events as they happen, and a key benefit of radio is that we can listen to it while doing other activities, such as driving or working. The main drawback of radio, when compared to books or television, is that there is no visual element; we cannot see what the broadcaster is describing.
+
+	Advantages / disadvantages of TV, and my opinion:
+
+	In my opinion, television is the most effective of these three media because it brings us closer to reality than a book or radio programme ever can. For example, we can watch events as they take place on the other side of the world, or we can see the body language of a politician who is being interviewed. The disadvantages of television are that programmes tend to be short and interrupted by advertisements, meaning that information is presented in limited depth.
+
+---
+
+#19 Language
+
+> Several languages are in danger of extinction because they are spoken by very small numbers of people. Some people say that governments should spend public money on saving these languages, while others believe that would be a waste of money. Discuss both these views and give your opinion.
+
+- It is true that some minority languages may disappear in the near future. Although it can be argued that governments could save money by allowing this to happen, I believe that these languages should be protected and preserved.
+
+- There are several reasons why saving minority languages could be seen as a waste of money. Firstly, if a language is only spoken by a small number of people, expensive education programmes will be needed to make sure that more people learn it, and the state will have to pay for facilities, teachers and marketing. This money might be better spent on other public services. Secondly, it would be much cheaper and more efficient for countries to have just one language. Governments could cut all kinds of costs related to communicating with each minority group.
+
+- Despite the above arguments, I believe that governments should try to preserve languages that are less widely spoken. A language is much more than simply a means of communication; it has a vital connection with the cultural identity of the people who speak it. If a language disappears, a whole way of life will disappear with it, and we will lose the rich cultural diversity that makes societies more interesting. By spending money to protect minority languages, governments can also preserve traditions, customs and behaviours that are part of a country’s history.
+
+- In conclusion, it may save money in the short term if we allow minority languages to disappear, but in the long term this would have an extremely negative impact on our cultural heritage.
+
+(258 words)
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|in danger of|Several languages are in danger in extinction||
+2|minority<>majority|some minority languages may disappear in the near future||
+3|save $ by allowing this to happen|||
+4|sth should be protected & preserved|||
+5|a small # of|if a language is only spoken by ~ pp||
+6|facilities, teachers & marketing|the state will have to pay for ~||
+7|$ might be better spent on|This ~ other public services.||
+8|cheaper & more efficient|it would be much cheaper and more for countries to have just one language||
+9|cut costs|gov could cut all kinds of costs related to communicating with each minority group||
+10|related to doing|||
+11|Despite ..., |Despite the above arguments, ....||
+12|preserve|gov should try to preserve languages that are less widely spoken||
+13|much more than a means of|A language is much more than simply a means of communication; it has a vital connection with ...||
+14|cultural identity|a language has a vital connection with the cultural identity of the pp who speak it||
+15|cultural diversity|If a languages disappears, a whole way of life will disappear with it, an we will lose the rich ~ tha makes societyies more interesting.||
+16|traditions, customs & behaviours| they are part of a country's history||
+17|cultural heritage|||
+
+
+# 20 Gender & Jobs
+
+> Some people think that men and women have different qualities. Therefore, some certain jobs are suitable for men and some jobs are suitable for women. To what extent do you agree or disagree?
+
+- Women now compete and cooperate with men in almost all walks of life and they have proved their mettle, too. However, men and women are not built alike. They may have the same intellectual capabilities, but physically and emotionally men and women are different and that probably explains why certain jobs are considered suitable for men and certain other jobs suitable for women.
+
+- Until a few decades ago many people used to believe that women are not suitable for a career in science or finance. Such wrong notions no longer exist because many women have proved that they make equally brilliant engineers and number crunchers. Still, certain sectors prefer men over women. There are also some sectors where women outperform men.
+
+- Thanks to their stronger physique, men are more suitable for physically demanding jobs than women. For example, jobs in mining and mechanics are laborious and involve handling heavy machinery. A few women have proved that they are capable of handling such jobs, but the majority of workers employed in these sectors are men. The armed forces also recruit more men than women.
+
+- Though women lack physical prowess, they score better than men in some other areas. For example, women are more caring and patient. These qualities make them become excellent teachers and nurses. Women also possess better people skills and are considered more suitable for careers in hospitality and public relations.
+
+- Of course, several women have proved that they are capable of doing just about anything that men can. Take for instance, the case of Madam Curie, the first woman to win the Nobel Prize for Physics. She proved her mettle at a time when science and technology were largely dominated by men. Women have also conquered the seas, the mountains and the skies. The fact that they lacked muscle power didn’t deter them from pursuing their goals. Still, these are exceptions rather than the rules.
+
+- In conclusion, certain jobs are more suitable for men. There are also certain jobs where women perform better than men. Personally I believe that a person’s physical and intellectual capabilities, rather than gender, should determine his or her career choice. If a woman possesses sufficient physical strength and is determined enough to pursue a career in a male dominated sector, her gender should not come in the way of her goal. The same theory applies to men as well.
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|qualities|pp think that men & women  have diff ~||
+2|be suitable for|some certain jobs are suitable for men||
+3|compete & cooperate with|Women now ~ men in almost all walks of life||
+4|awalk of life|a person’s job or position in society||
+5|mettle(.n)|the courage to carry on;the ability and determination to do something successfully despite difficult conditions||
+6|capabilities|intellectual ~; physically & emotionally (different)||
+7|be considered adj for sb|this probably explains why certain jobs are considered suitable for men||
+8|Until xxx ago ... did|Until a few decades ago many pp used to believe that .....||
+9|science & finance|women are not suitable for a career in ~|Explaination|30%
+10|notions|such wrong ~ no longer exist because ...||
+11|brilliant engineers & number crunchers|because women have proved that they make equally brilliant engineers and number crunchers||
+12|number crunchers|1. a person whose job involves working with numbers, such as an accountant||
+||2. a computer or computer program that works with numbers and calculates data||
+13|Still, |However, certain sectors prefer men over women. There are also some sectors where women outperform men.||
+14|physique|the size and shape of a person’s body||
+15|physically demanding jobs|Thanks to their stronger physique, men are more suitable for ~ than women|Idea|gender 100%
+16|laborious(mining, armed forces & mechanics)|jobs in mining and mechanics are ~ and involve handling heavy machinery.||
+17|be capable of doing|a few women have proved that they ~ handling such jobs||
+18|the majority of|~ workers employed in these sectors are men||
+19|recruit|The armed forces also recuit more men than women||
+20|physical prowess|Although women lack physical powess, ...||
+21|score(vi.)|Althoug ..., women score better than men in some other areas.||
+22|caring & patient|women are more ~(teachers & nurses). These **qualities** make them become excellent teachers & nurses||
+23|possess|women also possess better pp skills and are considered more suitable for careers in hospitality and public relations||
+24|Take for instance,|||
+25|do about|[=cope with, treat with] several women **have proved** that they are capable of doing about anything that men can||
+26|Madam Curie|the first woman to win the Nobel Prize for Physics||
+27|dominate|technology were largely dominated by men||
+28|conquer|women have also conquered the seas, the mountains and the skies.||
+29|the fact that .. didn't deter sb from|The fact that they lacked muscle power didn't deter them from pursuing their goals||
+30|rather than gender|I believe that a persons' physical and intelectual capabilities, rather than gender, should determine his or her career choice.||
+31|come in the way of|her gender should not come in the way of her goal.||
+
+
+# 21 Nowadays the differences between countries are becoming less evident because we see the same TV shows, advertisements, fashion and follow the same brands. To what extent the advantages of this trend outweigh its disadvantages?
+
+- We are now living in a global village where geographical barriers have become insignificant. All over the world, people wear the same kind of clothes, eat the same foods and watch the same films. In my opinion, this trend has made life easier for us all.
+
+- There are several benefits to following global fashion trends. It makes traveling easier. For example, now Indians and Americans or Europeans have more or less the same tastes in fashion, food and music. As a result, young Indian professionals can travel to the US or Europe and still feel at home there.
+
+- The biggest advantage of following a global lifestyle is that it eliminates culture shock when you travel to other countries. It also protects you from discrimination. When you wear the same kind of clothes or eat the same kind of foods as everyone else, you will not stand out. This will actually protect you from various forms of discrimination that you might experience when you are in a foreign country. An Indian woman living in the US will be at a disadvantage if she insists on wearing only traditional Indian clothes and eating only vegetarian foods. This will limit the choices she has, but if she is willing to follow the culture of the country she lives in, life will be easier for her.
+
+- The only disadvantage of this trend is the loss of ethnicity. Every nation has its traditional styles of fashion and clothing. When everyone wears the same kind of clothes, this cultural legacy gets lost.
+
+- To conclude, the benefits of following global trends in lifestyle and fashion are many. It makes life easier for the globetrotting youngsters. There are, nonetheless, a few disadvantages, but there is an easy way to get around them. People who are proud of their ethnic fashion and lifestyle can follow it when they are in their own country.
+
 
 

@@ -2,7 +2,7 @@
 layout: post
 title: Design Patterns - Adapter
 date: 2016-04-22
-weather: sunny
+weather: cloudy
 categories: Design 
 tags: [Design]
 description: 
@@ -11,8 +11,6 @@ description:
 > [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
 
 # 6. Adapter 
-
-> Simple Concept, Complex Implementation
 
 - **Intent**: 
 	- Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
