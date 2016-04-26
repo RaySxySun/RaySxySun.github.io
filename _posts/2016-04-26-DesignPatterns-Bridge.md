@@ -10,7 +10,7 @@ description:
 
 > [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
 
-# 6. Bridge 
+# 7. Bridge 
 
 - **Intent**: 
 	- Decouple an abstraction from its implementation so that the two can vary independently.

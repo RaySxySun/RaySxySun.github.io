@@ -25,7 +25,7 @@ description:
 - Structural Patterns (7 Types)
 	- [Adapter](http://raysxysun.github.io/design/2016/04/23/DesignPatterns-Adapter/)
 	- [Bridge](http://raysxysun.github.io/design/2016/04/26/DesignPatterns-Bridge/) 
-	- Composite 
+	- [Composite](http://raysxysun.github.io/design/2016/04/26/DesignPatterns-Composite/) 
 	- Decorator 
 	- Façade 
 	- Flyweight 
