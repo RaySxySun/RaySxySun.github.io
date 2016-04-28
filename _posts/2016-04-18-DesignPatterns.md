@@ -26,7 +26,7 @@ description:
 	- [Adapter](http://raysxysun.github.io/design/2016/04/23/DesignPatterns-Adapter/)
 	- [Bridge](http://raysxysun.github.io/design/2016/04/26/DesignPatterns-Bridge/) 
 	- [Composite](http://raysxysun.github.io/design/2016/04/26/DesignPatterns-Composite/) 
-	- Decorator 
+	- [Decorator](http://raysxysun.github.io/design/2016/04/28/DesignPatterns-Decorator/)  
 	- Façade 
 	- Flyweight 
 	- Proxy 
