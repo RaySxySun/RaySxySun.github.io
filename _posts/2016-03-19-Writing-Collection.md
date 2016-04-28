@@ -934,7 +934,9 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 31|come in the way of|her gender should not come in the way of her goal.||
 
 
-# 21 Nowadays the differences between countries are becoming less evident because we see the same TV shows, advertisements, fashion and follow the same brands. To what extent the advantages of this trend outweigh its disadvantages?
+# 21 Same culture
+
+> Nowadays the differences between countries are becoming less evident because we see the same TV shows, advertisements, fashion and follow the same brands. To what extent the advantages of this trend outweigh its disadvantages?
 
 - We are now living in a global village where geographical barriers have become insignificant. All over the world, people wear the same kind of clothes, eat the same foods and watch the same films. In my opinion, this trend has made life easier for us all.
 
@@ -946,5 +948,24 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 
 - To conclude, the benefits of following global trends in lifestyle and fashion are many. It makes life easier for the globetrotting youngsters. There are, nonetheless, a few disadvantages, but there is an easy way to get around them. People who are proud of their ethnic fashion and lifestyle can follow it when they are in their own country.
 
-
-
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|a global village|where geographical barriers have become insignificant||
+2|insignificant|||
+3|have made life easier|this trend has made life easier for us all||
+4|more or less|now Indians and Americans or Europeans have ~ the same tastes in fashion, food and music.||
+5|There are several benefits to doing|~ following a global lifestyle is that it ...||
+6|eliminate culture shock|it eliminates culture shock when you travel to other countries.||
+7|discrimination|protects sb from ~||
+8|stand out|you will not stand out.||
+9|at a disadvantage|An Indian woman living in the us will be at a disadvantage if ..||
+10|insist on|if he insists on wearing only traditional clothes and eating only vegetarian foods||
+11|vegetarian foods|||
+12|ethnicity|the only disadvantage of this trend is the loss of ethnicity||
+13|cultural legacy|When everyone wears the same kind of clothes, this cultural legacy gets lost||
+14|the benefits of doing|~ following global trends in lifestyle and fashion are many||
+15|globetrotting|the activity of travelling in many countries all over the world||
+15|the globetrotting youngsters|It makes life easier for ~||
+16|There are, nonetheless, a few disadvantages|||
+17|get around|avoid||
+18|ethnic [ˈeθnɪk]|People who are pround of their ~ fashion and lifestyle can follow it when they are in their own country.||
