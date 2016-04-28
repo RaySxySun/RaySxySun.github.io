@@ -1,6 +1,6 @@
 ---
 layout: post
-title: FrontEnd - CSS: Equidistant
+title: FrontEnd - CSS Equidistant
 date: 2016-04-27
 weather: sunny
 categories: Design 
@@ -30,4 +30,4 @@ it's the best solution
 	  justify-content: space-between;
 	}
 
-> [Design Patterns Index](http://raysxysun.github.io/categories/#FrontEnd)
+> [FrontEnd](http://raysxysun.github.io/categories/#FrontEnd)

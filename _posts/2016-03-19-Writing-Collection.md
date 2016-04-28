@@ -969,3 +969,50 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 16|There are, nonetheless, a few disadvantages|||
 17|get around|avoid||
 18|ethnic [ˈeθnɪk]|People who are pround of their ~ fashion and lifestyle can follow it when they are in their own country.||
+
+# Museum: Entaining/Educational
+
+> Some people think that museums should be enjoyable places to entertain people, while others believe that the purpose of museums is to educate. Discuss both views and give you own opinion.
+
+- People have different views about the role and function of museums. In my opinion, museums can and should be both entertaining and educational.
+
+- On the one hand, it can be argued that the main role of a museum is to entertain. Museums are tourist attractions, and their aim is to exhibit a collection of interesting objects that many people will want to see. The average visitor may become bored if he or she has to read or listen to too much educational content, so museums often put more of an emphasis on enjoyment rather than learning. This type of museum is designed to be visually spectacular, and may have interactive activities or even games as part of its exhibitions.
+
+- On the other hand, some people argue that museums should focus on education. The aim of any exhibition should be to teach visitors something that they did not previously know. Usually this means that the history behind the museum’s exhibits needs to be explained, and this can be done in various ways. Some museums employ professional guides to talk to their visitors, while other museums offer headsets so that visitors can listen to detailed commentary about the exhibition. In this way, museums can play an important role in teaching people about history, culture, science and many other aspects of life.
+
+- In conclusion, it seems to me that a good museum should be able to offer an interesting, enjoyable and educational experience so that people can have fun and learn something at the same time.
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|the role & function|pp have diff views about ~ of museums.||
+2|entertaining & educational|museums can and should be both ~||
+3|entertain (vi.)|~ (somebody) (with something) to interest and amuse somebody in order to please them||
+4|tourist attractions| Museums are ~||
+5|exhibit sth|their aim is to ~ a collection of interesting objects(exhibition=exhibit n.)||
+6|become bored|The average visitor may ~ if he or she has to read and listen to too much educational content||
+7|enjoyment rather than learning|museums often put more of an emphasis on enjoyment rather than learning||
+8|visually spectacular|This type of museum is designed to be ~||
+9|interactive activities or even games|This type of museum may have ~ as part of its exhibitions.||
+10|did not previously know|The aim of any exhibition should be to teach visitors sth that they ~||
+11|Usually this means that ...|~ the history behind the museum's exhibits needs to be explained||
+12|professional guides/headsets|||
+13|detailed commentary|museums offer headsets so that visitors can listen to ~ about the exhibition||
+14|history, culture, science|museums play an important role in teaching pp about ~||
+15|an interesting, enjoyable & educational|a good museum shoul be able to offer ~ experience||
+16|have fun and learn sth|||
+
+
+# Computer
+
+> Computer technology has had more of a negative impact than a positive impact on the society? How far do you agree with this statement? Support your views with reasons and/or examples from your own experience.
+
+- Every coin has two sides; computer technology is no different. However, I can’t agree with the argument that its disadvantages outweigh its advantages. Yes, there are some negative aspects, but in my opinion, there are many more positive aspects.
+
+- Computers and the internet have made us more efficient. Today huge amounts of information are available online. If we have a computer and an internet connection we can access the whole of this information from anywhere in the world. The internet has made it possible for us to stay connected to our near and dear ones all the time. It has made it possible for people to work from their home and get paid. Thanks to the internet, we can now learn foreign languages without leaving our country.	
+
+- Computers have increased our efficiency. We can now perform more tasks in less time. Jobs that took weeks or months 20 or 30 years ago can now be done in a matter of hours. Computer technology also allows doctors to diagnose diseases more accurately. It helps us to predict natural calamities and save lives.
+
+- There are some drawbacks as well. People’s privacy often gets violated on the internet. Also, in the recent past there have been several incidents of hacking. Malicious software programs like viruses can infect computers and compromise the personal and financial information of the user. However, in most cases, these problems can be controlled with a little effort. For example, by installing anti-virus programs on their computer, people can protect their computers from malware and spyware.
+
+- To conclude, computers and the internet have improved our lives in many ways. There are some negative impacts as well, but they cannot be a hindrance for the positive development of mankind.
+

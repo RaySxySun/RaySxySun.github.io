@@ -35,3 +35,16 @@ description:
 
 - degenerate (adj.退化的,变质的 vt/vi. 使退化, 退化)
     - A decorator can be viewed as a degenerate(adj.) composite with only one component.
+
+- Snippet: a small piece of information or news
+
+    // Snippet of response
+    
+    "id":"43027995-e84d-d4df-15bf-5238fccf83ee"
+    "name":"OXTON KVETON RIZAL"
+    "primary_cmr":[]
+    "cmr_number":""
+    "default_cmr":""
+
+- CMR(customer-managed relationship)
+    - customer-managed relationship (CMR) is a relationship in which a business uses a methodology, software, and perhaps Internet capability to encourage the customer to control access to information and ordering. CMR can be viewed as an alternative to or as a possible approach to include in CRM (customer relationship management).
