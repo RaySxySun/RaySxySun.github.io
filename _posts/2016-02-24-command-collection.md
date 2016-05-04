@@ -35,6 +35,7 @@ No.|problem|solution
 9|set up ~/bin|vim /etc/environment
 10|update core with cmd|sudo apt-get dist-upgrade 
 11|check system info|uname -a && cat /etc/lsb-release 
+12|ubuntu mp3 plugin|sudo apt-get install ubuntu-restricted-extras
 
 > Problem 9: Docker: FATA[0000] Get http:///var/run/docker.sock/v1.18/version: dial unix /var/run/docker.sock: no such file or directory. Are you trying to connect to a TLS-enabled daemon without TLS?
 

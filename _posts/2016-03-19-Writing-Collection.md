@@ -970,7 +970,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 17|get around|avoid||
 18|ethnic [ˈeθnɪk]|People who are pround of their ~ fashion and lifestyle can follow it when they are in their own country.||
 
-# Museum: Entaining/Educational
+# 22 Museum: Entaining/Educational
 
 > Some people think that museums should be enjoyable places to entertain people, while others believe that the purpose of museums is to educate. Discuss both views and give you own opinion.
 
@@ -1002,7 +1002,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 16|have fun and learn sth|||
 
 
-# Computer
+# 23 Computer
 
 > Computer technology has had more of a negative impact than a positive impact on the society? How far do you agree with this statement? Support your views with reasons and/or examples from your own experience.
 
@@ -1016,3 +1016,46 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 
 - To conclude, computers and the internet have improved our lives in many ways. There are some negative impacts as well, but they cannot be a hindrance for the positive development of mankind.
 
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|more of + n.|Computer technology has had more of a negative impact than a positive impact on the society||
+2|make us more efficient|||
+3|a huge amount of| a limited amount of / a certain amount of||
+4|stay connected to|the Internet has made it possible for us to ~ our near and dear ones all the time.||
+5|without doing|Thanks to the internet, we can now learn foreign languages without leaving our country||
+6|increase one efficiency|Computers have increased our efficiency.||
+7|in a matter of hours|Jobs that took weeks 10years ago can now be done ~||
+8|diagnose|computers also allow doctors to diagnose diseases more accurately||
+9|calamity|an event resulting in great loss and misfortune||
+10|privacy gets violated|pp's privacy often gets violated on the internet.||
+11|incidents of hacking|the phone hacking incidents||
+12|Malicious[mə'lɪʃəs]|~ software: viruses can **infect** computers and **compromise** personal and financial info of the user||
+13|controlled with a little effort|For example, by installing **anti-virus** on their computer||
+14|malware & spyware|pp can protect their computers from ~||
+15|hindrance [ 'hindrəns ]|These negative impacts cannot be a hindrance for the positive development of mankind.||
+
+# 24 Businesses & Social Responsibilities
+
+> As well as making money, businesses also have social responsibilities. To what extent do you agree or disagree?
+
+- Businesses have always sought to make a profit, but it is becoming increasingly common to hear people talk about the social obligations that companies have. I completely agree with the idea that businesses should do more for society than simply make money.
+
+- On the one hand, I accept that businesses must make money in order to survive in a competitive world. It seems logical that the priority of any company should be to cover its running costs, such as employees’ wages and payments for buildings and utilities. On top of these costs, companies also need to invest in improvements and innovations if they wish to remain successful. If a company is unable to pay its bills or meet the changing needs of customers, any concerns about social responsibilities become irrelevant. In other words, a company can only make a positive contribution to society if it is in good financial health.
+
+- On the other hand, companies should not be run with the sole aim of maximising profit; they have a wider role to play in society. One social obligation that owners and managers have is to treat their employees well, rather than exploiting them. For example, they could pay a “living wage” to ensure that workers have a good quality of life. I also like the idea that businesses could use a proportion of their profits to support local charities, environmental projects or education initiatives. Finally, instead of trying to minimise their tax payments by using accounting loopholes, I believe that company bosses should be happy to contribute to society through the tax system.
+
+- In conclusion, I believe that companies should place as much importance on their social responsibilities as they do on their financial objectives.
+
+(285 words, band 9)
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|have always sought to|Businesses have always sought to make a profit||
+2|increasingly common|it is becoming ~ to hear ...||
+3|social obligations|social responsibilities||
+4|in a competitive world|I accept that businesses must make money in order to survive ~||
+5|logical|it seems logical that ...||
+6|the priority of .. should be to do ..|It seems logical that ~ any company should be to cover its running cost||
+7|running cost|||
+8||||
