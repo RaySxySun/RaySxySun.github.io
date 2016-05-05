@@ -47,7 +47,7 @@ description:
 	- Abstract Factory can be used with Facade to provide an interface for creating subsystem objects in a subsystem-independent way. Abstract Factory can also be used as an alternative to Facade to hide platform-specific classes.
 	- Mediator is similar to Facade in that it abstracts functionality of existing classes. However, Mediator's purpose is to abstract arbitrary communication between colleague objects, often centralizing functionality that doesn't belong in any one of them.
 
-- Code Sample: Composite
+- Code Sample: Façade
 
 <img src="{{ site.url }}/assets/img/2016-04-18-DesignPatterns/FacadeSample.png" alt="{{ page.title }} at {{ site.title }}">	
 

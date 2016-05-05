@@ -27,9 +27,9 @@ description:
 	- [Bridge](http://raysxysun.github.io/design/2016/04/26/DesignPatterns-Bridge/) 
 	- [Composite](http://raysxysun.github.io/design/2016/04/26/DesignPatterns-Composite/) 
 	- [Decorator](http://raysxysun.github.io/design/2016/04/28/DesignPatterns-Decorator/)  
-	- [Façade](http://raysxysun.github.io/design/2016/04/28/DesignPatterns-Façade/) 
-	- Flyweight 
-	- Proxy 
+	- [Façade](http://raysxysun.github.io/design/2016/05/04/DesignPatterns-Façade/) 
+	- [Flyweight](http://raysxysun.github.io/design/2016/05/05/DesignPatterns-Flyweight/) 
+	- [Proxy](http://raysxysun.github.io/design/2016/05/06/DesignPatterns-Proxy/) 
 
 
 - Behavioral Patterns (11 Types)

@@ -1057,5 +1057,62 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 4|in a competitive world|I accept that businesses must make money in order to survive ~||
 5|logical|it seems logical that ...||
 6|the priority of .. should be to do ..|It seems logical that ~ any company should be to cover its running cost||
-7|running cost|||
-8||||
+7|running cost|employees wages & payments for buildings and utilities||
+8|improvements & innovations|companies also need to invest in improvements and innovations||
+9|the changing needs of|If a company is unable to pay its bills or meet ~ customers,||
+10|irrelevant|any concerns about social responsibilities become ~||
+11|financial health|a company can only make a positive contribution to society if it is in good ~||
+12|be run with aim of|companies should not be run with the sole aim of maximising profit||
+13|a wider role|they have ~ to play in society.||
+14|treat ... well, rather than exploiting|One social obligation that owners and managers have is to treat their exployees well, rather than exploiting them.||
+15|"living wage"|they could pay a ~ to ensure that workers have a good quality of life.||
+16|local charities, env projects or edu initiatives|use a proportion of their profits to support ~||
+17|accounting loopholes|instead of trying to minimise their tax payments by using ~,||
+18|place as much importance on .. as sb do|I believe that companies should ~ they do on their financial objectives||
+
+
+# 25
+
+> Nowadays more people prefer to socialize online rather than face to face. Is this a positive or negative development?
+
+- People are glued to their cellphones and tablets. They are constantly updating their status on social networks and checking out the photos and videos uploaded by their virtual friends. In fact, most of us now have more friends online than in the real world. In my opinion, this is a negative development that can have far reaching consequences.
+
+- Excessive online socialization can lead to depression, isolation and behavioural problems. The internet is a great platform to share views and opinions, but it also fuels unhealthy competition among people. Studies have shown that people develop an inferiority complex when their friends get more comments or likes than them.
+
+- Social media has many negative sides. There is no guarantee that the people we meet online are actually real. Many of them create fake profiles with the objective of cheating naïve users. There have been several instances of teenagers committing suicide after they got cheated by their online friends. Most people who are addicted to online socialization have hardly any time for talking to their family members or neighbours. This affects family relationships. Also, it can cause the individual to become isolated from his community.
+
+- Face to face communications, on the other hand, lead to the development of trustworthy relationships that last long. Meeting a friend or a dear one over a coffee or in a park is always a memorable experience. Social media friendships lack that warmth. Also, we cannot expect our online friends living in another part of the globe to help us when we are in trouble.
+
+- To conclude, it is not hard to see that excessive online socialization is bad. It affects our relationships. It is true that the internet has enriched our lives in many ways, but if we are addicted to it, we will develop many problems. After all, the virtual world cannot replace the real world; neither can virtual friends the real ones.
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|socialize|more pp prefer to ~ online rather than face to face||
+2|be glued to|pp are glued to their cellphones and tablets||
+3|cellphones & tablets|||
+4|update status & check out|They are constantly updateing their status on social networks||
+5|more friends online than in the real world|||
+6|far reaching consequences|profound consequences||
+7|Excessive online socialization|~ can lead to depression, isolation & behavioural problems||
+8|depression, isolation & behavioural problems|negative emotions and behavioural problems||
+9|fuel unhealthy competition|The Internet is a great platform to share ..., but it also ~s among pp||
+10|inferiority complex|a sense of personal inferiority arising from conflict between the desire to be noticed and the fear of being humiliated||
+11|desire|We all desire your early reply to this inquiry.||
+12|more comments & likes|people develop an inferiority complex when their friends get ~ than them||
+13|negative sides|||
+14|no guarantee|There is ~ that the pp we meet online are actually real.||
+15|fake profiles|Many of them create ~ with the objective of cheating naive users.||
+16|commit suicide|There have been several instances of teenagers ~ing ||
+17|got cheated by friends|||
+18|be addicted to|most pp who ~ online socialization have hardly any time for talking to their family members or neighbours.||
+19|cause sb to do|it can cause the individual to become isolated from his community||
+20|trustworthy relationships|F2F communications -> the development of ~ that last long.||
+21|over a coffee or in a park|meeting a friend or a dear one ~ is always a memorable experience.||
+22|memorable experience|||
+23|warmth|Social media friendships lack that warmth.||
+24|the globe|we cannot expect our online friends living in another part of the globe to help us when we are in trouble.||
+25|it is not hard to see that|||
+26|neither|the virtual world cannot replace the real world; neither can virtual friends the real ones||
+
+
+

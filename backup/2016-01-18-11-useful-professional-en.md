@@ -48,3 +48,25 @@ description:
 
 - CMR(customer-managed relationship)
     - customer-managed relationship (CMR) is a relationship in which a business uses a methodology, software, and perhaps Internet capability to encourage the customer to control access to information and ordering. CMR can be viewed as an alternative to or as a possible approach to include in CRM (customer relationship management).
+
+- walk sb through
+    -to slowly and carefully explain something to someone or show someone how to do something
+    - Hi folks, we will hold the Release R3.4 knowledge sharing session tomorrow between 7:30 PM and 8:00 PM at the training on the floor 3. Each team can walk us through changes/stories/even defects that your team has achieved during R3.4 from the business perspective or technical perspective. So all of us can get on the same page to learn from each other to avoid identical mistakes and gain knowledge. Let’s see which team is the best to do this for the first time.
+
+- postpone
+    - [meaning]to arrange for an event, etc. to take place at a later time or date 
+    - [diff] delay: 
+        - (n.) a period of time when sb/sth **has to** wait because of a problem that makes something slow or late
+        - (v.)to not do something until a later time or to make something happen at a later time
+            - delay doing something
+            - delay something
+            - delay somebody
+    - [synonym] **put off**
+        - to cancel a meeting or an arrangement that you have made with somebody
+            - She put him off with **the excuse** (借口) that she had too much work to do.
+        - to make somebody dislike somebody/something or not trust them/it
+            - She's very clever but her manner does tend to put people off.
+        - to disturb somebody who is trying to give all their attention to something that they are doing
+            - Don't put me off when I'm trying to concentrate.
+    - [example]We'll have to postpone the meeting until next week.
+
