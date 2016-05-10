@@ -18,14 +18,20 @@ description:
     To git@github.com:RaySxySun/xxxxxx
      + a695c74...cfb90cf HEAD -> master (forced update)
 
+---
+
 - pass something on (to somebody)
 	
     In C#, arguments can be passed to parameters either by value or by reference. 
 	Much of the discount is pocketed(私吞了) by retailers instead of being passed on to customers.
 
+---
+
 - cancel out 抵消
 
     The pros and cons cancel out.
+
+---
 
 - -laden(used to form adjectives showing that something is full of, or loaded with, the thing mentioned)
     - feature-laden (multifunction)
@@ -33,8 +39,12 @@ description:
     - value-laden (influenced by personal opinions)
         - 'Freedom fighter' is a value-laden word.
 
+---
+
 - degenerate (adj.退化的,变质的 vt/vi. 使退化, 退化)
     - A decorator can be viewed as a degenerate(adj.) composite with only one component.
+
+---
 
 - Snippet: a small piece of information or news
 
@@ -46,12 +56,18 @@ description:
     "cmr_number":""
     "default_cmr":""
 
+---
+
 - CMR(customer-managed relationship)
     - customer-managed relationship (CMR) is a relationship in which a business uses a methodology, software, and perhaps Internet capability to encourage the customer to control access to information and ordering. CMR can be viewed as an alternative to or as a possible approach to include in CRM (customer relationship management).
+
+---
 
 - walk sb through
     -to slowly and carefully explain something to someone or show someone how to do something
     - Hi folks, we will hold the Release R3.4 knowledge sharing session tomorrow between 7:30 PM and 8:00 PM at the training on the floor 3. Each team can walk us through changes/stories/even defects that your team has achieved during R3.4 from the business perspective or technical perspective. So all of us can get on the same page to learn from each other to avoid identical mistakes and gain knowledge. Let’s see which team is the best to do this for the first time.
+
+---
 
 - postpone
     - [meaning]to arrange for an event, etc. to take place at a later time or date 
@@ -70,3 +86,13 @@ description:
             - Don't put me off when I'm trying to concentrate.
     - [example]We'll have to postpone the meeting until next week.
 
+---
+
+- undoable: can revert
+    - Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.[Design Pattern: Command]
+---
+
+- prior to: before
+    - during the week prior to the meeting
+
+---
