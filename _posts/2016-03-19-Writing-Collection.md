@@ -881,6 +881,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 16|traditions, customs & behaviours| they are part of a country's history||
 17|cultural heritage|||
 
+---
 
 # 20 Gender & Jobs
 
@@ -933,6 +934,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 30|rather than gender|I believe that a persons' physical and intelectual capabilities, rather than gender, should determine his or her career choice.||
 31|come in the way of|her gender should not come in the way of her goal.||
 
+---
 
 # 21 Same culture
 
@@ -970,6 +972,8 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 17|get around|avoid||
 18|ethnic [ˈeθnɪk]|People who are pround of their ~ fashion and lifestyle can follow it when they are in their own country.||
 
+---
+
 # 22 Museum: Entaining/Educational
 
 > Some people think that museums should be enjoyable places to entertain people, while others believe that the purpose of museums is to educate. Discuss both views and give you own opinion.
@@ -1001,6 +1005,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 15|an interesting, enjoyable & educational|a good museum shoul be able to offer ~ experience||
 16|have fun and learn sth|||
 
+---
 
 # 23 Computer
 
@@ -1034,6 +1039,8 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 13|controlled with a little effort|For example, by installing **anti-virus** on their computer||
 14|malware & spyware|pp can protect their computers from ~||
 15|hindrance [ 'hindrəns ]|These negative impacts cannot be a hindrance for the positive development of mankind.||
+
+---
 
 # 24 Businesses & Social Responsibilities
 
@@ -1070,8 +1077,9 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 17|accounting loopholes|instead of trying to minimise their tax payments by using ~,||
 18|place as much importance on .. as sb do|I believe that companies should ~ they do on their financial objectives||
 
+---
 
-# 25
+# 25 Socialize Online
 
 > Nowadays more people prefer to socialize online rather than face to face. Is this a positive or negative development?
 
@@ -1114,5 +1122,51 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 25|it is not hard to see that|||
 26|neither|the virtual world cannot replace the real world; neither can virtual friends the real ones||
 
+---
 
+# 26 GM foods
 
+>For a long time there has been concern about the quality of the food we eat because of additives and contaminants. Recently genetically modified (GM) food has become more common, causing concern. Is this concern justified or not?
+
+- People are getting more and more concerned about the quality of food they eat. The rich and the famous have already switched to organic foods. Such foods are costly and nutritious. Unfortunately, few people can afford them. Those who cannot afford to buy organic foods are also making a conscious effort to choose foods wisely. They refuse to buy foods containing additives and preservatives. Some of them are also against genetically modified foods. They are worried that GM foods might cause diseases like cancer. However, till date, we haven’t got anything to prove that GM foods cause cancer.
+
+- GM foods have been around for over 20 years. Contrary to popular belief these foods have not been linked to cancer or another disease. There have been several studies, but none managed to prove that GM crops cause cancer.
+
+- Organic foods are certainly healthier than GM foods, but their affordability is an issue. Organic foods don’t contain pesticides. Since pesticides are not used, their yield per hectare is low. Because of these reasons organic foods are way beyond the reach of common man. By contrast GM foods are cheaper. GM plants are resistant to droughts, floods and pests. They can be grown using very little water. Also, they can resist pests. They provide better yields and hence prices are low.
+
+- Over the last few decades, there has been a dramatic increase in world population. The world population is expected to reach 8 billion within the next few years. When there is an increase in population, the need for food also increases. In such a scenario, the only practical solution is to grow more GM foods. Unless our scientists find a healthier and cheaper option, GM foods are here to stay.
+
+- To conclude, people have the freedom to decide what they should eat. If they are particularly concerned about GM foods, they don’t have to eat such foods. However, in my opinion, these fears are baseless. Many people simply overlook the major benefits of GM foods and instead focus on their unproven negative effects.
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|there has been concern about|For a long time ~ the quality of the food we eat||
+2|additives & contaminants|||
+3|GM|genetically modified food||
+4|justified|Is this concern justified or not?||
+5|get concerned about|pp are getting more and more concerned about the quality of food they eat.||
+6|switch to|the rich and the famous have already switched to organic foods.||
+7|costly & nutritious|such foods are ~||
+8|afford to|Those who cannot afford to buy organic foods are also making a conscious effort to choose foods wisely||
+9|making a conscious effort to|||
+10|refuse to buy|They ~ foods containing additives and preservatives.||
+11|be warried|they are worried that||
+12|till date|~, we haven't got anything to prove that GM foods cause cancer.||
+13|be linked to|Contrary to popular belief these foods have not been linked to cancer or another disease.||
+14|none|There have been several studies, but none managed to prove that GM foods cause cancer||
+15|organic foods|~ are certainly healthier than GM foods.||
+16|affordability|the ~ of organic foods is an issue.||
+17|pesticides|Organic foods don't contain ~||
+18|yield per hectare|their ~ is low.||
+19|be way beyond|because of these reasons organic foods are way beyond the reach of common man||
+20|the reach of|||
+21|be resistant to|GM plants ~ **droughts, floods and pests**||
+22|be grown|the can be grown using very little water.||
+23|resist|they can ~ pests||
+24|better yields |they can provide ~ and hence prices are low||
+25|over , have done|Over the last few decades, there has been a dramatic increase in world population.||
+26|the need for food|~ also increases||
+27|be here to stay|Unless our scientists find a healthier and cheaper option, GM foods are here to stay.||
+28|baseless|these fears are baseless||
+29|overlook|||
+30|unproven|Many people simply overlook the major benefits of GM foods and instead focus on their unproven negative effects.||
