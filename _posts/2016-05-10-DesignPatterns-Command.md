@@ -22,10 +22,8 @@ description:
 	- parameterize objects by an action to perform,
 	- specify, queue, and execute requests at different times.
 	- support undo.
-	- support logging changes so that they can be reapplied in case of a system
-crash.
-	- structure a system around high-level operations built on primitives
-operations.
+	- support logging changes so that they can be reapplied in case of a system crash.
+	- structure a system around high-level operations built on primitives operations.
 
 - **Structure**:	
 
@@ -38,8 +36,7 @@ operations.
 		- declares an interface for executing an operation.
 	- ConcreteCommand
 		- defines a binding between a Receiver object and an action.
-		- implements Execute by invoking the corresponding operation(s) on
-Receiver.
+		- implements Execute by invoking the corresponding operation(s) on Receiver.
 	- Client
 		- creates a ConcreteCommand object and sets its receiver.
 	- Invoker
@@ -62,9 +59,9 @@ Receiver.
 - **Related Patterns**:
 	- A Composite can be used to implement MacroCommands.
 	- A Memento can keep state the command requires to undo its effect.
-	- A command that must be copied before being placed on the historylist acts as a Prototype.
+	- A command that must be copied before being placed on the history list acts as a Prototype.
 
-- Code Sample: Chain of Responsibility 
+- Code Sample: Command
 
 <img src="{{ site.url }}/assets/img/2016-04-18-DesignPatterns/CommandSample.png" alt="{{ page.title }} at {{ site.title }}">	
 

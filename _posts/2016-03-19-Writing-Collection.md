@@ -383,7 +383,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 
 # 8 Luck & Success
 
-> “When people succeed, it is because of hard work. Luck has nothing to do with success.” Do you agree or disagree with the quotation above? Use specific reasons and examples to explain your语义组 position.
+> “When people succeed, it is because of hard work. Luck has nothing to do with success.” Do you agree or disagree with the quotation above? Use specific reasons and examples to explain your position.
 
 - Many people claim that success comes only as a result of hard work, while others believe that it is mostly the result of good fortune.  I believe that the former is true; success is only achieved by people who are diligent, hard-working and perseverant.  I feel this way for two reasons, which I will explore in the following essay.
 
@@ -392,7 +392,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 - Secondly, people today tend to misattribute the results of hard work and diligence to simple blind luck. Too many people ascribe to luck things which are actually the result of careful planning, research and “business smarts.”  For example, some people said that my uncle was lucky when his initial product offering was successful.  However, he was confident that his product would be a hit even before he started manufacturing it.  This is because he spent thousands of dollars on market research and focus groups.  It was this investment, not luck, which ensured the early success of his business.  Likewise, when his small firm completed its first merger just before the target company rose to prominence some called him lucky.  In this case, though, my uncle had spent weeks interviewing the research and development team at that company and predicted their success based on what they told him about their planning.  Had he not been confident of their success, he would not have completed the merger.   Again, this victory was the result of diligence rather than luck, despite what some observers say about it.
 
 -  In conclusion, I strongly believe that success comes as a result of hard work, rather than good fortune.  This is because success is a gradual and cumulative process, and because the public’s conception of luck is very superficial and hollow.
-blind luck
+
 
 No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 1|luck = good fortune|||
@@ -1170,3 +1170,37 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 28|baseless|these fears are baseless||
 29|overlook|||
 30|unproven|Many people simply overlook the major benefits of GM foods and instead focus on their unproven negative effects.||
+
+---
+
+#27 Parents & TV
+
+> Do you agree or disagree with the following statement? To make children do well in school, parents should limit the hours that children spend on watching TV or movies. 
+
+- In contemporary society, watching TV has become a popular leisure activity among school children. However, when asked about whether parents should limit the hours that children spend on it, people meet with a dilemma. According to my personal experiences, I hold the standpoint that watching too much TV or moviews could have adverse influence on children.
+
+- On top of the first, children can be easily misled by the inappropriate contents on TV because of their psychological immaturity. Firstly, children can have convenient access to the violent scenes in some 'Super Hero' Hollywood movies. They have more chances to imitate the behaviours in the movies and to form the bad habit of using violence to deal with problems in their daily lives. Besides, there are also some pornographic plots on television programs, which will definitely leave unhealthy effects on children's growth.
+
+- What's more, spending too much time on watching TV will absolutely account for children's studying time. Those children will be unwilling to do school works. My sister is a case in point. She often spends at leat three hours on watching cartoons and movies per day even before her examinations. She has less time to finish her homework and review the texts. So she finally failed the college entrance examination. THus watching too much TV programs will adversely affect children's studies.
+
+- Finally, students who spend less time on watching TV will have more chances to stay with peers. They can share common interests and brilliant ideas with each other, which will be beneficial to their futures. On the other hand, those who always stay at home and watch TV will feel being isolated and lack the basic communicating skills.
+
+- In conclusion, I should reinforce my viewpoint that parents should limit the time children spend on watching TV or movies.
+
+No.|Phrases&Words|Meaning&Synonyms|Position|Odds
+---|---|---|---|
+1|dilemma|pp meet with a dilemma.||
+2|standpoint|hold ~||
+3|too much|watching too much TV or moviews could have adverse influence on children.||
+4|be misled by|children can be easily misled by the inappropriate contents on TV||
+5|immaturity|psychological immaturity||
+6|convenient access|children can have ~ to the violent scences||
+7|imitate|they have more chances to ~ the behaviours in the movies and form the bad habit||
+8|the habit of|they may form the bad habit of using violence to deal with problems in their daily lives.||
+9|pornographic|there are also some pornographic plots on television programs.||
+10|account for|spending too much time on watching TV will absolutely ~ children's studying time.||
+11|be unwilling to|Those children will be unwilling to do school works||
+12|cartoons & movies|she often spends at least three hours on watching ~ per day even before her examinations||
+13|the college entrance examination|||
+14|stay with peers|||
+15|be beneficial to|||

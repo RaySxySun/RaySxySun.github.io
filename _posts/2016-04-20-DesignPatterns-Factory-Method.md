@@ -43,8 +43,8 @@ description:
 	- ConcreteCreator to define the factory method(Creator declares) so that it returns an instance of the appropriate ConcreteProduct.
 
 - **Consequences**:
-	- 1. Provides hooks for subclasses.
-	- 2. Connects parallel class hierarchies.
+	- 1.Provides hooks for subclasses.
+	- 2.Connects parallel class hierarchies.
 
 - **Related Patterns**:
 	- **Abstract Factory** is often implemented with factory methods.
@@ -53,61 +53,61 @@ description:
 
 > Interaction diagram
 
-<img src="{{ site.url }}/assets/img/2016-04-18-DesignPatterns/FactoryMethod.jpg" alt="{{ page.title }} at {{ site.title }}">
+<img src="{{ site.url }}/assets/img/2016-04-18-DesignPatterns/FactorySample.jpg" alt="{{ page.title }} at {{ site.title }}">
 	
 
 - Code Sample
 
-	//product interface
-	public interface Sender {  
-	    public void Send();  
-	} 
+		//product interface
+		public interface Sender {  
+		    public void Send();  
+		} 
 
-	//two concrete product classes
-	public class MailSender implements Sender {  
-	    @Override  
-	    public void Send() {  
-	        System.out.println("this is mailsender!");  
-	    }  
-	}  
+		//two concrete product classes
+		public class MailSender implements Sender {  
+		    @Override  
+		    public void Send() {  
+		        System.out.println("this is mailsender!");  
+		    }  
+		}  
 
-	public class SmsSender implements Sender {  
-	  
-	    @Override  
-	    public void Send() {  
-	        System.out.println("this is sms sender!");  
-	    }  
-	}  
+		public class SmsSender implements Sender {  
+		  
+		    @Override  
+		    public void Send() {  
+		        System.out.println("this is sms sender!");  
+		    }  
+		}  
 
-	//provider interface
-	public interface Provider {  
-	    public Sender produce();  
-	}  
+		//provider interface
+		public interface Provider {  
+		    public Sender produce();  
+		}  
 
-	//two factory concrete class
-	public class SendMailFactory implements Provider {  
-	      
-	    @Override  
-	    public Sender produce(){  
-	        return new MailSender();  
-	    }  
-	}  
+		//two factory concrete class
+		public class SendMailFactory implements Provider {  
+		      
+		    @Override  
+		    public Sender produce(){  
+		        return new MailSender();  
+		    }  
+		}  
 
-	public class SendSmsFactory implements Provider{  
-	  
-	    @Override  
-	    public Sender produce() {  
-	        return new SmsSender();  
-	    }  
-	}  
+		public class SendSmsFactory implements Provider{  
+		  
+		    @Override  
+		    public Sender produce() {  
+		        return new SmsSender();  
+		    }  
+		}  
 
-	//test
-	public class Test {  
-	    public static void main(String[] args) {  
-	        Provider provider = new SendMailFactory();  
-	        Sender sender = provider.produce();  
-	        sender.Send();  
-	    }  
-	}  
+		//test
+		public class Test {  
+		    public static void main(String[] args) {  
+		        Provider provider = new SendMailFactory();  
+		        Sender sender = provider.produce();  
+		        sender.Send();  
+		    }  
+		}  
 
 > [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
