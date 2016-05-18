@@ -8,7 +8,9 @@ tags: [Design]
 description: 
 ---
 
-> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
+> [Design Patterns Category](http://raysxysun.github.io/categories/#Design)
+
+> [Design Patterns Index](http://raysxysun.github.io/design/2016/04/18/DesignPatterns/)
 
 # 7. Bridge 
 
@@ -120,4 +122,6 @@ description:
 <img src="{{ site.url }}/assets/img/2016-04-18-DesignPatterns/JDBC.png" alt="{{ page.title }} at {{ site.title }}">	
 
 
-> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
+> [Design Patterns Category](http://raysxysun.github.io/categories/#Design)
+
+> [Design Patterns Index](http://raysxysun.github.io/design/2016/04/18/DesignPatterns/)

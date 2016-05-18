@@ -8,7 +8,9 @@ tags: [Design]
 description: 
 ---
 
-> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
+> [Design Patterns Category](http://raysxysun.github.io/categories/#Design)
+
+> [Design Patterns Index](http://raysxysun.github.io/design/2016/04/18/DesignPatterns/)
 
 # 5. Singleton 
 
@@ -210,4 +212,6 @@ description:
 
 	Of course, before you use the rubber chicken, you need to ask yourself whether you actually need 5 people in one room and it would not just be easier with one person in the room on their own doing all the work. Actually, this is just extending the analogy, but you get the idea.
 
-> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
+> [Design Patterns Category](http://raysxysun.github.io/categories/#Design)
+
+> [Design Patterns Index](http://raysxysun.github.io/design/2016/04/18/DesignPatterns/)

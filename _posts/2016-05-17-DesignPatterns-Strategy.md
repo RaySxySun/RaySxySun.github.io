@@ -8,7 +8,9 @@ tags: [Design]
 description: 
 ---
 
-> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
+> [Design Patterns Category](http://raysxysun.github.io/categories/#Design)
+
+> [Design Patterns Index](http://raysxysun.github.io/design/2016/04/18/DesignPatterns/)
 
 # 21. Strategy
 
@@ -22,8 +24,7 @@ description:
     - many related classes differ only in their behavior.
     - you need different variants of an algorithm.
     - an algorithm uses data that clients shouldn't know about.
-    - a class defines many behaviors, and these appear as multipleconditional
-statements in its operations.
+    - a class defines many behaviors, and these appear as multipleconditional statements in its operations.
 - **Structure**:	
 
 <img src="{{ site.url }}/assets/img/2016-04-18-DesignPatterns/Strategy.png" alt="{{ page.title }} at {{ site.title }}">
@@ -113,4 +114,6 @@ statements in its operations.
         }  
 
 
-> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
+> [Design Patterns Category](http://raysxysun.github.io/categories/#Design)
+
+> [Design Patterns Index](http://raysxysun.github.io/design/2016/04/18/DesignPatterns/)

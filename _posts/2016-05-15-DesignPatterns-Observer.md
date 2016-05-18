@@ -8,7 +8,9 @@ tags: [Design]
 description: 
 ---
 
-> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
+> [Design Patterns Category](http://raysxysun.github.io/categories/#Design)
+
+> [Design Patterns Index](http://raysxysun.github.io/design/2016/04/18/DesignPatterns/)
 
 # 19. Observer
 
@@ -136,4 +138,6 @@ description:
         } 
 
 
-> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
+> [Design Patterns Category](http://raysxysun.github.io/categories/#Design)
+
+> [Design Patterns Index](http://raysxysun.github.io/design/2016/04/18/DesignPatterns/)

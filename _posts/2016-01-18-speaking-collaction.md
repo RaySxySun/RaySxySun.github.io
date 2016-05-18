@@ -1217,6 +1217,23 @@ You should say
 
 
 ---
+> Describe a book
+
+- I had sought a textbook specialized in phrasal verbs for a very long time and this one is the first I found that deserves this appellation. You will find tons of phrasal verbs in there, almost 400, among the most popular.
+
+- The book is divided in 40 units or so containing a dozen verbs. Quick grammar rules relative to phrasal verbs introduce each unit. Here are treated, little by little, the following issues which are salient characteristics of the phrasal verbs, i.e. What is a particle? Is a particle always separable? How to make the difference between a particle and a "vulgar" preposition? Where is the accentuation of a phrasal verb? Is it possible to find a common abstract notion between some meanings of verbs that share the same particle (e.g. break in, call in, give in)? Yes, you'll have the answers to all these riveting questions!
+
+- In each unit, each verb is followed by its inflected forms (gerund, past and participle). Its different meanings are described and you'll see that sometimes the particle of a verb can go from a non-separable state to a separable state depending on the sense given to the verb! A couple of practical examples illustrates each meaning.
+
+- Now, exercises! You'll find a lot of them in the book. Five, six, sometimes more per unit, including a recapitulation exercise using verbs that you studied in previous units, so that you can train your memory and check your knowledge.
+A unit will take you quite a certain time and sometimes you'll need up to 1 hour 1/2 if you do them seriously. Perhaps my mistake was to try hard to complete a whole unit in one time. Because of that, I admit I felt discouragement from time to time, especially because I had to interrupt my working session for domestic or professional reasons. If you don't get time, make two or three exercises a day and the day after, review the main points and carry on your training.
+
+- You'll quickly realize that mastering phrasal verbs is no child's play and requires steady and hard work. But it's a fascinating world and it's so funny to see the power a single particle can have over the meaning of a common verb and hence, over a sentence :)
+
+- This book is a premiere. If you already enjoyed it and are looking for a useful complement, buy the Cambridge international dictionary of phrasal verbs, it will give you a pretty thorough overview of the power of these verbs. But I would suggest it for people with at least an intermediate level.
+
+
+---
 
 >part2 cont.
 

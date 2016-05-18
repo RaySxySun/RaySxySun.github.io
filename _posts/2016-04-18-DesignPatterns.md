@@ -8,7 +8,7 @@ tags: [Design]
 description: 
 ---
 
-> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
+> [Design Patterns Category](http://raysxysun.github.io/categories/#Design)
 
 # Design Patterns
 
@@ -33,18 +33,18 @@ description:
 
 
 - Behavioral Patterns (11 Types)
-	- Chain of Responsibility 
-	- Command 
-	- Interpreter 
-	- Iterator 
-	- Mediator 
-	- Memento 
-	- Observer 
-	- State 
-	- Strategy 
-	- Template Method 
-	- Visitor 
+	- [Chain of Responsibility](http://raysxysun.github.io/design/2016/05/09/DesignPatterns-ChainOfResponsibility/)  
+	- [Command](http://raysxysun.github.io/design/2016/05/10/DesignPatterns-Command/) 
+	- [Interpreter](http://raysxysun.github.io/design/2016/05/11/DesignPatterns-Interpreter/) 
+	- [Iterator](http://raysxysun.github.io/design/2016/05/11/DesignPatterns-Iterator/) 
+	- [Mediator](http://raysxysun.github.io/design/2016/05/12/DesignPatterns-Mediator/) 
+	- [Memento](http://raysxysun.github.io/design/2016/05/15/DesignPatterns-Memento/) 
+	- [Observer](http://raysxysun.github.io/design/2016/05/15/DesignPatterns-Observer/) 
+	- [State](http://raysxysun.github.io/design/2016/05/17/DesignPatterns-State/) 
+	- [Strategy](http://raysxysun.github.io/design/2016/05/17/DesignPatterns-Strategy/) 
+	- [Template Method](http://raysxysun.github.io/design/2016/05/18/DesignPatterns-TemplateMethod/) 
+	- [Visitor](http://raysxysun.github.io/design/2016/05/18/DesignPatterns-Visitor/) 
 
 ---
 
-> [Design Patterns Index](http://raysxysun.github.io/categories/#Design)
+> [Design Patterns Category](http://raysxysun.github.io/categories/#Design)
