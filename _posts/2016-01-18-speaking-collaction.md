@@ -1226,7 +1226,8 @@ You should say
 - In each unit, each verb is followed by its inflected forms (gerund, past and participle). Its different meanings are described and you'll see that sometimes the particle of a verb can go from a non-separable state to a separable state depending on the sense given to the verb! A couple of practical examples illustrates each meaning.
 
 - Now, exercises! You'll find a lot of them in the book. Five, six, sometimes more per unit, including a recapitulation exercise using verbs that you studied in previous units, so that you can train your memory and check your knowledge.
-A unit will take you quite a certain time and sometimes you'll need up to 1 hour 1/2 if you do them seriously. Perhaps my mistake was to try hard to complete a whole unit in one time. Because of that, I admit I felt discouragement from time to time, especially because I had to interrupt my working session for domestic or professional reasons. If you don't get time, make two or three exercises a day and the day after, review the main points and carry on your training.
+
+- A unit will take you quite a certain time and sometimes you'll need up to 1 hour 1/2 if you do them seriously. Perhaps my mistake was to try hard to complete a whole unit in one time. Because of that, I admit I felt discouragement from time to time, especially because I had to interrupt my working session for domestic or professional reasons. If you don't get time, make two or three exercises a day and the day after, review the main points and carry on your training.
 
 - You'll quickly realize that mastering phrasal verbs is no child's play and requires steady and hard work. But it's a fascinating world and it's so funny to see the power a single particle can have over the meaning of a common verb and hence, over a sentence :)
 

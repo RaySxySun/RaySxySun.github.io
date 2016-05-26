@@ -96,3 +96,10 @@ description:
     - during the week prior to the meeting
 
 ---
+
+- exhaustive: full, detailed
+    - Here is an exhaustive list of rules
+
+- non-exhaustive:
+    - Here is a non-exhaustive list of (optional) rule
+
