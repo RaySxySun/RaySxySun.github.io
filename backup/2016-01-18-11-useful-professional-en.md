@@ -103,3 +103,83 @@ description:
 - non-exhaustive:
     - Here is a non-exhaustive list of (optional) rule
 
+---
+
+- For the sake of: in order to get or keep something
+    - For the sake of comprehension, I’ll assume that the data in the buffer are not locked by latches 
+
+---
+
+- end up: to find yourself in a place or situation that you did not intend or expect to be in
+    - **end up doing something**: I ended up doing all the work myself.
+    -  If you go on like this you'll end up in prison.
+    -  If he carries on driving like that, he'll end up dead.
+
+---
+
+- end up with: Get as a result of something
+    - He tried hard but ENDED UP WITH a poor grade.
+---
+
+- disappear, vanish, etc. into thin air: to disappear suddenly in a mysterious way
+    - Durability ensures that Transaction 1 won’t disappear into thin air if the database crashes just after T1 is committed.
+
+--- 
+
+- ACID: Atomicity[ˌætəmˈɪsɪti], Isolation, Durability, Consistency
+
+---
+
+- granularity: is the extent to which a material or system is composed of distinguishable pieces or grains.
+    - Of course a real database uses a more sophisticated system involving more types of locks (like intention locks) and more granularities (locks on a row, on a page, on a partition, on a table, on a tablespace) but the idea remains the same.
+
+---
+
+- overhead: regular costs that you have when you are running a business or an organization, such as rent, electricity, wages, etc.
+    - there is no overhead from the “fat and slow” lock manager
+    - High overheads mean small profit margins.
+
+---
+
+- Serializable: The SQL norm defines 4 levels of isolation
+    - Serializable, Repeatable read, Read committed, Read uncommitted 
+
+---
+
+- Data versioning and locking are two different visions: optimistic locking vs pessimistic locking. 
+
+---
+
+- integrity: the state of being whole and not divided
+    - Because the transaction has broken the integrity of the database (for example you have a UNIQUE constraint on a column and the transaction adds a duplicate)
+
+---
+
+- Database Log Record: Each operation (add/remove/modify) during a transaction produces a log. This log record is composed of
+    - LSN(A unique Log Sequence Number), TransID, PageID, PrevLSN, UNDO, REDO
+
+---
+
+- mess: a condition in which things are dirty or not neat.
+    - ARIES uses only logical UNDO because it’s a real mess to deal with physical UNDO.
+
+---
+
+- chronological order: chronological order
+    - Each log has a unique LSN. The logs that are linked belong to the same transaction. The logs are linked in a chronological order (the last log of the linked list is the log of the last operation).
+
+---
+
+- clustered:
+    - how to manage clustered databases and global transactions
+
+- snapshot:
+    - how to take a snapshot when the database is still running
+- compress:
+    - how to efficiently store (and compress) data
+
+---
+
+- rock-solid:
+    - think twice when you have to choose between a **buggy** NoSQL database and a **rock-solid** relational database. 
+    

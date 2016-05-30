@@ -1204,3 +1204,10 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 13|the college entrance examination|||
 14|stay with peers|||
 15|be beneficial to|||
+
+---
+
+#28 Advertising
+
+---
+

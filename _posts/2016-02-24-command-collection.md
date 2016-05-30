@@ -36,6 +36,11 @@ No.|problem|solution
 10|update core with cmd|sudo apt-get dist-upgrade 
 11|check system info|uname -a && cat /etc/lsb-release 
 12|ubuntu mp3 plugin|sudo apt-get install ubuntu-restricted-extras
+13|Step 1: format USB|sudo umount /media/[name]/dev 
+|Step 2: format USB|lsblk && sudo fdisk -l  
+|Step 3: format USB erase|sudo dd if=/dev/zero of=/dev/sdb bs=4k && sync  
+|Step 4: format USB|sudo mkfs.ext4 /dev/sd[x]  
+|Step 4: format USB|sudo eject /dev/sd[x]  
 
 > Problem 9: Docker: FATA[0000] Get http:///var/run/docker.sock/v1.18/version: dial unix /var/run/docker.sock: no such file or directory. Are you trying to connect to a TLS-enabled daemon without TLS?
 
