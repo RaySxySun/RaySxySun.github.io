@@ -1,0 +1,51 @@
+---
+layout: post
+title: cheat sheet - set pwd & setup xdebug
+date: 2016-06-23
+weather: cloudy
+categories: Linux
+tags: [ubuntu, linux, php]
+description:  cheat sheet - set pwd for sudo & setup xdebug
+---
+
+# 1. Send pwd to 'sudo' in shell script
+
+	
+> The -S (stdin) option causes sudo to read the password from the standard input instead of the terminal device.  The password must be followed by a newline character.
+
+	 
+	 echo "asdf" | sudo -S chmod 755 -R "${WEB_ROOT}/${INSTANCE_NAME}"
+
+# 2. setup xdebug for ubuntu 
+
+> automatically setting
+
+	sudo apt-get install php5-xdebug
+	ls /etc/php5/mods-available/
+	sudo php5enmod xdebug
+
+> manually setting
+
+	sudo apt-get install php5-xdebug
+	etc/php5/apache2/php.ini 
+	#add zend_extension="/usr/lib/php5/20121212/xdebug.so
+	#notice: the path may vary in different versions
+	
+# 3. modify host
+	
+    ohray@ohraymaster-XXXXX:~/DataHouse/shellUtils$ cat /etc/hosts
+    127.0.0.1	localhost
+    127.0.0.1	ohraymaster-XXXXX
+    
+    # The following lines are desirable for IPv6 capable hosts
+    ::1     ip6-localhost ip6-loopback
+    fe00::0 ip6-localnet
+    ff00::0 ip6-mcastprefix
+    ff02::1 ip6-allnodes
+    ff02::2 ip6-allrouters
+    
+    ohray@ohraymaster-XXXXX:~/DataHouse/shellUtils$ cat /etc/hostname 
+    ohraymaster-XXXXX
+
+ 
+ 
