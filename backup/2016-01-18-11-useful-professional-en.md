@@ -183,3 +183,49 @@ description:
 - rock-solid:
     - think twice when you have to choose between a **buggy** NoSQL database and a **rock-solid** relational database. 
     
+---
+
+- hit the ground running: to be ready to work immediately on a new activity
+    - His previous experience will allow him to hit the ground running when he takes over the Commerce Department.
+
+
+---
+
+- lead the pack: to be first or best of a group 
+    -  For the second week in a row, the new Star Wars movie leads the pack at the box office.
+
+---
+
+- low-hanging fruit:  a course of action that can be undertaken quickly and easily as part of a wider range of changes or solutions to a problem
+    - first pick the low-hanging fruit.
+    - Reducing HTTP requests and optimizing database queries are low-hanging fruit that noticeably improve application performance and response time.
+
+---
+
+- infallible: a person or thing that is incapable of error or failure
+    - HHVM is just fine for your production server, but it’s not infallible. I recommend you keep tabs on HHVM’s master process with Supervisord.
+
+---
+
+- HHVM: The first initiative is HHVM, or the Hip Hop Virtual Machine.
+    - This alternative PHP engine was released in October 2013. Its just-in-time (JIT) compiler provides performance many times better than PHP-FPM.
+
+---
+
+- seamless: having no seams;
+    - Hack is a server-side language that is similar to and seamless with PHP.
+
+---
+
+- dialect:
+    - Hack’s developers even call Hack a dialect of PHP.
+
+---
+
+- Zend Engine:
+    - HHVM is the first true competitor to the traditional Zend Engine PHP runtime.
+
+---
+
+- reap:To harvest
+    - Both HHVM and the Zend Engine will improve, and PHP developers will reap the benefits.
