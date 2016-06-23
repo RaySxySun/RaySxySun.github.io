@@ -1,7 +1,7 @@
 ---
 layout: post
 title: cheat sheet - set pwd & setup xdebug
-date: 2016-06-23
+date: 2016-06-22
 weather: cloudy
 categories: Linux
 tags: [ubuntu, linux, php]
