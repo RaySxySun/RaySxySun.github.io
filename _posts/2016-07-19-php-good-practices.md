@@ -1,10 +1,10 @@
 ---
 layout: post
 title: PHP Good Practice
-date: 2016-07-01
+date: 2016-07-19
 weather: cloudy
-categories: Linux
-tags: [Linux]
+categories: php
+tags: [php]
 description:
 ---
 

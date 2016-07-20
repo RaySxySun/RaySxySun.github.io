@@ -229,3 +229,13 @@ description:
 
 - reap:To harvest
     - Both HHVM and the Zend Engine will improve, and PHP developers will reap the benefits.
+
+
+---
+
+- bee's knees: informal an excellent or ideally suitable person or thing
+
+---
+
+- it pays to:
+    - static factory methods and public constructors both have their uses, and it pays to understand their relative merits
