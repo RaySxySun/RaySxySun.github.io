@@ -239,3 +239,20 @@ description:
 
 - it pays to:
     - static factory methods and public constructors both have their uses, and it pays to understand their relative merits
+
+
+---
+
+- in preference to: 优于，优先于
+    - avoid creating unnecessary objects by using static factory methods (Item 1) **in preference** to constructors on immutable classes that provide both.
+
+- be preferable to: 优于
+    - the static factory method Boolean.valueOf(String) **is almost always preferable to** the constructor Boolean(String) .
+
+---
+
+- performance gains: 性能提升
+    - **Using a static initializer** results in significant performance gains if the method is invoked frequently.
+
+
+
