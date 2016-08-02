@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Effective Java - Item 3 Singleton Property
-weather: rainy
+weather: cloudy
 categories: Java
 tags: [Java]
 description:
@@ -44,7 +44,7 @@ description:
                             return INSTANCE;
                         }
 
-- [The Best]As of release 1.5, make an enum type with one element to implement singletons (even in the face of sophisticated serialization or reflection attacks.)
+- [The Best]As of release 1.5, **a single-element enum type is the best way to implement a singleton.** (even in the face of sophisticated serialization or reflection attacks.)
     - [+] more concise
     - [+] provides the serialization machinery for free
     - [+] provides an ironclad guarantee against multiple instantiation,
