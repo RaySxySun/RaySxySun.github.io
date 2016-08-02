@@ -37,12 +37,12 @@ description:
             - 1.declare all instance fields transient
             - 2.provide a readResolve method
 
-                // readResolve method to preserve singleton property
-                private Object readResolve() {
-                    // Return the one true Elvis and let the garbage collector
-                    // take care of the Elvis impersonator.
-                    return INSTANCE;
-                }
+                        // readResolve method to preserve singleton property
+                        private Object readResolve() {
+                            // Return the one true Elvis and let the garbage collector
+                            // take care of the Elvis impersonator.
+                            return INSTANCE;
+                        }
 
 - [The Best]As of release 1.5, make an enum type with one element to implement singletons (even in the face of sophisticated serialization or reflection attacks.)
     - [+] more concise
@@ -76,6 +76,7 @@ description:
 
 > 1. Serializable: (Serializable、transient、readResolve())
 > 2. Reflection: create an instance using private Constructor.
+
 ---
 
 
