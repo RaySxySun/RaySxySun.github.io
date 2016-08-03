@@ -10,7 +10,7 @@ description:
 
 # 1 City Life
 
->More and more people are migrating to cities in search of a better life, but city life can be extremely difficult. Explain some of the difficulties of living in a city. How can governments make urban life better for everyone?
+> More and more people are migrating to cities in search of a better life, but city life can be extremely difficult. Explain some of the difficulties of living in a city. How can governments make urban life better for everyone?
 
 - Cities are often seen as places of opportunity, but there are also some major drawbacks of living in a large metropolis. In my opinion, governments could do much more to improve city life for the average inhabitant.
 
@@ -724,7 +724,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 
 ---
 
-#16 Animal experiments 
+# 16 Animal experiments 
 
 > Nowadays animal experiments are widely used to develop new medicines and to test the safety of other products. Some people argue that these experiments should be banned because it is morally wrong to cause animals to suffer, while others are in favour of them because of their benefits to humanity. Discuss both views and give your own opinion.
 
@@ -765,7 +765,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 
 ---
 
-#17 Music
+# 17 Music
 
 > There are many different types of music in the world today. Why do we need music? Is the traditional music of a country more important than the international music that is heard everywhere nowadays?
 
@@ -805,7 +805,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 
 ---
 
-#18 Tech
+# 18 Tech
 
 > Nowadays the way many people interact with each other has changed because of technology. In what ways has technology affected the types of relationships that people make? Has this been a positive or negative development?
 
@@ -847,7 +847,7 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 
 ---
 
-#19 Language
+# 19 Language
 
 > Several languages are in danger of extinction because they are spoken by very small numbers of people. Some people say that governments should spend public money on saving these languages, while others believe that would be a waste of money. Discuss both these views and give your opinion.
 
@@ -1210,4 +1210,82 @@ No.|Phrases&Words|Meaning&Synonyms|Position|Odds
 #28 Advertising
 
 ---
+
+
+
+---
+
+# 29 Economic Progress
+
+> Many governments think that economic progress is their most important goal. Some people, however, think that other types of progress are equally important for a country.  Discuss both these views and give your own opinion.
+
+- People have different views about how governments should measure their countries’ progress. While economic progress is of course essential, I agree with those who believe that other measures of progress are just as important.
+
+- There are three key reasons why economic growth is seen as a fundamental goal for countries. Firstly, a healthy economy results in job creation, a high level of employment, and better salaries for all citizens. Secondly, economic progress ensures that more money is available for governments to spend on infrastructure and public services. For example, a government with higher revenues can invest in the country's transport network, its education system and its hospitals. Finally, a strong economy can help a country’s standing on the global stage, in terms of its political influence and trading power.
+
+- However, I would argue that various other forms of progress are just as significant as the economic factors mentioned above. In particular, we should consider the area of social justice, human rights, equality and democracy itself. For example, the treatment of minority groups is often seen as a reflection of the moral standards and level of development of a society. Perhaps another key consideration when judging the progress of a modern country should be how well that country protects the natural environment, and whether it is moving towards environmental sustainability. Alternatively, the success of a nation could be measured by looking at the health, well-being and happiness of its residents.
+
+- In conclusion, the economy is obviously a key marker of a country’s success, but social, environmental and health criteria are equally significant.	
+
+---
+
+# 30 Traditional Culture
+
+> Task: Many customs and traditional ways of behavior are no longer relevant to the modern life and not worth keeping. Agree or disagree?
+
+- A growing number of customs and traditional cultures have disappeared gradually, with the progress of our society. People, especially among teenagers, hold conflicting views about whether all these traditional norms should be inherited generation by generation. Personally, the valuable traditions our ancestors passed down to us, with no doubt, should be preserved.
+
+- Preserving traditional culture is not equal to sacrificing modern conveniences, and there is no denying that respecting tradition is the prerequisite for future progress. Modern civilizations, admittedly, stand for the development of times. However, human beings are bound to learn valuable experience from what happened in the past. Accordingly, historical legacies should be at least equally crucial with the current cultures, if not more than. Undeniably, some conventional customs exert positive effects on the harmoniousness of families. Specifically, in the Spring festival, Chinese people will reunite together with their families no matter where they have worked, just for enjoying the sense of belongings. Moreover, the moral values and virtues passed on from our forefathers have the educational functions like teaching us how to be respectful to elders and responsible for your family and even the whole country.
+
+However, some obsolete traditional culture dross which may impede the advancement of a nation do exist. For example, females would find it difficult to pursue a job and males would be laughed for staying at home looking after their children in the past decades. Thanks for the modern culture that advocates the equal rights between men and women. The labor market is full of the well-educated female workforce.
+
+In conclusion, despite some outdated culture leftovers, stepping up efforts to preserve historical heritages which are, to some extent, on the verge of extinction, is extremely imperative. Modern culture, however, should coexist peacefully with traditions and not be neglected.
+(296 words)
+
+---
+
+ # 31 Arts & Science
+
+ > People still value artists in the age of advanced science and technology. What are the reasons? Are arts as important as science and technology?
+
+- In the contemporary scientific community, many may wonder why there is still a high respect and regard for artists such as musician, painters and writers. In the essay, the significance of both art and science will be fully explored.
+
+- Art is attached great importance in the era of science and technology thanks to its irreplaceable functions. Superficially, it is relaxing and refreshing to watch films on weekends, listen to concerts every three months and appreciate refined art such as operas and ballets whenever there is an opportunity. Profoundly, art promotes the advancement of science and technology. For example, Da Vinci’s paintings of the internal structure of human bodies laid the foundation of modern anatomy. Also, Jules Verne, the famous French writer in the 19 century, envisioned the possibility of submarines in the “Twenty Thousand Leagues under the Sea” and helicopters in the “The Clipper of the Clouds”
+
+- Science and technology are of equal significance for human society. To be pragmatic, they raise productivity and satisfy basic human needs. For instance, it was not until the invention of Watt’s steam engine that the industries of metallurgy, coal mining and textile began to prosper. Besides, agriculture is now so mechanized that only about 2 percent of American workers make a living as farmers who can feed the whole country more than sufficient. What few realize is that science and technology also push the progress of art. Only after the law of visual stay was discovered was there the art of cartoon and animation and only after the invention of projectors was made was there the boom of silver screen
+
+- In conclusion, art is as weighty as science and technology to human advancement and they actually complement and facilitate each other. Just as Flaubert says, art will be scientific while science will be artistic and they finally converge at the peak of the mountain of civilization.
+
+(313 words)
+
+---
+
+# 31 Advertisement
+
+> In some countries, advertisers increase the amount of advertising which try to persuade children to buy snacks, toys,and other goods. Parents object to such pressure on children. But some advertisers claim that there is useful information in these advertisements. Discuss both views and give your opinion.
+
+
+- People today are too often bombarded with various advertisements on television,in newspapers or on the running buses or subways, a large proportion of which are children targeted. although it can be argued that the information in a commercial is far from helpful, I believe that too much exposure to advertising imposes too much stress on children as well as their parents. 
+
+
+- Many advertisers may claim that the advertisements are full of useful information. This is true to a certain extent. In some cases, parents tend to choose the right quality products according to what a commercial introduces. these advertisements can provide potential customers with a comprehensive understanding of the products advertised, which can help consumers make well-informed buying decisions. For example, television
+advertisements can present goods in a visual and audio way, this can definitely enhance people’s knowledge of the advertised goods, especially some electronic toys or newly-introduced food.
+
+- Nevertheless, in some others,quite the revers e is true. That is to say that the information in advertisements is far from helpful but rather harmful because almost kinds of advertising will definitely exaggerate their merits but conceal their demerits. Moreover, The advertisers usually have a deep insight into children's psychology and behaviors which are taken into advantage of in their advertising to make their products. whether a toy, a snack or some other goods, more appealing to the young minds. As a result, the innocent young are very likely to fall prey to the predators and ask them parents to buy whatever is advertised, regardless of the price and the function.
+
+- Overall, I believe that advertising marketed towards children should be strictly examined and controlled by the related authorities because children are the disadvantaged group of people and prone to any tricks and deceits. Also parents should be more discreet when choosing a product from advertisements.
+
+---
+
+- 32 festivals
+
+> Most people have forgotten the meaning behind traditional or religious festivals; during festival periods, people nowadays only want to enjoy themselves. To what extent do you agree or disagree with this opinion?
+
+- Some people argue that we no longer remember the original meaning of festivals, and that most of us treat them as opportunities to have fun. While I agree that enjoyment seems to be the priority during festival times, I do not agree that people have forgotten what these festivals mean.
+
+- On the one hand, religious and traditional festivals have certainly become times for celebration. In the UK, Christmas is a good example of a festival period when people are most concerned with shopping, giving and receiving presents, decorating their homes and enjoying traditional meals with their families. Most people look forward to Christmas as a holiday period, rather than a time to practise religion. Similar behaviour can be seen during non-religious festivals, such as Bonfire Night. People associate this occasion with making fires, watching firework displays, and perhaps going to large events in local parks; in other words, enjoyment is people’s primary goal.
+
+- However, I disagree with the idea that the underlying meaning of such festivals has been forgotten. In UK primary schools, children learn in detail about the religious reasons for celebrating Christmas, Easter and a variety of festivals in other religions. For example, in late December, children sing Christmas songs which have a religious content, and they may even perform nativity plays telling the story of Jesus’ birth. Families also play a role in passing knowledge of religious festivals’ deeper significance on to the next generation. The same is true for festivals that have a historical background, such as Bonfire Night or Halloween, in the sense that people generally learn the stories behind these occasions at an early age.
+
+- In conclusion, although people mainly want to enjoy themselves during festivals, I believe that they are still aware of the reasons for these celebrations.
 

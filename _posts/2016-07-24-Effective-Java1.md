@@ -103,7 +103,4 @@ description:
 				- by adhering to common naming conventions.
 
 
-> In summary, static factory methods and public constructors both have their
-uses, and it pays to understand their relative merits. Often static factories are pref-
-erable, so avoid the reflex to provide public constructors without first considering
-static factories.
+> In summary, static factory methods and public constructors both have their uses, and it pays to understand their relative merits. Often static factories are preferable, so avoid the reflex to provide public constructors without first considering static factories.

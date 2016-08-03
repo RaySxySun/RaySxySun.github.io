@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Effective Java - Item 5 Unnecessary Objects
+date: 2016-08-03
 weather: cloudy
 categories: Java
 tags: [Java]
@@ -58,42 +59,43 @@ description:
         - eliminate the unnecessary initializations by **lazily initializing** these fields (Item 71) the first time the isBabyBoomer method is invoked, but it is not recommended.
             - complicate the implementation
             - unlikely to result in a noticeable performance improvement
-        class Person {
-            private final Date birthDate;
 
-            // Other fields, methods, and constructor omitted
+                        class Person {
+                            private final Date birthDate;
 
-            /**
-            * The starting and ending dates of the baby boom.
-            */
+                            // Other fields, methods, and constructor omitted
 
-            private static final Date BOOM_START;
-            private static final Date BOOM_END;
+                            /**
+                            * The starting and ending dates of the baby boom.
+                            */
 
-            static {
-                Calendar gmtCal = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
-                gmtCal.set(1946, Calendar.JANUARY, 1, 0, 0, 0);
-                BOOM_START = gmtCal.getTime();
-                gmtCal.set(1965, Calendar.JANUARY, 1, 0, 0, 0);
-                BOOM_END = gmtCal.getTime();
-            }
+                            private static final Date BOOM_START;
+                            private static final Date BOOM_END;
 
-            public boolean isBabyBoomer() {
-                return birthDate.compareTo(BOOM_START) >= 0 && birthDate.compareTo(BOOM_END) < 0;
-            }
-        }
+                            static {
+                                Calendar gmtCal = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
+                                gmtCal.set(1946, Calendar.JANUARY, 1, 0, 0, 0);
+                                BOOM_START = gmtCal.getTime();
+                                gmtCal.set(1965, Calendar.JANUARY, 1, 0, 0, 0);
+                                BOOM_END = gmtCal.getTime();
+                            }
+
+                            public boolean isBabyBoomer() {
+                                return birthDate.compareTo(BOOM_START) >= 0 && birthDate.compareTo(BOOM_END) < 0;
+                            }
+                        }
 
 ---
 
 - ### 3.Consider the case of adapters, also known as views.
     - Because an adapter has no state beyond that of its backing object, there’s no need to create more than one instance of a given adapter to a given object
-    - e.g. the **keySet method **of the Map interface returns a Set view of the Map object, consisting of all the keys in the map. it would seem that every call to keySet would have to create a new Set instance, but every call to keySet on a given Map object may return **the same Set instance**.
+    - e.g. the **keySet method** of the Map interface returns a Set view of the Map object, consisting of all the keys in the map. it would seem that every call to keySet would have to create a new Set instance, but every call to keySet on a given Map object may return **the same Set instance**.
 
 ---
 
-- ###4. Prefer primitives to boxed primitives, and watch out for unintentional autoboxing (The lesson is clear)
+- ### 4. Prefer primitives to boxed primitives, and watch out for unintentional autoboxing (The lesson is clear)
 
-                // The variable sum is declared as a Long instead of a long , which means that the program constructs about 2 31 unnecessary Long instances
+                // The variable sum is declared as a Long instead of a long , which means that the program constructs about 2^31 unnecessary Long instances
                 // Hideously slow program! Can you spot the object creation?
                 public static void main(String[] args) {
                     Long sum = 0L;

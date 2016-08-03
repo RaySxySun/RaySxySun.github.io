@@ -12,9 +12,8 @@ description:
 
 > Docker Images: [HERE](https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=trinitycore&starCount=0)
 
-
 Steps|Description|Commands
----|---|
+---|---|---
 1|Install docker| apt-get install docker.io
 2|Launch service| service docker.io status
 || service docker.io start
@@ -44,3 +43,9 @@ Steps|Description|Commands
 14|Docker network|sudo vim /etc/resolvconf/resolv.conf.d/base (nameserver 8.8.8.8 nameserver 8.8.4.4)
 15|Docker Version|docker version
 16|Download & test latest centos server|sudo docker run -i -t centos /bin/bash
+17|**create docker subnet networks**| sudo docker network create -d bridge --subnet 172.25.0.0/16 docker01
+18|**run a contatiner with a given ip**|[preferrable] docker run -v /home/ray:/home/ray -h xmaster --name=xmaster -it ubuntu bash 
+.| |[alernative]sudo docker run --net mynet123 --ip 172.18.0.22 -v /home/ray:/home/ray -h xmaster --name=xmaster -it ubuntu bash
+19|**make sure container attached to network**|docker network connect docker01 xmaster
+20|**inspect a customized network**|docker network inspect xmaster
+

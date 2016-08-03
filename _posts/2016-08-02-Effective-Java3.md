@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Effective Java - Item 3 Singleton Property
+date: 2016-08-02
 weather: cloudy
 categories: Java
 tags: [Java]

@@ -30,7 +30,7 @@ No.|problem|solution
 |solution 2| nameserver 8.8.4.4
 |solution 2| resolvconf -u
 |CentOS|/etc/resolv.conf
-|CentOS|nameserver 8.8.8.8 & nameserver 8.8.4.4
+|CentOS|nameserver 8.8.8.8 & nameserver 8.8.4.4 & nameserver 114.114.114.114
 8|Docker: FATA[0000] | sudo service docker restart
 9|set up ~/bin|vim /etc/environment
 10|update core with cmd|sudo apt-get dist-upgrade 
@@ -40,7 +40,10 @@ No.|problem|solution
 |Step 2: format USB|lsblk && sudo fdisk -l  
 |Step 3: format USB erase|sudo dd if=/dev/zero of=/dev/sdb bs=4k && sync  
 |Step 4: format USB|sudo mkfs.ext4 /dev/sd[x]  
-|Step 4: format USB|sudo eject /dev/sd[x]  
+|Step 4: format USB|sudo eject /dev/sd[x]
+14|Ubuntu nameserver 1|sudo vim /etc/resolvconf/resolv.conf.d/base
+|Ubuntu nameserver 2|nameserver 114.114.114.114
+|Ubuntu nameserver 3|sudo service resolvconf restart
 
 > Problem 9: Docker: FATA[0000] Get http:///var/run/docker.sock/v1.18/version: dial unix /var/run/docker.sock: no such file or directory. Are you trying to connect to a TLS-enabled daemon without TLS?
 

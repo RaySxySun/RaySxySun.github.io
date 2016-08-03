@@ -3,9 +3,9 @@ layout: post
 title: HashMap(Java)
 date: 2016-06-06
 weather: cloudy
-categories: Java 
+categories: Java
 tags: [Java]
-description: 
+description:
 ---
 
 # HashMap
@@ -17,8 +17,8 @@ description:
 		- V remove(Object key)
 		- Boolean containsKey(Object key)
 	- (2) the Entry<K, V>: is used to keep data.
-		- key-value pair 
-		- two extra data: 
+		- key-value pair
+		- two extra data:
 			- a reference to another Entry(like linked list)
 			- a hash value that represents the hash value of the key ( avoid the computation of the hash every time)
 
@@ -31,7 +31,7 @@ description:
 		}
 -
 	- (3) buckets or bins: multiple singly linked lists of **nullable** entries ; **default capacity is 16**
-		- Three Steps: 
+		- Three Steps:
 			- gets the hashcode of the key
 			- rehashes the hashcode to prevent against a bad hashing function
 			- rehashed hash hashcode and bit-masks it(optimized modulo function)
@@ -51,11 +51,11 @@ description:
 			static int indexFor(int h, int length) {
 			    return h & (length-1);
 			}
- 	
+
 <img src="{{ site.url }}/assets/img/2016-06-06-HashMap/HashMap1.png" alt="{{ page.title }} at {{ site.title }}">
 
 > the size of the inner array needs to be a power of 2. For Example
-> size is 17: bitwise formula “H AND 16” is going to be either 16 or 0. 
+> size is 17: bitwise formula “H AND 16” is going to be either 16 or 0.
 > size is 16: the range of the bitwise index formula “H AND 15” is from 0 to 15
 
 # HashMap Auto Resizing
@@ -63,7 +63,7 @@ description:
 > the HashMap is able to increase its inner array in order to keep very short nullable linked lists.
 > public HashMap(int initialCapacity, float loadFactor): the default initialCapacity is **16** && default loadFactor is **0.75**.
 
-- if it needs to increase the capacity of the inner array?: 
+- if it needs to increase the capacity of the inner array?:
 	- Each time we add a new key/value in your Map with put(…)
 	- The size of the map & A threshold
 	- the resizing of the array creates twice more buckets
@@ -75,20 +75,20 @@ description:
 - (1)The **HashMap** is not threads safe. (Because of auto-resizing mechanism)
 - (2)The **HashTable** is a thread safe. (SLOW: CRUD methods are synchronized)
 - (3)The **ConcurrentHashMap** is smater thread safe implementation. (JAVA5:synchronized bucket)
-	- multiples threads can get(), remove() or put(),  if not accessing the same bucket or resizing 
+	- multiples threads can get(), remove() or put(),  if not accessing the same bucket or resizing
 	- It is better choice for multithreaded application.
 
-> [Worst] when 2 threads save/put value & the 2 put() calls auto resizing at the same time, which would create a inner-loop in a bucket. Tring to get a data, the get(), will never end.
+> [Worst] when 2 threads save/put value & the 2 put() calls auto resizing at the same time, which would create a inner-loop in a bucket. Trying to get a data, the get(), will never end.
 
 # Unchangeable Key
 
-> If we create your own Key class and don’t make it changeable. Modifying key may cause value "lost"(exist but cannot be found). 
+> If we create your own Key class and don’t make it changeable. Modifying key may cause value "lost"(exist but cannot be found).
 
-# HashMap in JAVA 8 
+# HashMap in JAVA 8
 
 >  The lines of code about HashMap increases from 1k (JAVA 7) to 2k (JAVA 8)
 
-- A BIG difference: Nodes can be extended to TreeNodes. 
+- A BIG difference: Nodes can be extended to TreeNodes.
 	- TreeNodes	is a red-black tree structure.O(log(n)) for add, delete or get
 
 		static class Node<K,V> implements Map.Entry<K,V> {

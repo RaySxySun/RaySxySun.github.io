@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 10. speaking collection
+title: Speaking Collection 1  
 date: 2016-01-18
 categories: EN
 tags: [EN, Speaking]
@@ -316,7 +316,7 @@ description:
 
 - It **would probably be** more difficult without a teacher. You **need** someone **to show** you what **to do** and **correct** your mistakes. You **need** a lot of discipline to (OR a lot of self-discipline to) **teach** yourself.
 
-<pre class="alert alert-success"> 
+<pre class="alert alert-success">
     It requires a lot of time, commitment and discipline to keep up with the flow of the course.
     跟上课程进度需要许多时间、努力和训练。
     discipline 努力
@@ -505,7 +505,7 @@ description:
 
 ---
 
-> neighbours 
+> neighbours
 
 1 How well do you know your next-door neighbours?
 
@@ -594,7 +594,7 @@ description:
 # **PART II**
 
 ---
-    
+
     Describe a person (family member, famous person...)
     Describe a place (city, holiday...)
     Describe an object (something you use, a gift...)
@@ -617,7 +617,7 @@ description:
 4. This goal interests me because I’ve always wondered how people manage to create a work of fiction from nothing; I’ve always wondered whether I could do the same, and whether I’d **be capable of bringing** a story to life. I’ve always enjoyed reading, and I’d like to follow in the footsteps of my favourite authors.
 
 
-<pre class="alert alert-success"> 
+<pre class="alert alert-success">
         Band 7-9 phrases
         a future aim of mine
         the plot would be fictional
@@ -717,9 +717,9 @@ description:
 3 As I said earlier, it **was** a school trip, and I **think** there **were** around thirty of us, **including** two teachers. I **was with** a group of close friends, which **made** the experience more enjoyable.
 
 4 What really **struck** me **about** Sydney was that it **was historic but modern and thriving** at the same time. It **seemed to me to be** a lively, fashionable and cosmopolitan place. **Coming from** a relatively small city, the experience **made me keen to visit** more cities around the world in the future.
- 
+
 ---
- 
+
 > Describe a subject that you think should be removed from school education programmes. You should say
 
 - what the subject is
@@ -730,8 +730,8 @@ description:
 
 2 There **are** a few reasons why I **think that** school art lessons are unnecessary. Firstly, I **don’t believe that** drawing and painting **are essential skills** that children **will need** when they **leave** school. Children **might find** these activities enjoyable, but it**’s unlikely that** they **will need** them in the working world. Secondly, children **can draw, paint and make collages** in their own time at home; parents **can encourage this**, and they **can even join in**. Finally, **remembering** my own art lessons at school, I **don’t think** we **learnt** any real art skills; the teachers **left us to draw or create** things, but they **didn’t provide** much technical instruction.
 
-3 Instead of art lessons, children **could do more work on** core subjects like maths, science or language. These subjects **are more likely to help** children in later life when they **enter** the job market, and I **think** both children and their teachers **would benefit** if more time **were devoted to** them. 
- 
+3 Instead of art lessons, children **could do more work on** core subjects like maths, science or language. These subjects **are more likely to help** children in later life when they **enter** the job market, and I **think** both children and their teachers **would benefit** if more time **were devoted to** them.
+
 ---
 
 > Describe an interesting conversation you had with someone you didn't know. You should say
@@ -1123,7 +1123,7 @@ You should say:
 ---
 
 > describe an object
-    
+
     Describe something you bought recently.
     Describe a gift you gave or received.
     Describe something you own which is important to you.
@@ -1240,7 +1240,7 @@ You should say
 
 - but oh was I thankful for it!!! All through the movie I kept on having this big large smile sculpted into my face. For the record, I'm 30 years old, and I've played warcraft and wow for many years since when I was 13 or 14 years old. Ever since then, I haven't stopped playing. Therefore you can count me as a fan. Now onto the movie... Gosh, I saw it at a pre-screening, and I kept wanting more of it. It just never gets boring! I really enjoyed the little stuff that is found throughout the movie for the fans. I also incredibly enjoyed the intro sequence.
 
-- Those who argue the movie cuts too many parts or that it changes the story too much are totally wrong. This movie could not have shown the whole first time in its entirety - keep in mind that the lore lasts well over ten hours, making a movie this long would, well, make it way too long and besides, how would you financially sustain such a project? 
+- Those who argue the movie cuts too many parts or that it changes the story too much are totally wrong. This movie could not have shown the whole first time in its entirety - keep in mind that the lore lasts well over ten hours, making a movie this long would, well, make it way too long and besides, how would you financially sustain such a project?
 
 - OK, so there are changes in the movie - well, this is Duncan's vision of it. All of us have our own visions of the lore and books which may or may not be compatible with that of Duncan's, but I can safely assume that nobody can say they have a hundred percent the same vision of the story as Chris Metzen; that's the thing with story: each player / reader has a different vision of it. As for me, I was blown away. Never before have I felt so much at home in a movie, it is as if I had taken a walk in the town where I grew up, Stormwind, Goldshire, Ironforge, everything felt so much like home, I was moved. I cannot tell of another movie that had me shed tears just by seeing a landscape on screen.
 
@@ -1260,7 +1260,7 @@ You should say
 
 ---
 
->  Aims for the future: 
+>  Aims for the future:
 Do you think that it's better to have clear aims for the future, or is it best to take each day as it comes?
 
 - (Answer) I think it’s best to have a good idea of what you want to do with your life, especially in terms of studies and career. (Why) Having aims allows you to plan what you need to do today and tomorrow in order to achieve longer-term objectives. (Example) For example, if you want to become a doctor, you need to choose the right subjects at school, get the right exam results, and work hard at university. (Opposite) Without a clear aim, it would be impossible to take the necessary steps towards a career in medicine, or any other profession.
@@ -1661,7 +1661,7 @@ Do you think that school children should be encouraged to have their own ideas, 
 
 > technologies
 
-1.What technology or equipment is used in most workplaces nowadays? 
+1.What technology or equipment is used in most workplaces nowadays?
 
     Advice: give a list of different technologies, then talk about one in detail:
 
@@ -1723,7 +1723,7 @@ Do you think that school children should be encouraged to have their own ideas, 
 
 ---
 
-> TV 
+> TV
 
 1 Do you think most people watch TV for education or for entertainment?
 
